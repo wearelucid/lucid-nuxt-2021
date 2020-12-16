@@ -1,0 +1,160 @@
+/*
+ * fluid-size:
+ * Precise Control over sizes:
+ * Adapt a layout from a minimum size to a maximum size in a given range of screen widths
+ *
+ * Usage:
+ * html {
+ *   @include fluid-size('font-size', 320px, 1366px, 14px, 18px);
+ *   // or like this
+ *   @include fluid-size('font-size', 32.0rem, 136.6rem, 1.4rem, 1.8rem);
+ * }
+ * @params:
+ * $properties: e.g. 'font-size', 'padding-top' etc.
+ * $min-vw: below this viewport we don't see any change
+ * $max-vw: above this viewport we don't see any change
+ * $min-value: smallest value for property
+ * $max-value: biggest value
+ *
+ * ⚠️  ! Beware:
+ * Don't mix units. You can either use all parameters in px or in rem, but don't mix them.
+ * Because Breakpoints should be set in pixel you should prefer px over other units.
+ * (https://adamwathan.me/dont-use-em-for-media-queries/)
+ *
+ * ⚠️ ! Beware 2:
+ *  Media queries declarations do not base themselves on the declared font-size that you apply to html!!!
+ * instead they always use the default size - which as I said is 16px in pretty much all browsers.
+ * Read more: https: //stackoverflow.com/questions/47409585/using-rem-units-in-media-queries-and-as-width
+ *
+ * ⚠️ ! Beware 3: Unitless fluid sizes
+ * If you want to create fluid-sizes for line-heights, you have to indicate line-height with the unit 'em'. Unitless will mess things up.
+ *
+ */
+
+@mixin fluid-size($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+/*
+ * Hide visually
+ * See http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ * for discussion of different solutions
+ */
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+@mixin visually-hidden-reset() {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+@mixin visually-hidden-focusable() {
+  @include visually-hidden;
+
+  &:focus,
+  &:active {
+    @include visually-hidden-reset;
+  }
+}
+
+/*
+ * Lists with layout purpose
+ */
+@mixin reset-list() {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*
+ * Reset button
+ */
+@mixin reset-button() {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  appearance: none;
+}
+
+/*
+ * Reset Link
+ */
+@mixin reset-link() {
+  color: $s-color-text;
+  cursor: pointer;
+
+  &:hover {
+    color: $s-color-primary;
+  }
+}
+
+/*
+ * Hocus Focus
+ */
+
+@mixin hocus-focus($type: outline, $color: $s-color-primary, $offset: 1rem) {
+
+  // reset firefox dotted outline
+  &::-moz-focus-inner {
+    // sass-lint:disable-line no-vendor-prefixes
+    border: 0;
+  }
+
+  @if $type==outline {
+    [data-whatintent='keyboard'] &:focus {
+      outline: 1px solid $color;
+      outline-offset: $offset;
+    }
+
+    [data-whatintent='mouse'] &:focus {
+      outline: 0; // clearing dotted line when using the mouse
+    }
+  }
+
+  @else if $type==bgcolor {
+    [data-whatintent='keyboard'] &:focus {
+      background-color: $color;
+    }
+  }
+}
+
+/*
+ * WordWrap
+ */
+@mixin word-wrap($break: true) {
+  hyphens: auto;
+
+  @if $break==true {
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+}

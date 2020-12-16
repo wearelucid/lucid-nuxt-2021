@@ -1,0 +1,60 @@
+/*
+ * Settings – Variables
+ */
+
+$s-font-family-base: 'Arial', sans-serif;
+
+/*
+ * Font Sizes
+ * Before starting a project:
+ * Set up a type-specification file
+ */
+
+/* Font-Sizes */
+$s-fz-14: 14px;
+
+$s-line-height-std: 1.2;
+
+
+/*
+ * Settings – Spacing
+ */
+
+$s-size-spacer-20: 2rem;
+
+$s-size-gutter-20: $s-size-spacer-20;
+
+$s-size-content-max-width-small: $s-fz-14 * 30; // 600px = 20px * 30em (don't make paragraphs too wide!)
+$s-size-content-max-width-medium: 1100px;
+$s-size-content-max-width-large: 1440px;
+
+
+/*
+ * Settings – Specific sizes
+ */
+
+/*
+ * Settings – Animations
+ */
+
+$s-animation-duration-default: 0.3s;
+$s-animation-easing-default: ease-in-out;
+
+/*
+ * Settings – Breakpoints
+ * Why we use px: https://adamwathan.me/dont-use-em-for-media-queries/
+ */
+
+$s-size-breakpoint-375: 375px;
+$s-size-breakpoint-768: 768px;
+$s-size-breakpoint-1440: 1440px;
+
+/*
+ * Settings – z-Index
+ */
+
+$s-zindex-map: (
+  'skip-navigation-link': 110,
+  'alert': 100,
+  'menu': 90
+);
