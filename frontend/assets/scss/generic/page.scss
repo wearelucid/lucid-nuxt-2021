@@ -1,0 +1,38 @@
+html {
+  @include word-wrap;
+  height: 100%;
+  font-family: $s-font-family-base;
+  font-size: (100% / 1.6); // now 1rem equals 10px
+  font-weight: normal;
+  line-height: $s-line-height-std;
+  color: $s-color-text;
+  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-text-size-adjust: none; // sass-lint:disable-line no-vendor-prefixes
+  font-kerning: normal;
+  font-feature-settings: 'liga'1, 'kern'1;
+}
+
+body {
+  color: red;
+  min-height: 100%;
+}
+
+main {
+  outline: none;
+}
+
+// TODO: Defined h1-h6 heading styles
+
+p {
+  @include font-style-base;
+  margin-bottom: 1em;
+}
+
+a {
+  @include reset-link;
+}
+
+ul {
+  @include reset-list;
+}

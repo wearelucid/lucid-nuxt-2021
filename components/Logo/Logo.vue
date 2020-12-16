@@ -20,6 +20,8 @@
         fill="#2F495E"
       />
     </svg>
+
+    <h1>Hallo planet</h1>
   </div>
 </template>
 
