@@ -10,7 +10,9 @@
 
 <script>
 export default {
-  // Basic example for fetching content with @nuxt/content
+  /**
+   * Basic example for fetching content with @nuxt/content
+   */
   async asyncData({ $content, params, error }) {
     const slug = params.slug || 'home'
     const page = await $content(slug)
@@ -18,9 +20,7 @@ export default {
       .catch(() => {
         error({ statusCode: 404, message: 'Page not found.' })
       })
-    return {
-      page,
-    }
+    return { page }
   },
 }
 </script>
