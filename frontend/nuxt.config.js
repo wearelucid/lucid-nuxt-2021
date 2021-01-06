@@ -33,4 +33,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  // Storybook Options (https://storybook.nuxtjs.org/options)
+  storybook: {
+    port: 4000, // Run Storybook on localhost:4000,
+  },
 }
