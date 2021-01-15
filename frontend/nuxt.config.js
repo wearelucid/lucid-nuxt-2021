@@ -29,7 +29,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ['@nuxtjs/apollo'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
@@ -37,5 +37,14 @@ export default {
   // Storybook Options (https://storybook.nuxtjs.org/options)
   storybook: {
     port: 4000, // Run Storybook on localhost:4000,
+  },
+
+  // Apollo Options (https://github.com/nuxt-community/apollo-module)
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://craft.test/api',
+      },
+    },
   },
 }

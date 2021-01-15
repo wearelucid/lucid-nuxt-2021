@@ -8,5 +8,33 @@
 </template>
 
 <script>
-export default {}
+import gql from 'graphql-tag'
+export default {
+  name: 'Home',
+  apollo: {
+    entries: {
+      query: gql`
+        query MyQuery {
+          entries(site: "*") {
+            siteId
+            sectionId
+            id
+            slug
+            title
+            url
+            uri
+            ... on pages_pages_Entry {
+              enabled
+              image {
+                url
+                id
+                title
+              }
+            }
+          }
+        }
+      `,
+    },
+  },
+}
 </script>
