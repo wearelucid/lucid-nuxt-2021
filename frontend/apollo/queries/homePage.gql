@@ -1,0 +1,21 @@
+#import "./fragments/pageBuilder.gql"
+
+query HomePage($site: [String], $section: [String]) {
+  page: entry(site: $site, section: $section) {
+    siteId
+    sectionId
+    id
+    slug
+    title
+    url
+    uri
+    ... on home_home_Entry {
+      id
+      pageBuilder {
+        ...pbSection
+        ...pbLink
+        ...pbImage
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+fragment pbSection on pageBuilder_pbSection_BlockType {
+  id
+  baseTitle
+  baseRichtext
+}
+
+fragment pbImage on pageBuilder_pbImage_BlockType {
+  id
+  baseImage {
+    url
+    width
+    height
+    title
+  }
+}
+
+fragment pbLink on pageBuilder_pbLink_BlockType {
+  id
+  baseLink {
+    customText
+    target
+    text
+    title
+    type
+    url
+  }
+}

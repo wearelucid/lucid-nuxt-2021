@@ -1,39 +1,18 @@
-<template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">Hello World</h1>
-    </div>
-  </div>
-</template>
-
 <script>
-import gql from 'graphql-tag'
+import SlugPage from '~/pages/_slug/index'
+import homePage from '~/apollo/queries/homePage'
 export default {
-  name: 'Home',
+  ...SlugPage,
+  name: 'HomePage',
   apollo: {
-    entries: {
-      query: gql`
-        query MyQuery {
-          entries(site: "*") {
-            siteId
-            sectionId
-            id
-            slug
-            title
-            url
-            uri
-            ... on pages_pages_Entry {
-              enabled
-              image {
-                url
-                id
-                title
-              }
-            }
-          }
+    page: {
+      variables() {
+        return {
+          site: 'default',
+          section: 'home',
         }
-      `,
+      },
+      query: homePage,
     },
   },
 }

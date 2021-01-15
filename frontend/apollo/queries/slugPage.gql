@@ -1,0 +1,21 @@
+#import "./fragments/pageBuilder.gql"
+
+query SlugPage($site: [String], $uri: [String]) {
+  page: entry(site: $site, uri: $uri) {
+    siteId
+    sectionId
+    id
+    slug
+    title
+    url
+    uri
+    ... on pages_pages_Entry {
+      id
+      pageBuilder {
+        ...pbSection
+        ...pbLink
+        ...pbImage
+      }
+    }
+  }
+}
