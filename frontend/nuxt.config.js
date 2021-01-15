@@ -2,6 +2,20 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
+  // Environment variables that are required at build time (rather than runtime)
+  // https://nuxtjs.org/docs/2.x/directory-structure/nuxt-config/#env
+  env: {
+    // baseURL: process.env.BASE_URL
+  },
+
+  // Environment variables that are required at runtime
+  // https://nuxtjs.org/docs/2.x/directory-structure/nuxt-config/#runtimeconfig
+  // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
+  publicRuntimeConfig: {
+    // baseURL: process.env.BASE_URL || 'https://nuxtjs.org',
+    apiUrl: process.env.API_URL,
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'frontend',
@@ -42,9 +56,7 @@ export default {
   // Apollo Options (https://github.com/nuxt-community/apollo-module)
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: 'http://craft.test/api',
-      },
+      default: '~/apollo/setup/apolloClientDefaultConfig.js',
     },
   },
 }
