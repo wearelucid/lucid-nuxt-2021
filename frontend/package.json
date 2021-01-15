@@ -13,7 +13,6 @@
     "storybook:build": "yarn nuxt storybook build"
   },
   "dependencies": {
-    "@nuxt/content": "^1.11.1",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
   },
