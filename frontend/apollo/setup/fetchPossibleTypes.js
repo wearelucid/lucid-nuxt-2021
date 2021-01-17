@@ -1,6 +1,6 @@
-/* eslint-disable no-console */
 const fs = require('fs')
 const fetch = require('cross-fetch')
+const consola = require('consola')
 require('dotenv').config()
 
 const fileLocationForFetchedTypes = './apollo/setup/possibleTypes.json'
@@ -12,6 +12,7 @@ const fileLocationForFetchedTypes = './apollo/setup/possibleTypes.json'
 
 const apiUrl = process.env.API_URL
 if (apiUrl == null) throw new Error('❌ No API_URL found in .env')
+consola.info('🚀 Fetching possible types for GraphQL fragments from ', apiUrl)
 
 fetch(apiUrl, {
   method: 'POST',
@@ -48,7 +49,7 @@ fetch(apiUrl, {
         if (err) {
           throw new Error('❌ Error writing possibleTypes.json', err)
         } else {
-          console.log('✅ Fragment types successfully extracted!')
+          consola.success('✅ Fragment types successfully extracted!')
         }
       }
     )

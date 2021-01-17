@@ -1,3 +1,5 @@
+import fetchRoutesToBeGenerated from './apollo/setup/fetchRoutesToBeGenerated'
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -47,6 +49,12 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  // Generate Options
+  generate: {
+    fallback: true,
+    routes: async () => await fetchRoutesToBeGenerated(process.env.API_URL),
+  },
 
   // Storybook Options (https://storybook.nuxtjs.org/options)
   storybook: {
