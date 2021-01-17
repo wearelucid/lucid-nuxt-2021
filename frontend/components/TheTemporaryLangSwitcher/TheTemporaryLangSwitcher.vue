@@ -6,13 +6,13 @@
       is the current lang (code: {{ $i18n.locale }})
     </p>
     <div v-if="pageTranslations.length">
-      <a
+      <nuxt-link
         v-for="locale in pageTranslations"
         :key="locale.language"
-        :href="locale.url"
+        :to="getPathFromUrl(locale.url)"
       >
         {{ $i18n.locales.find((l) => l.iso === locale.language).name }}
-      </a>
+      </nuxt-link>
     </div>
     <div v-else>
       <span>No translation available</span>
@@ -22,12 +22,18 @@
 </template>
 
 <script>
+// TODO: Replace package
+import { getPathFromUrl } from '@wearelucid/vuecid-helpers'
+
 export default {
   props: {
     pageTranslations: {
       type: Array,
       default: () => [],
     },
+  },
+  methods: {
+    getPathFromUrl: (url) => getPathFromUrl(url),
   },
 }
 </script>

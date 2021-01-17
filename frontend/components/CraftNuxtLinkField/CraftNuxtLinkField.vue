@@ -20,6 +20,7 @@
 <script>
 // TODO: The vue-link comes with the option to add or remove trailing slashes
 import { ForNuxt } from 'vue-link'
+// TODO: Replace package
 import { getPathFromUrl } from '@wearelucid/vuecid-helpers'
 
 export default {
