@@ -7,6 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "yarn generate-graphql-possible-types && yarn nuxt generate",
+    "netlify": "yarn generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "storybook": "yarn nuxt storybook",
