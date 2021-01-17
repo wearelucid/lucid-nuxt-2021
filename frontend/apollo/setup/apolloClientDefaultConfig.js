@@ -25,5 +25,13 @@ export default function ({ $config: { apiUrl } }) {
     cache: new InMemoryCache({
       fragmentMatcher,
     }),
+    apollo: {
+      defaultOptions: {
+        // Disable cache for queries (for now it doesn't seem to update the variables on route change otherwise):
+        query: {
+          fetchPolicy: 'no-cache',
+        },
+      },
+    },
   }
 }
