@@ -9,6 +9,7 @@ query SlugPage($site: [String], $uri: [String]) {
     title
     url
     uri
+    language
     ... on pages_pages_Entry {
       id
       pageBuilder {
@@ -16,6 +17,10 @@ query SlugPage($site: [String], $uri: [String]) {
         ...pbLink
         ...pbImage
       }
+    }
+    localized {
+      url
+      language
     }
   }
 }

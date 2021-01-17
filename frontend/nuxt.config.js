@@ -43,7 +43,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/apollo'],
+  modules: ['@nuxtjs/apollo', 'nuxt-i18n'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
@@ -58,5 +58,22 @@ export default {
     clientConfigs: {
       default: '~/apollo/setup/apolloClientDefaultConfig.js',
     },
+  },
+
+  // i18n Options (https://i18n.nuxtjs.org/)
+  i18n: {
+    locales: [
+      {
+        code: 'de',
+        iso: 'de-CH',
+        name: 'Deutsch',
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English',
+      },
+    ],
+    defaultLocale: 'de',
   },
 }

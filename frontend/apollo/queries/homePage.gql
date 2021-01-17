@@ -9,6 +9,7 @@ query HomePage($site: [String], $section: [String]) {
     title
     url
     uri
+    language
     ... on home_home_Entry {
       id
       pageBuilder {
@@ -16,6 +17,10 @@ query HomePage($site: [String], $section: [String]) {
         ...pbLink
         ...pbImage
       }
+    }
+    localized {
+      url
+      language
     }
   }
 }

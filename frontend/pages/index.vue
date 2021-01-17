@@ -8,7 +8,7 @@ export default {
     page: {
       variables() {
         return {
-          site: 'default',
+          site: this.$i18n.locale,
           section: 'home',
         }
       },
