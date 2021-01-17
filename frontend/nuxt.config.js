@@ -48,7 +48,10 @@ export default {
   modules: ['@nuxtjs/apollo', 'nuxt-i18n'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    // TODO: 'vue-link' seems not to work if not transpiled by babel. Maybe I'm missing something here.
+    transpile: ['vue-link'],
+  },
 
   // Generate Options
   generate: {

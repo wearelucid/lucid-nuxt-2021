@@ -20,7 +20,8 @@
     "core-js": "^3.6.5",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.14.6",
-    "nuxt-i18n": "^6.18.0"
+    "nuxt-i18n": "^6.18.0",
+    "vue-link": "^1.6.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
