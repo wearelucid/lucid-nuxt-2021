@@ -1,10 +1,12 @@
 fragment pbSection on pageBuilder_pbSection_BlockType {
+  __typename
   id
   baseTitle
   baseRichtext
 }
 
 fragment pbImage on pageBuilder_pbImage_BlockType {
+  __typename
   id
   baseImage {
     url
@@ -15,6 +17,7 @@ fragment pbImage on pageBuilder_pbImage_BlockType {
 }
 
 fragment pbLink on pageBuilder_pbLink_BlockType {
+  __typename
   id
   baseLink {
     customText

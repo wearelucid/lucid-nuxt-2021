@@ -1,4 +1,4 @@
-import fetchRoutesToBeGenerated from './apollo/setup/fetchRoutesToBeGenerated'
+import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -15,7 +15,6 @@ export default {
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
     // baseURL: process.env.BASE_URL || 'https://nuxtjs.org',
-    apiUrl: process.env.API_URL,
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -41,11 +40,12 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
+    'nuxt-graphql-request',
     '@nuxtjs/eslint-module',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/apollo', 'nuxt-i18n'],
+  modules: ['nuxt-i18n'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -64,11 +64,11 @@ export default {
     port: 4000, // Run Storybook on localhost:4000,
   },
 
-  // Apollo Options (https://github.com/nuxt-community/apollo-module)
-  apollo: {
-    clientConfigs: {
-      default: '~/apollo/setup/apolloClientDefaultConfig.js',
-    },
+  // nuxt-graphql-request Options (https://github.com/gomah/nuxt-graphql-request)
+  graphql: {
+    endpoint: process.env.API_URL,
+    // See: https://github.com/prisma-labs/graphql-request#passing-more-options-to-fetch
+    options: {},
   },
 
   // i18n Options (https://i18n.nuxtjs.org/)

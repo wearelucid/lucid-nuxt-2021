@@ -13,21 +13,18 @@ import {
   removeTrailingSlash,
   removeLeadingLang,
 } from '@wearelucid/vuecid-helpers'
-import slugPage from '~/apollo/queries/slugPage'
+import slugPageQuery from '~/graphql/queries/slugPage'
 
 export default {
   name: 'SlugPage',
-  async asyncData({ app, route }) {
-    const response = await app.apolloProvider.defaultClient.query({
-      query: slugPage,
-      variables: {
-        site: app.i18n.locale,
-        uri: removeLeadingLang(
-          removeTrailingSlash(removeLeadingSlash(route.path))
-        ),
-      },
-    })
-    const { page } = response.data
+  async asyncData({ app, route, $graphql }) {
+    const variables = {
+      site: app.i18n.locale,
+      uri: removeLeadingLang(
+        removeTrailingSlash(removeLeadingSlash(route.path))
+      ),
+    }
+    const { page } = await $graphql.request(slugPageQuery, variables)
     return { page }
   },
 }

@@ -7,19 +7,16 @@
 </template>
 
 <script>
-import homePage from '~/apollo/queries/homePage'
+import homePageQuery from '~/graphql/queries/homePage'
 
 export default {
   name: 'HomePage',
-  async asyncData({ app, route }) {
-    const response = await app.apolloProvider.defaultClient.query({
-      query: homePage,
-      variables: {
-        site: app.i18n.locale,
-        section: 'home',
-      },
-    })
-    const { page } = response.data
+  async asyncData({ app, $graphql }) {
+    const variables = {
+      site: app.i18n.locale,
+      section: 'home',
+    }
+    const { page } = await $graphql.request(homePageQuery, variables)
     return { page }
   },
 }
