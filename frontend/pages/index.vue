@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import homePageQuery from '~/graphql/queries/homePage'
+import homePageQuery from '~/graphql/queries/homePage.gql'
 
 export default {
   name: 'HomePage',

@@ -8,7 +8,7 @@
 
 <script>
 import { withoutLeadingSlash, withoutTrailingSlash } from '@nuxt/ufo'
-import slugPageQuery from '~/graphql/queries/slugPage'
+import slugPageQuery from '~/graphql/queries/slugPage.gql'
 
 /**
  * TODO: This should live somewhere in a helpers repo.
