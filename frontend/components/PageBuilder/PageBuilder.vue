@@ -29,6 +29,8 @@
     <nuxt-link to="/en/">Back to Home /en/</nuxt-link><br />
     <nuxt-link to="/test-seite">Testseite DE</nuxt-link><br />
     <nuxt-link to="/en/test-page">Test page EN</nuxt-link><br />
+    <nuxt-link to="/asdf">404 Page DE</nuxt-link><br />
+    <nuxt-link to="/en/asdf">404 Page EN</nuxt-link><br />
     <hr style="margin: 1em 0" />
   </div>
 </template>
