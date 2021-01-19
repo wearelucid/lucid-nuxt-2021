@@ -15,6 +15,7 @@ export default {
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
     // baseURL: process.env.BASE_URL || 'https://nuxtjs.org',
+    apiUrl: process.env.API_URL,
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -32,7 +33,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: ['plugins/craftLivePreview.client.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -86,5 +87,8 @@ export default {
       },
     ],
     defaultLocale: 'de',
+    // TODO: Re-enable browser lang detection by removing this property.
+    // But fix issues with live preview first: https://github.com/wearelucid/frontend-boilerplate/issues/9
+    detectBrowserLanguage: false,
   },
 }

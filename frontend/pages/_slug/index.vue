@@ -1,6 +1,9 @@
 <template>
   <div v-if="page">
     <the-temporary-lang-switcher :page-translations="page.localized" />
+    <p v-if="$craftLivePreview" style="color: red">
+      I am a preview! $craftLivePreview: {{ $craftLivePreview }}
+    </p>
     <h1 class="title">{{ page.title }}</h1>
     <page-builder :items="page.pageBuilder" />
   </div>
