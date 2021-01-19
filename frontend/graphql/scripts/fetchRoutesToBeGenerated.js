@@ -1,6 +1,5 @@
 import fetch from 'cross-fetch'
-// TODO: Replace with new helpers package!
-import { getPathFromUrl } from '@wearelucid/vuecid-helpers'
+import { parseURL } from '@nuxt/ufo'
 const consola = require('consola')
 
 export default async function (apiUrl) {
@@ -25,8 +24,8 @@ export default async function (apiUrl) {
         "❌ Couldn't get routes from CMS. Is API_URL defined in .env and your GraphQL endpoint working?"
       )
     }
-    const fetchedRoutes = jsonResponse.data.entries.map((item) =>
-      getPathFromUrl(item.url)
+    const fetchedRoutes = jsonResponse.data.entries.map(
+      (item) => parseURL(item.url).pathname
     )
     consola.success(
       '✅ Successfully fetched routes to generate: ',

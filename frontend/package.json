@@ -14,7 +14,7 @@
     "storybook:build": "yarn nuxt storybook build"
   },
   "dependencies": {
-    "@wearelucid/vuecid-helpers": "^3.0.1",
+    "@nuxt/ufo": "^0.5.4",
     "core-js": "^3.6.5",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.14.6",

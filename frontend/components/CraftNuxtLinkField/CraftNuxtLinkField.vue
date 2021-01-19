@@ -18,14 +18,14 @@
 </template>
 
 <script>
-// TODO: The vue-link comes with the option to add or remove trailing slashes
-import { ForNuxt } from 'vue-link'
-// TODO: Replace package
-import { getPathFromUrl } from '@wearelucid/vuecid-helpers'
+// Choose how you like your slashes:
+// import { ForNuxt, ForNuxtAddSlash, ForNuxtStripSlash } from 'vue-link'
+import { ForNuxtStripSlash } from 'vue-link'
+import { parseURL } from '@nuxt/ufo'
 
 export default {
   components: {
-    'vue-link': ForNuxt,
+    'vue-link': ForNuxtStripSlash,
   },
   props: {
     type: {
@@ -53,8 +53,18 @@ export default {
       default: '',
     },
   },
+  mounted() {
+    // TODO/Note: Log some important debug info to the console here:
+    // Delete this later
+    if (this.url)
+      console.log('CraftNuxtLinkField: ', {
+        type: this.type,
+        rawURL: this.url,
+        parsedURL: parseURL(this.url),
+      })
+  },
   methods: {
-    getPathFromUrl: (url) => getPathFromUrl(url),
+    getPathFromUrl: (url) => parseURL(url).pathname,
   },
 }
 </script>

@@ -9,7 +9,7 @@
       <nuxt-link
         v-for="locale in pageTranslations"
         :key="locale.language"
-        :to="removeTrailingSlash(getPathFromUrl(locale.url)) || '/'"
+        :to="withoutTrailingSlash(getPathFromUrl(locale.url)) || '/'"
       >
         {{ $i18n.locales.find((l) => l.iso === locale.language).name }}
       </nuxt-link>
@@ -22,8 +22,7 @@
 </template>
 
 <script>
-// TODO: Replace package
-import { getPathFromUrl, removeTrailingSlash } from '@wearelucid/vuecid-helpers'
+import { parseURL, withoutTrailingSlash } from '@nuxt/ufo'
 
 export default {
   props: {
@@ -33,8 +32,8 @@ export default {
     },
   },
   methods: {
-    getPathFromUrl: (url) => getPathFromUrl(url),
-    removeTrailingSlash: (url) => removeTrailingSlash(url),
+    getPathFromUrl: (url) => parseURL(url).pathname,
+    withoutTrailingSlash: (url) => withoutTrailingSlash(url),
   },
 }
 </script>
