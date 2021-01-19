@@ -11,12 +11,15 @@ import homePageQuery from '~/graphql/queries/homePage'
 
 export default {
   name: 'HomePage',
-  async asyncData({ app, $graphql }) {
+  async asyncData({ app, $graphql, error }) {
     const variables = {
       site: app.i18n.locale,
       section: 'home',
     }
     const { page } = await $graphql.request(homePageQuery, variables)
+    if (page == null) {
+      error({ statusCode: 404, message: app.i18n.t('error_404') })
+    }
     return { page }
   },
 }

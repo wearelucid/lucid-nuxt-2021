@@ -25,7 +25,7 @@ const removeLanguagePrefixFromPath = ({ path = '', prefix = '' } = {}) => {
 
 export default {
   name: 'SlugPage',
-  async asyncData({ app, route, $graphql }) {
+  async asyncData({ app, route, $graphql, error }) {
     const variables = {
       site: app.i18n.locale,
       uri: removeLanguagePrefixFromPath({
@@ -34,6 +34,9 @@ export default {
       }),
     }
     const { page } = await $graphql.request(slugPageQuery, variables)
+    if (page == null) {
+      error({ statusCode: 404, message: app.i18n.t('error_404') })
+    }
     return { page }
   },
 }

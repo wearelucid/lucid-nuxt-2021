@@ -90,5 +90,16 @@ export default {
     // TODO: Re-enable browser lang detection by removing this property.
     // But fix issues with live preview first: https://github.com/wearelucid/frontend-boilerplate/issues/9
     detectBrowserLanguage: false,
+    vueI18n: {
+      fallbackLocale: 'de',
+      messages: {
+        de: {
+          error_404: 'Seite nicht gefunden.',
+        },
+        en: {
+          error_404: 'Page not found.',
+        },
+      },
+    },
   },
 }
