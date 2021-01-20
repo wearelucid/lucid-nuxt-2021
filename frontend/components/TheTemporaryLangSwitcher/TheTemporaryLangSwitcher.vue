@@ -6,13 +6,13 @@
       is the current lang (code: {{ $i18n.locale }})
     </p>
     <div v-if="pageTranslations.length">
-      <nuxt-link
+      <NuxtLink
         v-for="locale in pageTranslations"
         :key="locale.language"
         :to="withoutTrailingSlash(getPathFromUrl(locale.url)) || '/'"
       >
         {{ $i18n.locales.find((l) => l.iso === locale.language).name }}
-      </nuxt-link>
+      </NuxtLink>
     </div>
     <div v-else>
       <span>No translation available</span>

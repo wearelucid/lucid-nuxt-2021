@@ -1,8 +1,8 @@
 <template>
   <div v-if="page">
-    <the-temporary-lang-switcher :page-translations="page.localized" />
+    <TheTemporaryLangSwitcher :page-translations="page.localized" />
     <h1 class="title">{{ page.title }}</h1>
-    <page-builder :items="page.pageBuilder" />
+    <PageBuilder :items="page.pageBuilder" />
   </div>
 </template>
 

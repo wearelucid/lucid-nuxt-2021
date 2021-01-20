@@ -17,7 +17,7 @@
         />
       </div>
       <div v-if="item.__typename === 'pageBuilder_pbLink_BlockType'">
-        <craft-nuxt-link-field v-if="item.baseLink" v-bind="item.baseLink" />
+        <CraftNuxtLinkField v-if="item.baseLink" v-bind="item.baseLink" />
       </div>
     </div>
 
