@@ -1,31 +1,23 @@
 <template>
-  <div>
-    <span>
-      Link of type <strong>{{ type }}</strong>
-      <br />
-      {{ url }}
-      <br />
-    </span>
-    <vue-link
-      v-if="url"
-      :to="type === 'entry' ? getPathFromUrl(url) : url"
-      :new-tab="target === '_blank'"
-    >
-      {{ customText ? customText : text }}
-    </vue-link>
-    <hr />
-  </div>
+  <!-- https://github.com/Developmint/vue-link#prop-overview -->
+  <VueLink
+    v-if="url"
+    :to="isInternalLink ? getPathFromUrl(url) : url"
+    :new-tab="target === '_blank'"
+    :external="!isInternalLink"
+    :title="title"
+  >
+    {{ customText ? customText : text }}
+  </VueLink>
 </template>
 
 <script>
-// Choose how you like your slashes:
-// import { ForNuxt, ForNuxtAddSlash, ForNuxtStripSlash } from 'vue-link'
-import { ForNuxtStripSlash } from 'vue-link'
+import { ForNuxt } from 'vue-link'
 import { parseURL } from '@nuxt/ufo'
 
 export default {
   components: {
-    'vue-link': ForNuxtStripSlash,
+    VueLink: ForNuxt,
   },
   props: {
     type: {
@@ -53,15 +45,10 @@ export default {
       default: '',
     },
   },
-  mounted() {
-    // TODO/Note: Log some important debug info to the console here:
-    // Delete this later
-    if (this.url)
-      console.log('CraftNuxtLinkField: ', {
-        type: this.type,
-        rawURL: this.url,
-        parsedURL: parseURL(this.url),
-      })
+  computed: {
+    isInternalLink() {
+      return this.type === 'entry'
+    },
   },
   methods: {
     getPathFromUrl: (url) => parseURL(url).pathname,

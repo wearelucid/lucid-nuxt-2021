@@ -22,7 +22,8 @@
     </div>
 
     <!-- TODO: Delete these links later, keep them for now to test nuxt client navigation within SPA mode -->
-    <p>Some Test Links:</p>
+    <hr style="margin: 2em 0" />
+    <h3>Some NuxtLinks for testing:</h3>
     <nuxt-link :to="localePath('/')">Back to Home localePath</nuxt-link><br />
     <nuxt-link to="/">Back to Home /</nuxt-link><br />
     <nuxt-link to="/en">Back to Home /en</nuxt-link><br />
@@ -31,7 +32,6 @@
     <nuxt-link to="/en/test-page">Test page EN</nuxt-link><br />
     <nuxt-link to="/asdf">404 Page DE</nuxt-link><br />
     <nuxt-link to="/en/asdf">404 Page EN</nuxt-link><br />
-    <hr style="margin: 1em 0" />
   </div>
 </template>
 

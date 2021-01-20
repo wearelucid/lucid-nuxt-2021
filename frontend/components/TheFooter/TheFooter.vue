@@ -1,5 +1,6 @@
 <template>
   <footer>
+    <hr style="margin: 2em 0" />
     <p v-if="$fetchState.pending">Fetching Footer...</p>
     <p v-else-if="$fetchState.error" style="color: red">
       {{ $fetchState.error.message }}
