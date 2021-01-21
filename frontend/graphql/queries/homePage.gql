@@ -1,4 +1,5 @@
 #import "./fragments/pageBuilder.gql"
+#import "./fragments/seomatic.gql"
 
 query HomePage($site: [String], $section: [String]) {
   page: entry(site: $site, section: $section) {
@@ -22,5 +23,6 @@ query HomePage($site: [String], $section: [String]) {
       url
       language
     }
+    ...seomatic
   }
 }

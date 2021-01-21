@@ -22,5 +22,10 @@ export default {
     }
     return { page }
   },
+  head() {
+    // TODO: This is a demo for debug mode, remove this later:
+    return this.$craftSEOmatic(this.page.seomatic, { debug: true })
+    // return this.$craftSEOmatic(this.page.seomatic)
+  },
 }
 </script>

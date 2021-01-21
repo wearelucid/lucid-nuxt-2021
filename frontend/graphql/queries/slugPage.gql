@@ -1,4 +1,5 @@
 #import "./fragments/pageBuilder.gql"
+#import "./fragments/seomatic.gql"
 
 query SlugPage($site: [String], $uri: [String]) {
   page: entry(site: $site, uri: $uri) {
@@ -22,5 +23,6 @@ query SlugPage($site: [String], $uri: [String]) {
       url
       language
     }
+    ...seomatic
   }
 }
