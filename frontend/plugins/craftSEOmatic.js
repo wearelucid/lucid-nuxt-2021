@@ -19,20 +19,21 @@ const ignoredProps = [
  */
 export default function ({ isDev }, inject) {
   inject(pluginName, (data, { config = {}, debug = isDev } = {}) => {
-    if (debug) {
-      // consola.withTag(pluginName).info('Raw Data: ', data)
-
-      // Complain if no data is provided
-      if (data == null) {
+    // Complain in debug mode but always return if no data is provided
+    if (data == null) {
+      if (debug) {
         consola
           .withTag(pluginName)
           .error(
             'No data provided. Make sure to include "seomatic" to your GraphQL query and that SEOmatic is installed on your Craft CMS instance.',
             { data }
           )
-        return
       }
+      return
+    }
 
+    // Add some debugging help
+    if (debug) {
       // Create a list of all provided keys
       const providedDataKeys = JSON.parse(JSON.stringify(Object.keys(data)))
       const providedDataKeysToPrint = providedDataKeys.join(', ')
