@@ -1,4 +1,5 @@
 import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
+import { messages } from './i18n'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -92,23 +93,7 @@ export default {
     detectBrowserLanguage: false,
     vueI18n: {
       fallbackLocale: 'de',
-      // Messages:
-      // Lean more about {named} formatting:
-      // https://kazupon.github.io/vue-i18n/guide/formatting.html#named-formatting
-      // Or @linked locale messages:
-      // https://kazupon.github.io/vue-i18n/guide/messages.html#linked-locale-messages
-      messages: {
-        de: {
-          error_default: 'Es ist ein Fehler aufgetreten.',
-          error_in_component: '@:error_default (Komponent: {component})',
-          error_404: 'Seite nicht gefunden.',
-        },
-        en: {
-          error_default: 'An Error occured.',
-          error_in_component: '@:error_default (Component: {component})',
-          error_404: 'Page not found.',
-        },
-      },
+      messages,
     },
   },
 }

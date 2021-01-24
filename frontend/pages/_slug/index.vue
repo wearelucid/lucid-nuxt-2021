@@ -35,7 +35,7 @@ export default {
     }
     const { page } = await $graphql.request(slugPageQuery, variables)
     if (page == null) {
-      error({ statusCode: 404, message: app.i18n.t('error_404') })
+      error({ statusCode: 404, message: app.i18n.t('error.message404') })
     }
     return { page }
   },

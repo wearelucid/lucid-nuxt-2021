@@ -39,7 +39,9 @@ export default {
     // Throw error in component if no data comes back (-> $fetchState.error):
     if (footerTranslations[0]?.baseTitle == null) {
       throw new Error(
-        this.$i18n.t('error_in_component', { component: this.$options.name })
+        this.$i18n.t('error.errorInComponent', {
+          component: this.$options.name,
+        })
       )
     }
 
