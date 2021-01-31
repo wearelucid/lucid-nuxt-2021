@@ -1,11 +1,11 @@
 /**
- * * Messages:
+ * * i18n messages:
  * Lean more about {named} formatting:
  * https://kazupon.github.io/vue-i18n/guide/formatting.html#named-formatting
  * Or @linked locale messages:
  * https://kazupon.github.io/vue-i18n/guide/messages.html#linked-locale-messages
  */
-const messages = {
+export default {
   de: {
     error: {
       messageDefault: 'Es ist ein Fehler aufgetreten.',
@@ -23,5 +23,3 @@ const messages = {
     },
   },
 }
-
-export { messages as default, messages }

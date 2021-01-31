@@ -1,5 +1,5 @@
 import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
-import { messages } from './i18n'
+import i18nConfig from './i18n/config'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -73,27 +73,11 @@ export default {
     options: {},
   },
 
-  // i18n Options (https://i18n.nuxtjs.org/)
-  i18n: {
-    locales: [
-      {
-        code: 'de',
-        iso: 'de-CH',
-        name: 'Deutsch',
-      },
-      {
-        code: 'en',
-        iso: 'en-US',
-        name: 'English',
-      },
-    ],
-    defaultLocale: 'de',
-    // TODO: Re-enable browser lang detection by removing this property.
-    // But fix issues with live preview first: https://github.com/wearelucid/frontend-boilerplate/issues/9
-    detectBrowserLanguage: false,
-    vueI18n: {
-      fallbackLocale: 'de',
-      messages,
-    },
-  },
+  /**
+   * TODO: Configure i18n in ./i18n/config
+   * If you don't need i18n: Remove dependency, delete /i18n folder,
+   * remove this config item and search for implementations in components
+   * (i.e. `i18n.$t` or `i18n.t`)
+   */
+  i18n: i18nConfig,
 }
