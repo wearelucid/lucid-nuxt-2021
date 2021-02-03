@@ -13,16 +13,8 @@
               : '',
           ]"
         >
-          <NuxtLink
-            v-if="item.newWindow === '0'"
-            class="TheNavigation__link"
-            :to="_withLeadingSlash(item.nodeUri)"
-            :exact="isHomeUri(item)"
-          >
-            {{ item.title }}
-          </NuxtLink>
           <a
-            v-else
+            v-if="item.newWindow === '1'"
             class="TheNavigation__link"
             target="_blank"
             rel="external nofollow noreferrer"
@@ -30,6 +22,14 @@
           >
             {{ item.title }}
           </a>
+          <NuxtLink
+            v-else
+            class="TheNavigation__link"
+            :to="_withLeadingSlash(item.nodeUri)"
+            :exact="isHomeUri(item)"
+          >
+            {{ item.title }}
+          </NuxtLink>
           <ul
             v-if="item.children && item.children.length"
             class="TheNavigation__sub-list"
@@ -40,21 +40,11 @@
               class="TheNavigation__item TheNavigation__item--child"
             >
               <NuxtLink
-                v-if="childItem.newWindow === '0'"
                 class="TheNavigation__link"
                 :to="_withLeadingSlash(childItem.nodeUri)"
               >
                 {{ childItem.title }}
               </NuxtLink>
-              <a
-                v-else
-                class="TheNavigation__link"
-                target="_blank"
-                rel="external nofollow noreferrer"
-                :href="childItem.nodeUri"
-              >
-                {{ childItem.title }}
-              </a>
             </li>
           </ul>
         </li>
@@ -116,7 +106,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .TheNavigation__link {
   text-decoration: none;
 }
