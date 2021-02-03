@@ -47,7 +47,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['nuxt-i18n'],
+  modules: ['nuxt-i18n', '@nuxtjs/sitemap'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -80,4 +80,12 @@ export default {
    * (i.e. `i18n.$t` or `i18n.t`)
    */
   i18n: i18nConfig,
+
+  // Sitemap with @nuxtjs/sitemap
+  // https://sitemap.nuxtjs.org/usage/sitemap
+  sitemap: {
+    hostname: 'http://localhost:3000', // TODO: Replace with frontendURL env variable
+    gzip: true,
+    routes: async () => await fetchRoutesToBeGenerated(process.env.API_URL),
+  },
 }
