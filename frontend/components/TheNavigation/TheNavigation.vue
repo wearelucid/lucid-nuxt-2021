@@ -105,6 +105,7 @@ export default {
   },
   methods: {
     isHomeUri: (item) => {
+      // Check for custom craft attribute on single page 'home' in mainNav
       const attr = item.customAttributes.find((a) => a.attribute === 'isHome')
       if (attr && attr.value === 'true') return true
     },
@@ -120,7 +121,7 @@ export default {
   text-decoration: none;
 }
 .nuxt-link-active {
-  color: green;
+  font-weight: bold;
 }
 .nuxt-link-exact-active {
   text-decoration: underline;
