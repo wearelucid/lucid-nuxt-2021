@@ -25,8 +25,8 @@
           <NuxtLink
             v-else
             class="TheNavigation__link"
-            :to="cleanUri(item.nodeUri)"
-            :exact="isHomeUri(cleanUri(item.nodeUri))"
+            :to="cleanUri(item)"
+            :exact="isHomeUri(cleanUri(item))"
           >
             {{ item.title }}
           </NuxtLink>
@@ -39,10 +39,7 @@
               :key="`nav-item-child-${childkey}`"
               class="TheNavigation__item TheNavigation__item--child"
             >
-              <NuxtLink
-                class="TheNavigation__link"
-                :to="cleanUri(childItem.nodeUri)"
-              >
+              <NuxtLink class="TheNavigation__link" :to="cleanUri(childItem)">
                 {{ childItem.title }}
               </NuxtLink>
             </li>
@@ -94,7 +91,8 @@ export default {
     },
   },
   methods: {
-    cleanUri: (uri) => withoutTrailingSlash(withLeadingSlash(uri)) || '/',
+    cleanUri: ({ nodeUri }) =>
+      withoutTrailingSlash(withLeadingSlash(nodeUri)) || '/',
     isHomeUri(uri) {
       return uri === '/' || uri === `/${this.$i18n.locale}`
     },
