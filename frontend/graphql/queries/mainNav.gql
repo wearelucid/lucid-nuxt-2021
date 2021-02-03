@@ -4,11 +4,17 @@ query MainNav($navHandle: String, $site: [String]) {
     url
     nodeUri
     language
+    newWindow
+    customAttributes {
+      attribute
+      value
+    }
     children {
       title
       url
       nodeUri
       language
+      newWindow
     }
   }
 }
