@@ -56,7 +56,6 @@ export default {
         }
         this.$fetch()
       },
-      immediate: true,
     },
   },
 }
