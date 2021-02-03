@@ -25,8 +25,8 @@
           <NuxtLink
             v-else
             class="TheNavigation__link"
-            :to="_withLeadingSlash(item.nodeUri)"
-            :exact="isHomeUri(item)"
+            :to="cleanUri(item.nodeUri)"
+            :exact="isHomeUri(cleanUri(item.nodeUri))"
           >
             {{ item.title }}
           </NuxtLink>
@@ -41,7 +41,7 @@
             >
               <NuxtLink
                 class="TheNavigation__link"
-                :to="_withLeadingSlash(childItem.nodeUri)"
+                :to="cleanUri(childItem.nodeUri)"
               >
                 {{ childItem.title }}
               </NuxtLink>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { withLeadingSlash } from '@nuxt/ufo'
+import { withLeadingSlash, withoutTrailingSlash } from '@nuxt/ufo'
 import mainNavQuery from '~/graphql/queries/mainNav.gql'
 export default {
   name: 'TheNavigation',
@@ -94,13 +94,9 @@ export default {
     },
   },
   methods: {
-    isHomeUri: (item) => {
-      // Check for custom craft attribute on single page 'home' in mainNav
-      const attr = item.customAttributes.find((a) => a.attribute === 'isHome')
-      if (attr && attr.value === 'true') return true
-    },
-    _withLeadingSlash: (uri) => {
-      return withLeadingSlash(uri)
+    cleanUri: (uri) => withoutTrailingSlash(withLeadingSlash(uri)) || '/',
+    isHomeUri(uri) {
+      return uri === '/' || uri === `/${this.$i18n.locale}`
     },
   },
 }
