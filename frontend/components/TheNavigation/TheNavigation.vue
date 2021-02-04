@@ -100,7 +100,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .TheNavigation__link {
   text-decoration: none;
 }
