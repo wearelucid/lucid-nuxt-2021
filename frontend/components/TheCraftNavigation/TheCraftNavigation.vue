@@ -1,30 +1,20 @@
 <template>
   <nav id="navigation">
-    <div class="TheNavigation__wrap">
+    <div class="TheCraftNavigation__wrap">
       <p v-if="$fetchState.pending">Fetching menu...</p>
-      <ul v-else class="TheNavigation__list">
+      <ul v-else class="TheCraftNavigation__list">
         <li
           v-for="(item, key) in menu"
           :key="`nav-item-${key}`"
           :class="[
-            'TheNavigation__item',
+            'TheCraftNavigation__item',
             item.children && item.children.length
-              ? 'TheNavigation__item--has-children'
+              ? 'TheCraftNavigation__item--has-children'
               : '',
           ]"
         >
-          <a
-            v-if="item.newWindow === '1'"
-            class="TheNavigation__link"
-            target="_blank"
-            rel="external nofollow noreferrer"
-            :href="item.nodeUri"
-          >
-            {{ item.title }}
-          </a>
           <NuxtLink
-            v-else
-            class="TheNavigation__link"
+            class="TheCraftNavigation__link"
             :to="cleanUri(item)"
             :exact="isHomeUri(cleanUri(item))"
           >
@@ -32,14 +22,17 @@
           </NuxtLink>
           <ul
             v-if="item.children && item.children.length"
-            class="TheNavigation__sub-list"
+            class="TheCraftNavigation__sub-list"
           >
             <li
               v-for="(childItem, childkey) in item.children"
               :key="`nav-item-child-${childkey}`"
-              class="TheNavigation__item TheNavigation__item--child"
+              class="TheCraftNavigation__item TheCraftNavigation__item--child"
             >
-              <NuxtLink class="TheNavigation__link" :to="cleanUri(childItem)">
+              <NuxtLink
+                class="TheCraftNavigation__link"
+                :to="cleanUri(childItem)"
+              >
                 {{ childItem.title }}
               </NuxtLink>
             </li>
@@ -54,7 +47,7 @@
 import { withLeadingSlash, withoutTrailingSlash } from '@nuxt/ufo'
 import mainNavQuery from '~/graphql/queries/mainNav.gql'
 export default {
-  name: 'TheNavigation',
+  name: 'TheCraftNavigation',
   data() {
     return {
       menu: [],
@@ -101,7 +94,7 @@ export default {
 </script>
 
 <style scoped>
-.TheNavigation__link {
+.TheCraftNavigation__link {
   text-decoration: none;
 }
 .nuxt-link-active {

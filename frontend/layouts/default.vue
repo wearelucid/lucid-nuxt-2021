@@ -1,7 +1,7 @@
 <template>
   <div>
     <ThePreviewIndicator v-if="$nuxt.isPreview" />
-    <TheNavigation />
+    <TheCraftNavigation />
     <Nuxt />
     <TheFooter />
   </div>
