@@ -8,7 +8,7 @@ export default {
   // Environment variables that are required at build time (rather than runtime)
   // https://nuxtjs.org/docs/2.x/directory-structure/nuxt-config/#env
   env: {
-    // baseURL: process.env.BASE_URL
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
 
   // Environment variables that are required at runtime
@@ -84,8 +84,7 @@ export default {
   // Sitemap with @nuxtjs/sitemap
   // https://sitemap.nuxtjs.org/usage/sitemap
   sitemap: {
-    hostname: 'http://localhost:3000', // TODO: Replace with frontendURL env variable
+    hostname: process.env.BASE_URL,
     gzip: true,
-    routes: async () => await fetchRoutesToBeGenerated(process.env.API_URL),
   },
 }
