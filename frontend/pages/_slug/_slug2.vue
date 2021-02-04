@@ -1,14 +1,8 @@
-<template>
-  <nuxt-content :document="page" />
-</template>
-
 <script>
+import SlugPage from '~/pages/_slug/index'
+
 export default {
-  async asyncData({ $content, params, error }) {
-    const page = await $content(params.slug, params.slug2)
-      .fetch()
-      .catch((err) => error(err))
-    return { page }
-  },
+  ...SlugPage,
+  name: 'Slug2Page',
 }
 </script>

@@ -7,15 +7,19 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "netlify": "yarn generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "storybook": "yarn nuxt storybook",
     "storybook:build": "yarn nuxt storybook build"
   },
   "dependencies": {
-    "@nuxt/content": "^1.11.1",
+    "@nuxt/ufo": "^0.5.4",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "graphql-tag": "^2.11.0",
+    "nuxt": "^2.14.6",
+    "nuxt-i18n": "^6.18.0",
+    "vue-link": "^1.6.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
@@ -26,6 +30,8 @@
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "graphql": "^15.4.0",
+    "nuxt-graphql-request": "^3.2.0",
     "prettier": "^2.1.2"
   }
 }

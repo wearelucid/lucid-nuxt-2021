@@ -1,0 +1,28 @@
+#import "./fragments/pageBuilder.gql"
+#import "./fragments/seomatic.gql"
+
+query SlugPage($site: [String], $uri: [String]) {
+  page: entry(site: $site, uri: $uri) {
+    siteId
+    sectionId
+    id
+    slug
+    title
+    url
+    uri
+    language
+    ... on pages_pages_Entry {
+      id
+      pageBuilder {
+        ...pbSection
+        ...pbLink
+        ...pbImage
+      }
+    }
+    localized {
+      url
+      language
+    }
+    ...seomatic
+  }
+}

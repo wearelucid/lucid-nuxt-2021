@@ -1,59 +1,29 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">{{ page.title }}</h1>
-      <nuxt-content :document="page" />
-    </div>
+  <div v-if="page">
+    <TheTemporaryLangSwitcher :page-translations="page.localized" />
+    <h1 class="title">{{ page.title }}</h1>
+    <PageBuilder :items="page.pageBuilder" />
   </div>
 </template>
 
 <script>
+import homePageQuery from '~/graphql/queries/homePage.gql'
+
 export default {
-  /**
-   * Basic example for fetching content with @nuxt/content
-   */
-  async asyncData({ $content, params, error }) {
-    const slug = params.slug || 'home'
-    const page = await $content(slug)
-      .fetch()
-      .catch(() => {
-        error({ statusCode: 404, message: 'Page not found.' })
-      })
+  name: 'HomePage',
+  async asyncData({ app, $graphql, error }) {
+    const variables = {
+      site: app.i18n.locale,
+      section: 'home',
+    }
+    const { page } = await $graphql.request(homePageQuery, variables)
+    if (page == null) {
+      error({ statusCode: 404, message: app.i18n.t('error.message404') })
+    }
     return { page }
+  },
+  head() {
+    return this.$craftSEOmatic(this.page.seomatic)
   },
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

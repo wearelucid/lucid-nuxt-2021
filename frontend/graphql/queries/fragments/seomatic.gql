@@ -1,0 +1,10 @@
+fragment seomatic on EntryInterface {
+  seomatic(asArray: true) {
+    metaTitleContainer
+    metaTagContainer
+    metaLinkContainer
+    # metaScriptContainer
+    # metaJsonLdContainer
+    # metaSiteVarsContainer
+  }
+}
