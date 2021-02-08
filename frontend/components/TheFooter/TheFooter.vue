@@ -6,7 +6,7 @@
       {{ $fetchState.error.message }}
     </p>
     <div v-else>
-      {{ title }}
+      {{ footer.baseTitle }}
     </div>
   </footer>
 </template>
@@ -18,26 +18,28 @@ export default {
   name: 'TheFooter',
   data() {
     return {
-      footerTranslations: [],
+      footer: {},
     }
   },
   async fetch() {
+    const variables = {
+      site: this.$i18n.locale,
+    }
+
     // Query directly in component with `graphql-tag`:
     const query = gql`
-      query Footer {
-        footerTranslations: globalSets(handle: "footer", site: "*") {
-          language
+      query Footer($site: [String]) {
+        footer: globalSet(handle: "footer", site: $site) {
           ... on footer_GlobalSet {
             baseTitle
           }
         }
       }
     `
-    // Make request:
-    const { footerTranslations } = await this.$graphql.request(query)
+    const { footer } = await this.$graphql.request(query, variables)
 
     // Throw error in component if no data comes back (-> $fetchState.error):
-    if (footerTranslations[0]?.baseTitle == null) {
+    if (footer?.baseTitle == null) {
       throw new Error(
         this.$i18n.t('error.errorInComponent', {
           component: this.$options.name,
@@ -45,22 +47,14 @@ export default {
       )
     }
 
-    // Set data:
-    this.footerTranslations = footerTranslations
+    this.footer = footer
   },
-  computed: {
-    localizedFooter() {
-      return this.footerTranslations.find(
-        (item) => item.language === this.currentIsoCode
-      )
-    },
-    currentIsoCode() {
-      // This should probably be `this.$i18n.localeProperties.iso`
-      // but somehow it doesn't get updated in computed property. Workaround:
-      return this.$i18n.locales.find((l) => l.code === this.$i18n.locale).iso
-    },
-    title() {
-      return this.localizedFooter.baseTitle
+  watch: {
+    '$i18n.locale': {
+      handler(newLocale, oldLocale) {
+        if (newLocale === oldLocale) return
+        this.$fetch()
+      },
     },
   },
 }
