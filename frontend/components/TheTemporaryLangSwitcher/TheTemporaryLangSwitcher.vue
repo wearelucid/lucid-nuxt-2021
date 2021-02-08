@@ -32,8 +32,8 @@ export default {
     },
   },
   methods: {
+    withoutTrailingSlash,
     getPathFromUrl: (url) => parseURL(url).pathname,
-    withoutTrailingSlash: (url) => withoutTrailingSlash(url),
   },
 }
 </script>
