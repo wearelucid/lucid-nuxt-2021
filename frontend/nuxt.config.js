@@ -8,7 +8,7 @@ export default {
   // Environment variables that are required at build time (rather than runtime)
   // https://nuxtjs.org/docs/2.x/directory-structure/nuxt-config/#env
   env: {
-    // baseURL: process.env.BASE_URL
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
 
   // Environment variables that are required at runtime
@@ -47,7 +47,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['nuxt-i18n'],
+  modules: ['nuxt-i18n', '@nuxtjs/sitemap'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -80,4 +80,11 @@ export default {
    * (i.e. `i18n.$t` or `i18n.t`)
    */
   i18n: i18nConfig,
+
+  // Sitemap with @nuxtjs/sitemap
+  // https://sitemap.nuxtjs.org/usage/sitemap
+  sitemap: {
+    hostname: process.env.BASE_URL,
+    gzip: true,
+  },
 }
