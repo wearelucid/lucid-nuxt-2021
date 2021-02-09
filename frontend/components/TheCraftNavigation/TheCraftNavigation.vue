@@ -2,10 +2,13 @@
   <nav id="navigation">
     <div class="TheCraftNavigation__wrap">
       <p v-if="$fetchState.pending">Fetching menu...</p>
+      <p v-else-if="$fetchState.error" style="color: red">
+        {{ $fetchState.error.message }}
+      </p>
       <ul v-else class="TheCraftNavigation__list">
         <li
-          v-for="(item, key) in menu"
-          :key="`nav-item-${key}`"
+          v-for="item in menu"
+          :key="item.id"
           :class="[
             'TheCraftNavigation__item',
             item.children && item.children.length
@@ -25,8 +28,8 @@
             class="TheCraftNavigation__sub-list"
           >
             <li
-              v-for="(childItem, childkey) in item.children"
-              :key="`nav-item-child-${childkey}`"
+              v-for="childItem in item.children"
+              :key="childItem.id"
               class="TheCraftNavigation__item TheCraftNavigation__item--child"
             >
               <NuxtLink
@@ -45,7 +48,7 @@
 
 <script>
 import { withLeadingSlash, withoutTrailingSlash } from '@nuxt/ufo'
-import mainNavQuery from '~/graphql/queries/mainNav.gql'
+import mainNavQuery from '~/graphql/queries/verbbNavigation.gql'
 export default {
   name: 'TheCraftNavigation',
   data() {
@@ -57,11 +60,10 @@ export default {
     // Fetch mainNav with current locale
     const variables = {
       navHandle: 'mainNav',
-      level: 1,
       site: this.$i18n.locale,
     }
     const { menu } = await this.$graphql.request(mainNavQuery, variables)
-    if (!menu) {
+    if (!menu || !menu.length) {
       throw new Error(
         this.$i18n.t('error.errorInComponent', {
           component: this.$options.name,
@@ -76,9 +78,7 @@ export default {
     // Watch for locale change to fetch new menu based on current locale
     '$i18n.locale': {
       handler(newLocale, oldLocale) {
-        if (newLocale === oldLocale) {
-          return
-        }
+        if (newLocale === oldLocale) return
         this.$fetch()
       },
     },
