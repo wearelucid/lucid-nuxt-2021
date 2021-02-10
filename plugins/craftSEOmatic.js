@@ -1,6 +1,8 @@
 const consola = require('consola')
 
-const pluginName = 'craftSEOmatic'
+const PLUGIN_NAME = 'craftSEOmatic'
+const logger = consola.withTag(PLUGIN_NAME)
+
 const expectedProps = [
   'metaTitleContainer',
   'metaTagContainer',
@@ -18,90 +20,94 @@ const ignoredProps = [
  * TODO: Create nuxt module, separate package
  */
 export default function ({ isDev }, inject) {
-  inject(pluginName, (data, { config = {}, debug = isDev } = {}) => {
-    // Always return if no data is provided
-    if (data == null) {
-      // Complain about it in debug mode
-      if (debug) {
-        consola
-          .withTag(pluginName)
-          .error(
+  inject(
+    PLUGIN_NAME,
+    (
+      data,
+      {
+        debug = isDev,
+        logRawData = false,
+        logProcessedData = isDev && process.client,
+      } = {}
+    ) => {
+      // Always return if no data is provided
+      if (data == null) {
+        // Complain about it in debug mode
+        if (debug) {
+          logger.error(
             'No data provided. Make sure to include "seomatic" in your GraphQL query and that SEOmatic is installed on your Craft CMS instance.',
             { data }
           )
+        }
+        return
       }
-      return
-    }
 
-    // Add some debugging help
-    if (debug) {
-      // Create a list of all provided keys
-      const providedDataKeys = JSON.parse(JSON.stringify(Object.keys(data)))
-      const providedDataKeysToPrint = providedDataKeys.join(', ')
+      // Add some debugging help
+      if (debug) {
+        // Create a list of all provided keys
+        const providedDataKeys = JSON.parse(JSON.stringify(Object.keys(data)))
+        const providedDataKeysToPrint = providedDataKeys.join(', ')
 
-      // Complain if we don't get what we expect
-      expectedProps.forEach((prop) => {
-        if (!providedDataKeys.includes(prop)) {
-          consola
-            .withTag(pluginName)
-            .error(
+        // Complain if we don't get what we expect
+        expectedProps.forEach((prop) => {
+          if (!providedDataKeys.includes(prop)) {
+            logger.error(
               `Please provide ${prop}. You provided: ${providedDataKeysToPrint}`
             )
-        }
-      })
+          }
+        })
 
-      // Warn if data is provided that's not being processed
-      ignoredProps.forEach((prop) => {
-        if (providedDataKeys.includes(prop)) {
-          consola
-            .withTag(pluginName)
-            .warn(
+        // Warn if data is provided that's not being processed
+        ignoredProps.forEach((prop) => {
+          if (providedDataKeys.includes(prop)) {
+            logger.warn(
               `${prop} will not be processed! Consider removing it or extending the plugin.`
             )
-        }
-      })
-    }
-
-    // Convert the GraphQL JSON data to an object so we can work with it:
-    const {
-      metaTitleContainer: {
-        title: { title },
-      },
-      metaTagContainer,
-      metaLinkContainer,
-    } = Object.entries(data).reduce((acc, [key, value]) => {
-      if (key !== '__typename') {
-        acc[key] = JSON.parse(value)
-        return acc
+          }
+        })
       }
 
-      return acc
-    }, {})
+      if (logRawData) logger.info('Raw data: ', data)
 
-    // Flatten metaTagContainer values into string:
-    const meta = metaTagContainer
-      ? Object.values(metaTagContainer).reduce(
-          (flat, next) => flat.concat(next),
-          []
-        )
-      : null
+      // Convert the GraphQL JSON data to an object so we can work with it:
+      const {
+        metaTitleContainer: {
+          title: { title },
+        },
+        metaTagContainer,
+        metaLinkContainer,
+      } = Object.entries(data).reduce((acc, [key, value]) => {
+        if (key !== '__typename') {
+          acc[key] = JSON.parse(value)
+          return acc
+        }
+        return acc
+      }, {})
 
-    // Flatten metaLinkContainer values into string:
-    const link = metaLinkContainer
-      ? Object.values(metaLinkContainer).reduce(
-          (flat, next) => flat.concat(next),
-          []
-        )
-      : null
+      // Flatten metaTagContainer values into string:
+      const meta = metaTagContainer
+        ? Object.values(metaTagContainer).reduce(
+            (flat, next) => flat.concat(next),
+            []
+          )
+        : null
 
-    const headData = {
-      ...(title && { title }),
-      ...(meta && { meta }),
-      ...(link && { link }),
+      // Flatten metaLinkContainer values into string:
+      const link = metaLinkContainer
+        ? Object.values(metaLinkContainer).reduce(
+            (flat, next) => flat.concat(next),
+            []
+          )
+        : null
+
+      const headData = {
+        ...(title && { title }),
+        ...(meta && { meta }),
+        ...(link && { link }),
+      }
+
+      if (logProcessedData) logger.info(headData)
+      return headData
     }
-
-    if (debug) consola.withTag(pluginName).info('Processed Data: ', headData)
-
-    return headData
-  })
+  )
 }
