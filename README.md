@@ -5,7 +5,7 @@
 - .env file (`cp .env.example .env`)
 
 ## First Things First
-- Delete the [`/_nuxt-content-module-demo`](./_nuxt-content-module-demo/README.md) directory if you don't need it
+- Delete the [`/_nuxt-content-module-demo`](./_nuxt-content-module-demo) directory if you don't need it
 - Go through [`nuxt.config.js`](./nuxt.config.js)
   - Remove i18n if you don't need it
 
