@@ -1,3 +1,3 @@
 [build]
-  base = "frontend/"
-  publish = "frontend/dist"
+  command = "yarn netlify"
+  publish = "dist"
