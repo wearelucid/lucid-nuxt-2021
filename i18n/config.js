@@ -19,7 +19,7 @@ export default {
   ],
   defaultLocale: 'de',
   // TODO: Re-enable browser lang detection by removing this property.
-  // ! But fix issues with live preview first: https://github.com/wearelucid/frontend-boilerplate/issues/25
+  // ! But fix issues with live preview first: https://github.com/wearelucid/lucid-nuxt-2021/issues/25
   detectBrowserLanguage: false,
   vueI18n: {
     fallbackLocale: 'de',

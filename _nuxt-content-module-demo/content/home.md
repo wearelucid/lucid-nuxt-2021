@@ -1,5 +1,5 @@
 ---
-title: frontend-boilerplate
+title: Nuxt Content Module
 ---
 
 You can edit me in <code>content/home.md</code>.
