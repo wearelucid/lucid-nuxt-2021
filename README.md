@@ -4,6 +4,11 @@
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
 - .env file (`cp .env.example .env`)
 
+## First Things First
+- Delete the [`/_nuxt-content-module-demo`](./_nuxt-content-module-demo/README.md) directory if you don't need it
+- Go through [`nuxt.config.js`](./nuxt.config.js)
+  - Remove i18n if you don't need it
+
 ## Build Setup
 ```bash
 # use specified node version
