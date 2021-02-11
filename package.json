@@ -1,5 +1,7 @@
 {
   "name": "lucid-nuxt-2021",
+  "description": "Nuxt.js Boilerplate",
+  "author" : "Lucid <buero@wearelucid.ch>",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/storybook": "^3.3.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",

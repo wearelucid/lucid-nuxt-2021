@@ -1,5 +1,15 @@
 import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
-import i18nConfig from './i18n/config'
+import createI18nConfig from './i18n/config'
+
+// Set the default locale (used by i18n and pwa/manifest module)
+const defaultLocale = 'de'
+
+// Set some default colors (used by pwa/meta and manifest module and to customize nuxt progress bar)
+const themeColors = {
+  primary: 'black',
+  background: 'white',
+  error: 'red',
+}
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -21,13 +31,11 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'frontend',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    htmlAttrs: {
+      // Set lang attribute for <html> element (=> better a11y)
+      // i18n: `nuxt-i18n` will override this in ./layouts/default.vue
+      lang: defaultLocale,
+    },
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -44,6 +52,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     'nuxt-graphql-request',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/pwa',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -59,6 +68,12 @@ export default {
   generate: {
     fallback: true,
     routes: async () => await fetchRoutesToBeGenerated(process.env.API_URL),
+  },
+
+  // Customize Nuxt.js Progress Bar
+  loading: {
+    color: themeColors.primary,
+    failedColor: themeColors.error,
   },
 
   // Storybook Options (https://storybook.nuxtjs.org/options)
@@ -79,7 +94,35 @@ export default {
    * remove this config item and search for implementations in components
    * (i.e. `i18n.$t` or `i18n.t`)
    */
-  i18n: i18nConfig,
+  i18n: createI18nConfig(defaultLocale),
+
+  // @nuxtjs/pwa Options (https://pwa.nuxtjs.org/)
+  pwa: {
+    // Disable workbox module (don't be a PWA)
+    workbox: false,
+    meta: {
+      theme_color: themeColors.primary,
+
+      // Don't be `mobile-web-app-capable`
+      mobileApp: false,
+
+      // Disable options already provided by SEOmatic in a Craft CMS setup:
+      name: false,
+      description: false,
+      lang: false,
+      ogType: false,
+      ogSiteName: false,
+      ogTitle: false,
+      ogDescription: false,
+      ogHost: false,
+      ogImage: false,
+      ogUrl: false,
+    },
+    manifest: {
+      lang: defaultLocale,
+      background_color: themeColors.background,
+    },
+  },
 
   // Sitemap with @nuxtjs/sitemap
   // https://sitemap.nuxtjs.org/usage/sitemap
