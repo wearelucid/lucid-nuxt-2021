@@ -30,7 +30,13 @@ export default {
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
-  head: {},
+  head: {
+    htmlAttrs: {
+      // Set lang attribute for <html> element (=> better a11y)
+      // i18n: `nuxt-i18n` will override this in ./layouts/default.vue
+      lang: defaultLocale,
+    },
+  },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
