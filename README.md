@@ -8,6 +8,7 @@
 - Delete the [`/_nuxt-content-module-demo`](./_nuxt-content-module-demo) directory if you don't need it
 - Go through [`nuxt.config.js`](./nuxt.config.js)
   - Remove i18n if you don't need it
+- Update your [`package.json`](./package.json)'s **name** and **description** properties. This info will end up in `manifest.json` created by [`@nuxtjs/pwa`'s manifest module](https://pwa.nuxtjs.org/manifest).
 
 ## Build Setup
 ```bash
