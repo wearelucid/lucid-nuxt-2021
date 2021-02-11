@@ -85,12 +85,24 @@ export default function ({ isDev }, inject) {
       }, {})
 
       // Flatten metaTagContainer values into string:
-      const meta = metaTagContainer
+      let meta = metaTagContainer
         ? Object.values(metaTagContainer).reduce(
             (flat, next) => flat.concat(next),
             []
           )
         : null
+
+      // Add unique identifier to avoid duplicated meta tags when used in child components
+      // See https://nuxtjs.org/docs/2.x/components-glossary/pages-head#the-head-method
+      meta = meta.map((item) => {
+        // They seem to either have a property called `property` or `name`,
+        // but let's add a safeguard here anyway:
+        if (!item.property && !item.name) return item
+        return {
+          hid: item.property ? item.property : item.name,
+          ...item,
+        }
+      })
 
       // Flatten metaLinkContainer values into string:
       const link = metaLinkContainer
