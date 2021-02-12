@@ -31,7 +31,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['./assets/scss/global/_page.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['plugins/craftLivePreview.client.js', 'plugins/craftSEOmatic.js'],
@@ -44,7 +44,19 @@ export default {
     // https://go.nuxtjs.dev/eslint
     'nuxt-graphql-request',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources',
   ],
+
+  // Mixins/Variables etc. shared across all components
+  styleResources: {
+    scss: [
+      './assets/scss/settings/_colors.scss',
+      './assets/scss/settings/_variables.scss',
+      './assets/scss/tools/_functions.scss',
+      './assets/scss/tools/_mixins.scss',
+      './assets/scss/tools/_typography.scss',
+    ],
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['nuxt-i18n', '@nuxtjs/sitemap'],
