@@ -19,6 +19,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.6.5",
     "graphql-tag": "^2.11.0",
+    "normalize-scss": "^7.0.1",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.18.0",
     "vue-link": "^1.6.1"
@@ -38,6 +39,7 @@
     "nuxt-graphql-request": "^3.2.0",
     "prettier": "^2.1.2",
     "sass": "^1.32.7",
+    "sass-lint": "^1.13.1",
     "sass-loader": "10"
   }
 }

@@ -10,11 +10,12 @@ html {
   font-weight: normal;
   line-height: $s-line-height-std;
   color: $s-color-text;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-  font-kerning: normal;
+  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-text-size-adjust: none; // sass-lint:disable-line no-vendor-prefixes
   font-feature-settings: 'liga'1, 'kern'1;
+  font-kerning: normal;
+  box-sizing: border-box;
 }
 
 body {
@@ -22,16 +23,25 @@ body {
   min-height: 100%;
 }
 
-h1 {
-  margin-bottom: 1rem;
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
 }
 
-main {
-  outline: none;
+/*
+ * Elements
+ */
+
+h1 {
+  @include font-style-heading-1;
 }
 
 p {
   @include font-style-base;
+  @include font-style-paragraph;
   margin-bottom: 1em;
 }
 

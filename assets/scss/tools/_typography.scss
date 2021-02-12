@@ -9,3 +9,14 @@
   line-height: $s-line-height-std;
   letter-spacing: normal;
 }
+
+@mixin font-style-paragraph {
+  @include font-style-base;
+  font-family: $s-font-family-serif;
+}
+
+@mixin font-style-heading-1 {
+  @include font-style-base;
+  font-size: $s-fz-30;
+  font-weight: $s-font-weight-bold;
+}
