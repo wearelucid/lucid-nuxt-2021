@@ -12,6 +12,12 @@ const themeColors = {
 }
 
 export default {
+  // Server config (https://nuxtjs.org/docs/2.x/features/configuration#edit-host-and-port)
+  server: {
+    // Access dev server on local network:
+    // host: '0', // default: localhost
+  },
+
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
