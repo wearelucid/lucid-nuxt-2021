@@ -6,42 +6,39 @@ $s-font-family-base: 'Arial', sans-serif;
 
 /*
  * Font Sizes
- * Before starting a project:
- * Set up a type-specification file
  */
 
 /* Font-Sizes */
 $s-fz-14: 1.4rem; // equals 14px
 
+/* Line-Heights */
 $s-line-height-std: 1.2;
 
 
 /*
- * Settings – Spacing
+ * Spacings
  */
 
+ /* Size-Spacer */
 $s-size-spacer-20: 2rem;
 
+/* Size-Gutter */
 $s-size-gutter-20: $s-size-spacer-20;
 
-$s-size-content-max-width-small: $s-fz-14 * 30; // 600px = 20px * 30em (don't make paragraphs too wide!)
+/* Size-Content-Max-Width */
+$s-size-content-max-width-small: $s-fz-14 * 30;
 $s-size-content-max-width-medium: 1100px;
 $s-size-content-max-width-large: 1440px;
 
-
 /*
- * Settings – Specific sizes
- */
-
-/*
- * Settings – Animations
+ * Animations
  */
 
 $s-animation-duration-default: 0.3s;
 $s-animation-easing-default: ease-in-out;
 
 /*
- * Settings – Breakpoints
+ * Breakpoints
  * Why we use px: https://adamwathan.me/dont-use-em-for-media-queries/
  */
 
@@ -50,7 +47,7 @@ $s-size-breakpoint-768: 768px;
 $s-size-breakpoint-1440: 1440px;
 
 /*
- * Settings – z-Index
+ * z-Index
  */
 
 $s-zindex-map: (
