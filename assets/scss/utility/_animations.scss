@@ -1,0 +1,16 @@
+/*
+ * Animations
+ */
+
+/*
+ * Page transitions
+ */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity $s-animation-duration-default $s-animation-easing-default;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
