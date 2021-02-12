@@ -3,57 +3,6 @@
  */
 
 /*
- * fluid-size:
- * Precise Control over sizes:
- * Adapt a layout from a minimum size to a maximum size in a given range of screen widths
- *
- * Usage:
- * html {
- *   @include fluid-size('font-size', 320px, 1366px, 14px, 18px);
- *   // or like this
- *   @include fluid-size('font-size', 32.0rem, 136.6rem, 1.4rem, 1.8rem);
- * }
- * @params:
- * $properties: e.g. 'font-size', 'padding-top' etc.
- * $min-vw: below this viewport we don't see any change
- * $max-vw: above this viewport we don't see any change
- * $min-value: smallest value for property
- * $max-value: biggest value
- *
- * ⚠️  ! Beware:
- * Don't mix units. You can either use all parameters in px or in rem, but don't mix them.
- * Because Breakpoints should be set in pixel you should prefer px over other units.
- * (https://adamwathan.me/dont-use-em-for-media-queries/)
- *
- * ⚠️ ! Beware 2:
- *  Media queries declarations do not base themselves on the declared font-size that you apply to html!!!
- * instead they always use the default size - which as I said is 16px in pretty much all browsers.
- * Read more: https: //stackoverflow.com/questions/47409585/using-rem-units-in-media-queries-and-as-width
- *
- * ⚠️ ! Beware 3: Unitless fluid sizes
- * If you want to create fluid-sizes for line-heights, you have to indicate line-height with the unit 'em'. Unitless will mess things up.
- *
- */
-
-@mixin fluid-size($properties, $min-vw, $max-vw, $min-value, $max-value) {
-  @each $property in $properties {
-    #{$property}: $min-value;
-  }
-
-  @media (min-width: $min-vw) {
-    @each $property in $properties {
-      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
-    }
-  }
-
-  @media (min-width: $max-vw) {
-    @each $property in $properties {
-      #{$property}: $max-value;
-    }
-  }
-}
-
-/*
  * Hide visually
  * See http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  * for discussion of different solutions
@@ -124,12 +73,10 @@
 /*
  * Hocus Focus
  */
-
 @mixin hocus-focus($type: outline, $color: $s-color-primary, $offset: 1rem) {
 
   // reset firefox dotted outline
-  &::-moz-focus-inner {
-    // sass-lint:disable-line no-vendor-prefixes
+  &::-moz-focus-inner { // sass-lint:disable-line no-vendor-prefixes
     border: 0;
   }
 
@@ -142,9 +89,7 @@
     [data-whatintent='mouse'] &:focus {
       outline: 0; // clearing dotted line when using the mouse
     }
-  }
-
-  @else if $type==bgcolor {
+  } @else if $type==bgcolor {
     [data-whatintent='keyboard'] &:focus {
       background-color: $color;
     }
@@ -160,5 +105,55 @@
   @if $break==true {
     word-wrap: break-word;
     word-break: break-word;
+  }
+}
+
+/*
+ * Define different component max widths
+ * Also check sketch file for further visual information
+ * @Params: small | medium | large | full-width
+ */
+
+@mixin set-gutter($size: 'small') {
+  @if ($size == 'small') {
+    width: 100%;
+    padding: 0 $s-size-gutter-small;
+
+    @include mq($from: medium) {
+      padding: 0 $s-size-gutter-medium;
+      max-width: px-to-rem($s-size-content-max-width-small) + 2 * ($s-size-gutter-medium);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  } @else if ($size == 'medium') {
+    width: 100%;
+    padding: 0 $s-size-gutter-small;
+
+    @include mq($from: medium) {
+      padding: 0 $s-size-gutter-medium;
+      max-width: px-to-rem($s-size-content-max-width-medium) + 2 * ($s-size-gutter-medium);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  } @else if ($size == 'large') {
+    width: 100%;
+    padding: 0 $s-size-gutter-small;
+
+    @include mq($from: medium) {
+      padding: 0 $s-size-gutter-medium;
+      max-width: px-to-rem($s-size-content-max-width-large) + 2 * ($s-size-gutter-medium);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  } @else if ($size == 'full-width') {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+
+    @include mq($from: medium) {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+    }
   }
 }

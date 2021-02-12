@@ -65,11 +65,9 @@ export default {
   // Mixins/Variables etc. shared across all components
   styleResources: {
     scss: [
-      './assets/scss/settings/_colors.scss',
-      './assets/scss/settings/_variables.scss',
-      './assets/scss/tools/_functions.scss',
-      './assets/scss/tools/_mixins.scss',
-      './assets/scss/tools/_typography.scss',
+      './assets/scss/settings/*.scss',
+      './assets/scss/tools/*.scss',
+      './assets/scss/generic/*.scss',
     ],
   },
 
