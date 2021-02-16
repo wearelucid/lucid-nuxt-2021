@@ -109,11 +109,9 @@
 }
 
 /*
- * Define different component max widths
- * Also check sketch file for further visual information
+ * Set-Gutter
  * @Params: small | medium | large | full-width
  */
-
 @mixin set-gutter($size: 'small') {
   @if ($size == 'small') {
     width: 100%;
