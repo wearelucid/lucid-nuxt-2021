@@ -1,5 +1,5 @@
 <template>
-  <nav id="navigation">
+  <nav id="navigation" class="TheCraftNavigation">
     <div class="TheCraftNavigation__wrap">
       <p v-if="$fetchState.pending">Fetching menu...</p>
       <p v-else-if="$fetchState.error" style="color: red">
@@ -93,14 +93,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.TheCraftNavigation__link {
-  text-decoration: none;
-}
-.nuxt-link-active {
-  font-weight: bold;
-}
-.nuxt-link-exact-active {
-  text-decoration: underline;
-}
-</style>
+<style src="./TheCraftNavigation.scss" lang="scss" scoped />
