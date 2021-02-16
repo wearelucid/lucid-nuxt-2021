@@ -1,8 +1,9 @@
 /*
  * Global CSS
  * Import files here that should be included across all pages
- * through the nuxt.config 'css' property
+ * through the nuxt.config 'css' property.
+ * Do not import variables or mixins.
  */
 
-@import './global/_page';
-@import './utility/_animations';
+@import './global/page';
+@import './utility/animations';
