@@ -19,9 +19,18 @@ const createI18nConfig = (defaultLocale = 'de') => {
       },
     ],
     defaultLocale,
-    // TODO: Re-enable browser lang detection by removing this property.
-    // ! But fix issues with live preview first: https://github.com/wearelucid/lucid-nuxt-2021/issues/25
-    detectBrowserLanguage: false,
+    /**
+     * ! Restraints when working with Craft CMS live preview:
+     * Preview inside iframe will be redirected to browser language
+     * and has to be set to desired language manually.
+     * This only applies to the home page if `onlyOnRoot` is set to `true`.
+     * https://github.com/wearelucid/lucid-nuxt-2021/issues/25
+     */
+    detectBrowserLanguage: {
+      onlyOnRoot: true, // Only detect and redirect on home page
+      useCookie: true, // Store selected lang in a cookie
+      cookieCrossOrigin: true, // Make it work inside iframe
+    },
     vueI18n: {
       fallbackLocale: defaultLocale,
       messages: i18nMessages,
