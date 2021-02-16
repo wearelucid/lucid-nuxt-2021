@@ -66,8 +66,8 @@ export default {
   styleResources: {
     scss: [
       './assets/scss/settings/*.scss',
-      './assets/scss/tools/*.scss',
       './assets/scss/generic/*.scss',
+      './assets/scss/tools/*.scss',
     ],
   },
 

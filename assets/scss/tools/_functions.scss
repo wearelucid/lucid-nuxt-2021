@@ -20,15 +20,3 @@
 @function px-to-rem($px) {
   @return to-rem(to-px($px) / to-px(10));
 }
-
-@function to-em($val) {
-  @return ($val + 0em); // sass-lint:disable-line zero-unit
-}
-
-@function to-rem($val) {
-  @return ($val + 0rem); // sass-lint:disable-line zero-unit
-}
-
-@function to-px($val) {
-  @return ($val + 0px); // sass-lint:disable-line zero-unit
-}
