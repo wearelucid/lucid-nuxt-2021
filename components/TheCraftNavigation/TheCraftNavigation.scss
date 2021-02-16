@@ -2,7 +2,7 @@ $c: 'TheCraftNavigation';
 
 .#{$c} {
   @include set-gutter('full-width');
-  margin: $s-size-spacer-40 0;
+  margin-bottom: $s-size-spacer-40;
 
   // @include mq($from: medium) {
   //   background-color: red; // TODO: Get mq working
@@ -16,7 +16,7 @@ $c: 'TheCraftNavigation';
     text-decoration: none;
 
     &.nuxt-link-active {
-      font-weight: $s-font-weight-bold;
+      color: $s-color-primary;
     }
 
     &.nuxt-link-exact-active {
