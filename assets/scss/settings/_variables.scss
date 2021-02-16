@@ -7,8 +7,8 @@
  * Font Settings
  */
 /* Font-Families */
-$s-font-family-base: 'Arial', sans-serif;
-$s-font-family-serif: 'Times New Roman', Times, serif;
+$s-font-family-base: 'OpenSans', sans-serif;
+$s-font-family-serif: 'Newsreader', serif;
 
 /* Font-Sizes */
 $s-fz-14: 1.4rem; // equals 14px
@@ -26,9 +26,12 @@ $s-font-weight-bold: 900;
  */
 /* Size-Spacer */
 $s-size-spacer-20: 2rem;
+$s-size-spacer-40: 4rem;
 
 /* Size-Gutter */
-$s-size-gutter-20: $s-size-spacer-20;
+$s-size-gutter-small: $s-size-spacer-20;
+$s-size-gutter-medium: $s-size-spacer-40;
+$s-size-gutter-large: $s-size-spacer-40 * 2;
 
 /* Size-Content-Max-Width */
 $s-size-content-max-width-small: $s-fz-14 * 30; // Optical good readable text width
