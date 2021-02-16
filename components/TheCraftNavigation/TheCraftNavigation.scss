@@ -4,9 +4,9 @@ $c: 'TheCraftNavigation';
   @include set-gutter('full-width');
   margin-bottom: $s-size-spacer-40;
 
-  // @include mq($from: medium) {
-  //   background-color: red; // TODO: Get mq working
-  // }
+  @include mq($from: medium) {
+    background-color: red;
+  }
 
   &__sub-list {
     margin-left: $s-size-spacer-20;
