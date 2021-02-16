@@ -36,7 +36,6 @@ h1 {
 }
 
 p {
-  @include font-style-base;
   @include font-style-paragraph;
   margin-bottom: 1em;
 }
