@@ -47,7 +47,7 @@ export default {
     '@nuxtjs/style-resources',
   ],
 
-  // Mixins/Variables etc. shared across all components
+  // Add mixins, variables etc. to share them across the app
   styleResources: {
     scss: [
       './assets/scss/settings/*.scss',
