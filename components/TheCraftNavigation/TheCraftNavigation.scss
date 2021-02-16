@@ -1,0 +1,27 @@
+$c: 'TheCraftNavigation';
+
+.#{$c} {
+  @include set-gutter('full-width');
+  margin: $s-size-spacer-40 0;
+
+  // @include mq($from: medium) {
+  //   background-color: red; // TODO: Get mq working
+  // }
+
+  &__sub-list {
+    margin-left: $s-size-spacer-20;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &.nuxt-link-active {
+      font-weight: $s-font-weight-bold;
+    }
+
+    &.nuxt-link-exact-active {
+      text-decoration: underline;
+    }
+
+  }
+}
