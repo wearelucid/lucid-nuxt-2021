@@ -5,10 +5,7 @@
 html {
   @include word-wrap;
   height: 100%;
-  font-family: $s-font-family-base;
-  font-size: (100% / 1.6); // now 1rem equals 10px
-  font-weight: normal;
-  line-height: $s-line-height-std;
+  font-size: (100% / 1.6); // Sets 1rem equal to 10px
   color: $s-color-text;
   -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
   -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
@@ -19,7 +16,7 @@ html {
 }
 
 body {
-  font-size: $s-fz-14;
+  @include font-style-base;
   min-height: 100%;
 }
 
@@ -34,7 +31,6 @@ body {
 /*
  * Elements
  */
-
 h1 {
   @include font-style-heading-1;
 }
