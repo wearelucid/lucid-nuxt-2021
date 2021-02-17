@@ -4,15 +4,15 @@
 
 html {
   @include word-wrap;
-  height: 100%;
-  font-size: (100% / 1.6); // Sets 1rem equal to 10px
+  box-sizing: border-box;
   color: $s-color-text;
-  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
-  -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
-  -webkit-text-size-adjust: none; // sass-lint:disable-line no-vendor-prefixes
   font-feature-settings: 'liga'1, 'kern'1;
   font-kerning: normal;
-  box-sizing: border-box;
+  font-size: (100% / 1.6); // Sets 1rem equal to 10px
+  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+  height: 100%;
+  text-size-adjust: none; // sass-lint:disable-line no-vendor-prefixes
 }
 
 body {
@@ -22,8 +22,8 @@ body {
 
 * {
   &,
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     box-sizing: inherit;
   }
 }

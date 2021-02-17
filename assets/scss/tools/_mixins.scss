@@ -8,23 +8,23 @@
  * for discussion of different solutions
  */
 @mixin visually-hidden() {
-  position: absolute;
-  width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
   height: 1px;
-  padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
-  border: 0;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 @mixin visually-hidden-reset() {
-  position: static;
-  width: auto;
+  clip: auto;
   height: auto;
   margin: 0;
   overflow: visible;
-  clip: auto;
+  position: static;
+  width: auto;
 }
 
 @mixin visually-hidden-focusable() {
@@ -40,22 +40,22 @@
  * Lists with layout purpose
  */
 @mixin reset-list() {
-  padding: 0;
-  margin: 0;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /*
  * Reset button
  */
 @mixin reset-button() {
-  display: block;
-  width: 100%;
-  cursor: pointer;
+  appearance: none;
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  appearance: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
 }
 
 /*
@@ -103,8 +103,8 @@
   hyphens: auto;
 
   @if $break==true {
-    word-wrap: break-word;
     word-break: break-word;
+    word-wrap: break-word;
   }
 }
 
@@ -114,44 +114,44 @@
  */
 @mixin set-gutter($size: 'small') {
   @if ($size == 'small') {
-    width: 100%;
     padding: 0 $s-size-gutter-small;
+    width: 100%;
 
     @include mq($from: medium) {
-      padding: 0 $s-size-gutter-medium;
-      max-width: px-to-rem($s-size-content-max-width-small) + 2 * ($s-size-gutter-medium);
       margin-left: auto;
       margin-right: auto;
+      max-width: px-to-rem($s-size-content-max-width-small) + 2 * ($s-size-gutter-medium);
+      padding: 0 $s-size-gutter-medium;
     }
   } @else if ($size == 'medium') {
-    width: 100%;
     padding: 0 $s-size-gutter-small;
+    width: 100%;
 
     @include mq($from: medium) {
-      padding: 0 $s-size-gutter-medium;
-      max-width: px-to-rem($s-size-content-max-width-medium) + 2 * ($s-size-gutter-medium);
       margin-left: auto;
       margin-right: auto;
+      max-width: px-to-rem($s-size-content-max-width-medium) + 2 * ($s-size-gutter-medium);
+      padding: 0 $s-size-gutter-medium;
     }
   } @else if ($size == 'large') {
-    width: 100%;
     padding: 0 $s-size-gutter-small;
+    width: 100%;
 
     @include mq($from: medium) {
-      padding: 0 $s-size-gutter-medium;
-      max-width: px-to-rem($s-size-content-max-width-large) + 2 * ($s-size-gutter-medium);
       margin-left: auto;
       margin-right: auto;
+      max-width: px-to-rem($s-size-content-max-width-large) + 2 * ($s-size-gutter-medium);
+      padding: 0 $s-size-gutter-medium;
     }
   } @else if ($size == 'full-width') {
-    width: 100%;
     max-width: 100%;
     padding: 0;
+    width: 100%;
 
     @include mq($from: medium) {
-      width: 100%;
       max-width: 100%;
       padding: 0;
+      width: 100%;
     }
   }
 }
