@@ -1,16 +1,19 @@
 # lucid-nuxt-2021
 
 ## Prerequisites
+
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
 - .env file (`cp .env.example .env`)
 
 ## First Things First
+
 - Delete the [`/_nuxt-content-module-demo`](./_nuxt-content-module-demo) directory if you don't need it
 - Go through [`nuxt.config.js`](./nuxt.config.js)
   - Remove i18n if you don't need it
 - Update your [`package.json`](./package.json)'s **name** and **description** properties. This info will end up in `manifest.json` created by [`@nuxtjs/pwa`'s manifest module](https://pwa.nuxtjs.org/manifest).
 
 ## Build Setup
+
 ```bash
 # use specified node version
 $ nvm use
@@ -30,3 +33,8 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## VS Code
+
+We recommend using VS Code for this boilerplate.
+The [`recommended extensions`](./vscode/extensions.json) will be installed (prompt by VS Code) when opening this project. The defined [`settings`](./vscode/settings.json) ensure that linting for [`eslint`](./.eslintrc.js) and [`stylelint`](./.stylelint.js) are being executed correctly.
