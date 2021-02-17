@@ -36,4 +36,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## VS Code
 
-We recommend using VS Code. [Rrecommended extensions](./.vscode/extensions.json) can be installed (prompt by VS Code) when opening the project. [Project settings](./.vscode/settings.json) ensure that linting with [`eslint`](./.eslintrc.js) and [`stylelint`](./.stylelintrc.json) works correctly.
+We recommend using VS Code. [Recommended extensions](./.vscode/extensions.json) can be installed (prompt by VS Code) when opening the project. [Project settings](./.vscode/settings.json) ensure that linting with [`eslint`](./.eslintrc.js) and [`stylelint`](./.stylelintrc.json) works correctly.
