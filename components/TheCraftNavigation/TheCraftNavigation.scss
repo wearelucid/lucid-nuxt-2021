@@ -4,6 +4,7 @@ $c: 'TheCraftNavigation';
   @include set-gutter('full-width');
   margin-bottom: $s-size-spacer-40;
   transition: background-color $s-animation-duration-default;
+  z-index: z('nav');
 
   @include mq($until: medium) {
     background-color: $s-color-secondary;
