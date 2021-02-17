@@ -73,6 +73,8 @@
 /*
  * Hocus Focus
  */
+
+// Relies upon https://github.com/ten1seven/what-input
 @mixin hocus-focus($type: outline, $color: $s-color-primary, $offset: 1rem) {
 
   // reset firefox dotted outline
