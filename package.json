@@ -11,9 +11,9 @@
     "generate": "nuxt generate",
     "netlify": "yarn generate --modern",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "stylelint": "stylelint '**/*.scss'",
-    "stylelint-fix": "npx stylelint '**/*.scss' --syntax scss --fix",
-    "lint": "yarn lint:js",
+    "lint:css": "stylelint '**/*.scss'",
+    "lint": "yarn lint:js && yarn lint:css",
+    "lint-fix": "yarn lint:js --fix && yarn lint:css --fix",
     "storybook": "yarn nuxt storybook",
     "storybook:build": "yarn nuxt storybook build"
   },
