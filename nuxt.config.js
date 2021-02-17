@@ -60,6 +60,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
+    '@nuxtjs/stylelint-module',
   ],
 
   // Add mixins, variables etc. to share them across the app
