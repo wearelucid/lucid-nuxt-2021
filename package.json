@@ -27,7 +27,8 @@
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.18.0",
     "sass-mq": "^5.0.1",
-    "vue-link": "^1.6.1"
+    "vue-link": "^1.6.1",
+    "what-input": "^5.2.10"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",

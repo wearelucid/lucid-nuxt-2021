@@ -48,7 +48,11 @@ export default {
   css: ['./assets/scss/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['plugins/craftLivePreview.client.js', 'plugins/craftSEOmatic.js'],
+  plugins: [
+    'plugins/craftLivePreview.client.js',
+    'plugins/craftSEOmatic.js',
+    'plugins/whatinput.js',
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
