@@ -45,6 +45,7 @@ export default {
     'nuxt-graphql-request',
     '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources',
+    '@nuxtjs/stylelint-module',
   ],
 
   // Add mixins, variables etc. to share them across the app
