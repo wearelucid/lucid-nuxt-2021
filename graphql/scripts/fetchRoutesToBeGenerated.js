@@ -9,7 +9,7 @@ export default async function (apiUrl) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        query: `
+        query: `#graphql
           {
             entries(site: "*") {
               url
