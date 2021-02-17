@@ -8,6 +8,7 @@
     "syler.sass-indented",
     "stylelint.vscode-stylelint",
     "octref.vetur",
-    "sdras.vue-vscode-snippets"
+    "sdras.vue-vscode-snippets",
+    "gruntfuggly.todo-tree"
   ]
 }
