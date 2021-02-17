@@ -2,7 +2,6 @@
  * Settings – Variables
  */
 
- 
 /*
  * Font Settings
  */
@@ -46,8 +45,13 @@ $s-animation-easing-default: ease-in-out;
 
 /*
  * Breakpoints
- * Why we use px: https://adamwathan.me/dont-use-em-for-media-queries/
+ * -> See _mediaqueries.scss
  */
-$s-size-breakpoint-375: 375px;
-$s-size-breakpoint-768: 768px;
-$s-size-breakpoint-1440: 1440px;
+$s-breakpoints: (
+  small: 375px,
+  medium: 768px,
+  large: 980px,
+);
+
+// Debug breakpoints: Display the currently active breakpoint in the top right corner
+$s-debug-breakpoints: true;
