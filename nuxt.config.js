@@ -64,6 +64,7 @@ export default {
     '@nuxtjs/stylelint-module',
     'nuxt-graphql-request',
     '@nuxtjs/pwa',
+    '@nuxt/image',
   ],
 
   // Style Resources Config
@@ -81,6 +82,20 @@ export default {
       '{components,layouts,pages}/**/*.vue',
       '{components,layouts,pages}/**/*.scss',
     ],
+  },
+
+  // @nuxt/image config (https://image.nuxtjs.org/api/options)
+  image: {
+    domains: [process.env.IMAGES_URL],
+    screens: {
+      // TODO: Add predefined breakpoints from a gloablly shared js/json.
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+    },
   },
 
   // Modules (https://go.nuxtjs.dev/config-modules)

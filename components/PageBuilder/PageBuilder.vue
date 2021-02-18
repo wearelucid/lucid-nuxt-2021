@@ -7,13 +7,12 @@
         <richtext v-if="item.baseRichtext" :content="item.baseRichtext" />
       </div>
       <div v-if="item.__typename === 'pageBuilder_pbImage_BlockType'">
-        <img
+        <ResponsiveImage
           v-if="item.baseImage && item.baseImage.length"
-          :src="item.baseImage[0].url"
           :alt="item.baseImage[0].title"
-          width="210px"
-          height="210px"
-          style="height: auto"
+          :src="item.baseImage[0].url"
+          :width="'210px'"
+          :height="'210px'"
         />
       </div>
       <div v-if="item.__typename === 'pageBuilder_pbLink_BlockType'">
