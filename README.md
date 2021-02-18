@@ -38,14 +38,14 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 This boilerplate is following the [SASS 7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern).
 
-The archtecture consists of:
+The architecture consists of:
 
-- Abstracts: Tools, helpers, functions and mixins.
-- Base: Holds what we might call the boilerplate code for the project, such as colors and typography delcarations.
-- Pages: Specific styles for pages.
-- Vendors: External libraries.
+- Abstracts: Tools, helpers, functions and mixins
+- Base: Holds what we might call the boilerplate code for the project, such as colors and typography declarations
+- Pages: Specific styles for pages
+- Vendors: External libraries
 
-Files which are declaring varibales or global helpers/mixins, are being imported and summarized inside [`style-resources.scss`](./assets/scss/style-resources.scss).
+Files which are declaring variables or global helpers/mixins, are being imported and summarized inside [`style-resources.scss`](./assets/scss/style-resources.scss).
 
 Note: Not all seven folders of the SASS 7-1 pattern have yet been setup. This is because folders such as `/themes` are very project specific.
 
@@ -55,7 +55,7 @@ Before adding any new file, make sure to check out [this guide](https://sass-gui
 
 Once the file is placed correctly, an import to that file needs to be set:
 
-- If your file declares variarbles or mixins, import it inside the [`style-resources.scss`](./assets/scss/style-resources.scss).
+- If your file declares variables or mixins, import it inside the [`style-resources.scss`](./assets/scss/style-resources.scss).
 - If you declare _actual styles,_ import them in [`global.scss`](./assets/scss/global.scss).
 
 ### Nuxt Style Resources
