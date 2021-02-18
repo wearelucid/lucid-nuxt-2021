@@ -9,10 +9,10 @@ html {
   font-feature-settings: 'liga'1, 'kern'1;
   font-kerning: normal;
   font-size: (100% / 1.6); // Sets 1rem equal to 10px
-  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
-  -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   height: 100%;
-  text-size-adjust: none; // sass-lint:disable-line no-vendor-prefixes
+  text-size-adjust: none;
 }
 
 body {
