@@ -16,6 +16,9 @@ $c: 'TheCraftNavigation';
 
   &__link {
     @include hocus-focus($type: outline, $color: $s-color-primary);
+    @include on-event() {
+      color: $s-color-primary;
+    }
 
     &.nuxt-link-active {
       color: $s-color-primary;
