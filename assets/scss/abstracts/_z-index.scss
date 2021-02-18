@@ -1,5 +1,5 @@
 /*
- * z-indices / z-index
+ * Z-indices / z-index
  */
 
 @function z($indices...) {
@@ -27,5 +27,5 @@
 }
 
 $s-zindex-map: (
-  'nav': 100
+  'nav': 100,
 ) !default;

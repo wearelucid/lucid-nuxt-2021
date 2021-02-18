@@ -1,5 +1,5 @@
 /*
- * Settings – Variables
+ * Variables
  */
 
 /*
@@ -46,7 +46,9 @@ $s-animation-easing-default: ease-in-out;
 
 /*
  * Breakpoints
- * -> See _mediaqueries.scss
+ * Use mq mixin like `@include mq($from: medium) {}`
+ * https://sass-mq.github.io/sass-mq/#undefined-mixin-mq
+ * -> See _mediaqueries.scss for more config
  */
 $s-breakpoints: (
   small: 375px,

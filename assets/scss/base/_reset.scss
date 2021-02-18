@@ -1,7 +1,5 @@
-@import '~normalize-scss/sass/normalize';
-
 /*
- * Basic resets on top of normalize-scss – https://github.com/JohnAlbin/normalize-scss.
+ * Basic resets on top of [normalize-scss](../vendors/_normalize.scss).
  */
 
 blockquote,
@@ -57,13 +55,4 @@ th {
 
 input {
   line-height: inherit;
-}
-
-/*
- * Removing abbr border
- */
-abbr {
-  &[title] { /* stylelint-disable-line selector-no-qualifying-type */
-    border-bottom: 0;
-  }
 }
