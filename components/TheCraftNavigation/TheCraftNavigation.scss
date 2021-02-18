@@ -3,22 +3,14 @@ $c: 'TheCraftNavigation';
 .#{$c} {
   @include set-gutter('full-width');
   margin-bottom: $s-size-spacer-40;
-  transition: background-color $s-animation-duration-default;
   z-index: z('nav');
-
-  @include mq($until: medium) {
-    background-color: $s-color-secondary;
-  }
 
   &__sub-list {
     margin-left: $s-size-spacer-20;
   }
 
   &__link {
-    @include hocus-focus($type: outline, $color: $s-color-primary);
-    @include on-event() {
-      color: $s-color-primary;
-    }
+    text-decoration: none;
 
     &.nuxt-link-active {
       color: $s-color-primary;

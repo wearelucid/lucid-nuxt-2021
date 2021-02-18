@@ -6,7 +6,7 @@ html {
   @include word-wrap;
   box-sizing: border-box;
   color: $s-color-text;
-  font-feature-settings: 'liga'1, 'kern'1;
+  font-feature-settings: 'liga' 1, 'kern' 1;
   font-kerning: normal;
   font-size: (100% / 1.6); // Sets 1rem equal to 10px
   -moz-osx-font-smoothing: grayscale;
@@ -42,7 +42,12 @@ p {
 
 a {
   @include reset-link;
-  text-decoration: underline;
+  @include keyboard-focus;
+  @include font-style-paragraph;
+  transition: color $s-animation-duration-default $s-animation-easing-default;
+  @include on-event {
+    color: $s-color-primary;
+  }
 }
 
 ul {
