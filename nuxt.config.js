@@ -64,7 +64,16 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxtjs/stylelint-module',
+    [
+      '@nuxtjs/stylelint-module',
+      {
+        files: [
+          'assets/**/*.{s?(a|c)ss,less,stylus}',
+          '{components,layouts,pages}/**/*.vue',
+          '{components,layouts,pages}/**/*.scss',
+        ],
+      },
+    ],
   ],
 
   // Add mixins, variables etc. to share them across the app
