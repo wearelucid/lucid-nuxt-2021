@@ -45,24 +45,22 @@ The archtecture consists of:
 - Pages: Specific styles for pages.
 - Vendors: External libraries.
 
-Files which are declaring varibales or global helpers/mixins, are being imported and summarized inside the [main.scss](./assets/scss/main.scss) file.
+Files which are declaring varibales or global helpers/mixins, are being imported and summarized inside [`style-resources.scss`](./assets/scss/style-resources.scss).
 
 Note: Not all seven folders of the SASS 7-1 pattern have yet been setup. This is because folders such as `/themes` are very project specific.
 
-### Adding new files
+### Adding new _shared_ or _global_ files
 
 Before adding any new file, make sure to check out [this guide](https://sass-guidelin.es/#the-7-1-pattern) to declare in which folder the new file belongs – or if you need to create a new folder.
 
 Once the file is placed correctly, an import to that file needs to be set:
 
-- If your file declares variarbles or mixins, import it inside the [main.scss](./assets/scss/main.scss).
-- If you declare actual styles, place the import inside the [global.scss](./assets/scss) file.
+- If your file declares variarbles or mixins, import it inside the [`style-resources.scss`](./assets/scss/style-resources.scss).
+- If you declare _actual styles,_ import them in [`global.scss`](./assets/scss/global.scss).
 
-### Nuxt style-resources
+### Nuxt Style Resources
 
-This boilerplate uses [@nuxtjs/style-resources](https://github.com/nuxt-community/style-resources-module). That way we are able to share all SASS tools across the entire project, done by importing them inside the [main.scss](./assets/scss/main.scss) file.
-
-Actual styles that need to be shared by default gloablly are placed inside the [global.scss](./assets/scss) file. Those styles are being exposed through the `css` property inside [nuxt.config.js](./nuxt.config.js)
+This boilerplate uses [@nuxtjs/style-resources](https://github.com/nuxt-community/style-resources-module).
 
 ## VS Code
 
