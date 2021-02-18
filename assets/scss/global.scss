@@ -1,0 +1,10 @@
+/*
+ * Global SCSS
+ * Import files here that should be included across all pages
+ * through the nuxt.config 'css' property.
+ * Do not import variables or mixins only actual styles!.
+ */
+
+@import './base/reset';
+@import './base/base';
+@import './base/animations';

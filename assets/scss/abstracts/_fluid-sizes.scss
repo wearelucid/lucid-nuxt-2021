@@ -1,4 +1,8 @@
 /*
+ * Fluid-Sizes
+ */
+
+/*
  * fluid-size:
  * Precise Control over sizes:
  * Adapt a layout from a minimum size to a maximum size in a given range of screen widths
@@ -38,7 +42,10 @@
 
   @media (min-width: $min-vw) {
     @each $property in $properties {
-      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+      #{$property}: calc(#{$min-value} +
+      #{strip-unit($max-value - $min-value)} *
+      (100vw - #{$min-vw}) /
+      #{strip-unit($max-vw - $min-vw)});
     }
   }
 
