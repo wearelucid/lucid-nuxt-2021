@@ -71,34 +71,6 @@
 }
 
 /*
- * Hocus Focus
- */
-
-// Relies upon https://github.com/ten1seven/what-input
-@mixin hocus-focus($type: outline, $color: $s-color-primary, $offset: 1rem) {
-
-  // reset firefox dotted outline
-  &::-moz-focus-inner {
-    border: 0;
-  }
-
-  @if $type==outline {
-    [data-whatintent='keyboard'] &:focus {
-      outline: 1px solid $color;
-      outline-offset: $offset;
-    }
-
-    [data-whatintent='mouse'] &:focus {
-      outline: 0; // clearing dotted line when using the mouse
-    }
-  } @else if $type==bgcolor {
-    [data-whatintent='keyboard'] &:focus {
-      background-color: $color;
-    }
-  }
-}
-
-/*
  * WordWrap
  */
 @mixin word-wrap($break: true) {
@@ -122,7 +94,8 @@
     @include mq($from: medium) {
       margin-left: auto;
       margin-right: auto;
-      max-width: px-to-rem($s-size-content-max-width-small) + 2 * ($s-size-gutter-medium);
+      max-width: px-to-rem($s-size-content-max-width-small) + 2 *
+        ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }
   } @else if ($size == 'medium') {
@@ -132,7 +105,8 @@
     @include mq($from: medium) {
       margin-left: auto;
       margin-right: auto;
-      max-width: px-to-rem($s-size-content-max-width-medium) + 2 * ($s-size-gutter-medium);
+      max-width: px-to-rem($s-size-content-max-width-medium) + 2 *
+        ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }
   } @else if ($size == 'large') {
@@ -142,7 +116,8 @@
     @include mq($from: medium) {
       margin-left: auto;
       margin-right: auto;
-      max-width: px-to-rem($s-size-content-max-width-large) + 2 * ($s-size-gutter-medium);
+      max-width: px-to-rem($s-size-content-max-width-large) + 2 *
+        ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }
   } @else if ($size == 'full-width') {
@@ -182,7 +157,6 @@
   }
 }
 
-
 /*
  * Context Based Selector
  */
@@ -193,5 +167,21 @@
 @mixin when-inside($context) {
   #{$context} & {
     @content;
+  }
+}
+
+/*
+ * Keyboard Focus with what-input
+ */
+
+// Relies upon https://github.com/ten1seven/what-input
+@mixin keyboard-focus($color: $s-color-primary, $offset: 1rem) {
+  [data-whatintent='keyboard'] &:focus {
+    outline: 1px solid $color;
+    outline-offset: $offset;
+  }
+
+  [data-whatintent='mouse'] &:focus {
+    outline: none;
   }
 }
