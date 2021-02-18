@@ -60,25 +60,28 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    'nuxt-graphql-request',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    [
-      '@nuxtjs/stylelint-module',
-      {
-        files: [
-          'assets/**/*.{s?(a|c)ss,less,stylus}',
-          '{components,layouts,pages}/**/*.vue',
-          '{components,layouts,pages}/**/*.scss',
-        ],
-      },
-    ],
+    '@nuxtjs/stylelint-module',
+    'nuxt-graphql-request',
+    '@nuxtjs/pwa',
   ],
 
-  // Add mixins, variables etc. to share them across the app
+  // Style Resources Config
+  // (https://github.com/nuxt-community/style-resources-module)
   styleResources: {
-    scss: ['./assets/scss/main.scss'],
+    // Share variables, mixins, functions across all style files
+    // Don't include actual styles.
+    scss: ['./assets/scss/style-resources.scss'],
+  },
+
+  // Stylelint config (https://github.com/nuxt-community/stylelint-module)
+  stylelint: {
+    files: [
+      'assets/**/*.{s?(a|c)ss,less,stylus}',
+      '{components,layouts,pages}/**/*.vue',
+      '{components,layouts,pages}/**/*.scss',
+    ],
   },
 
   // Modules (https://go.nuxtjs.dev/config-modules)

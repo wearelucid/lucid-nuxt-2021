@@ -1,0 +1,16 @@
+/**
+ * Nuxt Style Resources
+ * https://github.com/nuxt-community/style-resources-module
+ * ! Do not import actual styles. Use this module only to import variables, mixins, functions (et cetera) as they won't exist in the actual build. Importing actual styles will include them in every component and will also make your build/HMR magnitudes slower. Do not do this!
+ */
+
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+@import 'abstracts/z-index';
+@import 'abstracts/mediaqueries';
+@import 'abstracts/fluid-sizes';
+
+@import 'base/colors';
+@import 'base/fonts';
+@import 'base/typography';
