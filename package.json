@@ -9,13 +9,13 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "netlify": "yarn generate --modern",
+    "netlify": "nuxt generate --modern",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:css": "stylelint '**/*.scss'",
     "lint": "yarn lint:js && yarn lint:css",
-    "lint-fix": "yarn lint:js --fix && yarn lint:css --fix",
-    "storybook": "yarn nuxt storybook",
-    "storybook:build": "yarn nuxt storybook build"
+    "lint:fix": "yarn lint:js --fix && yarn lint:css --fix",
+    "storybook": "nuxt storybook",
+    "storybook:build": "nuxt storybook build"
   },
   "dependencies": {
     "@nuxt/ufo": "^0.5.4",
