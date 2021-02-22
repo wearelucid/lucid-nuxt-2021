@@ -1,0 +1,7 @@
+{
+  "jsonBreakpoints": {
+    "small": "320px",
+    "medium": "768px",
+    "large": "980px"
+  }
+}
