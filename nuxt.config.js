@@ -1,15 +1,14 @@
+import jsonImporter from 'node-sass-json-importer'
 import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
-import createI18nConfig from './i18n/config'
+import createI18nConfig from './configs/i18n/i18nConfig'
+import colorConfig from './configs/colors.json'
+import storybookConfig from './configs/storybookConfig'
 
-// Set the default locale (used by i18n and pwa/manifest module)
-const defaultLocale = 'de'
-
-// Set some default colors (used by pwa/meta and manifest module and to customize nuxt progress bar)
-const themeColors = {
-  primary: 'black',
-  background: 'white',
-  error: 'red',
-}
+/**
+ * Set the default locale (used by i18n and pwa/manifest module)
+ * ! Don't forget to update this (also for projects without i18n)
+ */
+const DEFAULT_LOCALE = 'de'
 
 export default {
   // Server config (https://nuxtjs.org/docs/2.x/features/configuration#edit-host-and-port)
@@ -40,7 +39,7 @@ export default {
     htmlAttrs: {
       // Set lang attribute for <html> element (=> better a11y)
       // i18n: `nuxt-i18n` will override this in ./layouts/default.vue
-      lang: defaultLocale,
+      lang: DEFAULT_LOCALE,
     },
   },
 
@@ -91,6 +90,11 @@ export default {
   build: {
     // TODO: 'vue-link' seems not to work if not transpiled by babel. Maybe I'm missing something here.
     transpile: ['vue-link'],
+
+    loaders: {
+      // Add node-sass-json-importer (https://github.com/pmowrer/node-sass-json-importer)
+      scss: { sassOptions: { importer: jsonImporter({ convertCase: true }) } },
+    },
   },
 
   // Generate Options
@@ -101,14 +105,12 @@ export default {
 
   // Customize Nuxt.js Progress Bar
   loading: {
-    color: themeColors.primary,
-    failedColor: themeColors.error,
+    color: colorConfig.colorPrimary,
+    failedColor: colorConfig.colorError,
   },
 
   // Storybook Options (https://storybook.nuxtjs.org/options)
-  storybook: {
-    port: 4000, // Run Storybook on localhost:4000,
-  },
+  storybook: storybookConfig,
 
   // nuxt-graphql-request Options (https://github.com/gomah/nuxt-graphql-request)
   graphql: {
@@ -118,19 +120,19 @@ export default {
   },
 
   /**
-   * TODO: Configure i18n in ./i18n/config
+   * TODO: Configure i18n in './configs/i18n/i18nConfig'
    * If you don't need i18n: Remove dependency, delete /i18n folder,
    * remove this config item and search for implementations in components
    * (i.e. `i18n.$t` or `i18n.t`)
    */
-  i18n: createI18nConfig(defaultLocale),
+  i18n: createI18nConfig(DEFAULT_LOCALE),
 
   // @nuxtjs/pwa Options (https://pwa.nuxtjs.org/)
   pwa: {
     // Disable workbox module (don't be a PWA)
     workbox: false,
     meta: {
-      theme_color: themeColors.primary,
+      theme_color: colorConfig.colorPrimary,
 
       // Don't be `mobile-web-app-capable`
       mobileApp: false,
@@ -148,8 +150,8 @@ export default {
       ogUrl: false,
     },
     manifest: {
-      lang: defaultLocale,
-      background_color: themeColors.background,
+      lang: DEFAULT_LOCALE,
+      background_color: colorConfig.colorBackgroundLight,
     },
   },
 

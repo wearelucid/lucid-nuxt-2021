@@ -50,12 +50,17 @@ $s-animation-easing-default: ease-in-out;
  * Use mq mixin like `@include mq($from: medium) {}`
  * https://sass-mq.github.io/sass-mq/#undefined-mixin-mq
  * -> See _mediaqueries.scss for more config
+ *
+ * Breakpoints definition:
+ * -> See 'configs/breakpoints.json'
  */
-$s-breakpoints: (
-  small: 375px,
-  medium: 768px,
-  large: 980px,
-);
+
+// Import JSON data with node-sass-json-importer
+@import '../../../configs/breakpoints.json';
+
+// Assign breakpoints definition to settings variable:
+// @debug $json-breakpoints;
+$s-breakpoints: $json-breakpoints;
 
 // Debug breakpoints: Display the currently active breakpoint in the top right corner
 $s-debug-breakpoints: true;

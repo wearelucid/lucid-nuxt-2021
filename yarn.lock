@@ -8013,6 +8013,11 @@ is-symbol@^1.0.2, is-symbol@^1.0.3:
   dependencies:
     has-symbols "^1.0.1"
 
+is-there@^4.4.4:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/is-there/-/is-there-4.5.1.tgz#ea292e7fad3fc4d70763fe0af40a286c9f5e1e2e"
+  integrity sha512-vIZ7HTXAoRoIwYSsTnxb0sg9L6rth+JOulNcavsbskQkCIWoSM2cjFOWZs4wGziGZER+Xgs/HXiCQZgiL8ppxQ==
+
 is-typedarray@^1.0.0, is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
@@ -9375,6 +9380,15 @@ node-res@^5.0.1:
     mime-types "^2.1.19"
     on-finished "^2.3.0"
     vary "^1.1.2"
+
+node-sass-json-importer@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/node-sass-json-importer/-/node-sass-json-importer-4.3.0.tgz#15773cc070f16aa20e93b378908366af85f6f742"
+  integrity sha512-+j+SsxPzYo7fWIDuz/etuLs+wfay5Zx2bkWE4LazkycdYGzEtCQz4tgIFXveeLBCBM6jvY4fp45z2JEj6U+VWQ==
+  dependencies:
+    is-there "^4.4.4"
+    json5 "^2.1.1"
+    lodash "^4.17.15"
 
 node-sass@^5.0.0:
   version "5.0.0"

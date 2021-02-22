@@ -62,11 +62,11 @@
  * Reset Link
  */
 @mixin reset-link() {
-  color: $s-color-text;
+  color: $color-dark;
   cursor: pointer;
 
   &:hover {
-    color: $s-color-primary;
+    color: $color-primary;
   }
 }
 
@@ -175,7 +175,7 @@
  */
 
 // Relies upon https://github.com/ten1seven/what-input
-@mixin keyboard-focus($color: $s-color-primary, $offset: 1rem) {
+@mixin keyboard-focus($color: $color-primary, $offset: 1rem) {
   [data-whatintent='keyboard'] &:focus {
     outline: 1px solid $color;
     outline-offset: $offset;
