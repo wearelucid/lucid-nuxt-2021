@@ -4,5 +4,5 @@
 
 # Storybook branch deploy
 [context.storybook]
-  command = "storybook:build"
+  command = "yarn storybook:build"
   publish = "storybook-static"
