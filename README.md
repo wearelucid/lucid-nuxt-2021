@@ -73,11 +73,11 @@ Once the file is placed correctly, an import to that file needs to be set:
 
 This boilerplate uses [@nuxtjs/style-resources](https://github.com/nuxt-community/style-resources-module).
 
-### Breakpoints
+### Breakpoints / Media Queries
 
 Add breakpoints to [`breakpoints.json`](./configs/breakpoints.json). Breakpoints are available in [Storybook](./configs/storybookConfig.js).
 
-#### Mixin Usage
+#### [`sass-mq`](https://github.com/sass-mq/sass-mq) Mixin Usage
 
 ```scss
 @include mq($from: medium) {
@@ -87,7 +87,7 @@ Add breakpoints to [`breakpoints.json`](./configs/breakpoints.json). Breakpoints
 }
 ```
 
-#### Debug breakpoints
+#### Debug `sass-mq` breakpoints
 
 Display the currently active breakpoint in the top right corner:
 
