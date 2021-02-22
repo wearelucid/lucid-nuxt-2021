@@ -1,0 +1,10 @@
+{
+  "colorPrimary": "#00f",
+  "colorSecondary": "#54e8a5",
+  "colorBackgroundLight": "#fff",
+  "colorBackgroundDark": "#111",
+  "colorError": "#f00",
+  "colorSuccess": "#0f0",
+  "colorDark": "#111",
+  "colorLight": "#fff"
+}

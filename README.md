@@ -34,6 +34,17 @@ $ yarn generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+## Storybook
+
+Added via [@nuxtjs/storybook](https://storybook.nuxtjs.org). Make sure to have a look at [`storybookConfig.js`](./configs/storybookConfig.js).
+
+Run Storybook:
+
+```bash
+# Run Storybook on http://localhost:4000
+$ yarn storybook
+```
+
 ## SASS Architecture
 
 This boilerplate is following the [SASS 7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern).
@@ -61,6 +72,28 @@ Once the file is placed correctly, an import to that file needs to be set:
 ### Nuxt Style Resources
 
 This boilerplate uses [@nuxtjs/style-resources](https://github.com/nuxt-community/style-resources-module).
+
+### Breakpoints
+
+Add breakpoints to [`breakpoints.json`](./configs/breakpoints.json). Breakpoints are available in [Storybook](./configs/storybookConfig.js).
+
+#### Mixin Usage
+
+```scss
+@include mq($from: medium) {
+  .titanic {
+    float: none;
+  }
+}
+```
+
+#### Debug breakpoints
+
+Display the currently active breakpoint in the top right corner:
+
+```scss
+$s-debug-breakpoints: true;
+```
 
 ## VS Code
 
