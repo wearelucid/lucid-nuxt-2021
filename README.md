@@ -4,6 +4,7 @@
 
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
 - .env file (`cp .env.example .env`)
+- Optional: It's recommended to use [VS Code](#VS-Code)
 
 ## First Things First
 
@@ -97,4 +98,4 @@ $s-debug-breakpoints: true;
 
 ## VS Code
 
-We recommend using VS Code. [Recommended extensions](./.vscode/extensions.json) can be installed (prompt by VS Code) when opening the project. [Project settings](./.vscode/settings.json) ensure that linting with [`eslint`](./.eslintrc.js) and [`stylelint`](./.stylelintrc.json) works correctly.
+We recommend to use [VS Code](https://code.visualstudio.com/). [Recommended extensions](./.vscode/extensions.json) can be installed (prompt by VS Code) when opening the project for the first time. [Project settings](./.vscode/settings.json) ensures that linting with [`eslint`](./.eslintrc.js) and [`stylelint`](./.stylelintrc.json) works correctly.
