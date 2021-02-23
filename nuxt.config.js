@@ -103,6 +103,13 @@ export default {
     routes: async () => await fetchRoutesToBeGenerated(process.env.API_URL),
   },
 
+  // Sitemap with @nuxtjs/sitemap
+  // https://sitemap.nuxtjs.org/usage/sitemap
+  sitemap: {
+    hostname: process.env.BASE_URL,
+    gzip: true,
+  },
+
   // Customize Nuxt.js Progress Bar
   loading: {
     color: colorConfig.colorPrimary,
@@ -121,7 +128,7 @@ export default {
 
   /**
    * TODO: Configure i18n in './configs/i18n/i18nConfig'
-   * If you don't need i18n: Remove dependency, delete /i18n folder,
+   * If you don't need i18n: Remove dependency, delete '/configs/i18n' folder,
    * remove this config item and search for implementations in components
    * (i.e. `i18n.$t` or `i18n.t`)
    */
@@ -153,12 +160,5 @@ export default {
       lang: DEFAULT_LOCALE,
       background_color: colorConfig.colorBackgroundLight,
     },
-  },
-
-  // Sitemap with @nuxtjs/sitemap
-  // https://sitemap.nuxtjs.org/usage/sitemap
-  sitemap: {
-    hostname: process.env.BASE_URL,
-    gzip: true,
   },
 }
