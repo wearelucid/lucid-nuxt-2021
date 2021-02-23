@@ -6,12 +6,14 @@
  * Font Settings
  */
 /* Font-Families */
-$s-font-family-base: 'Lato', sans-serif;
-$s-font-family-serif: 'Merriweather', serif;
+$s-font-family-base: 'IBM Plex Sans', sans-serif;
+$s-font-family-serif: 'IBM Plex Serif', serif;
+$s-font-family-monospace: 'IBM Plex Mono', monospace;
 
 /* Font-Sizes */
 $s-fz-14: 1.4rem; // equals 14px
 $s-fz-16: 1.6rem;
+$s-fz-18: 1.6rem;
 $s-fz-22: 2.2rem;
 $s-fz-30: 3rem;
 
@@ -20,7 +22,7 @@ $s-line-height-std: 1.3;
 
 /* Line-Weights */
 $s-font-weight-std: 400;
-$s-font-weight-bold: 900;
+$s-font-weight-bold: 700;
 
 /*
  * Spacings

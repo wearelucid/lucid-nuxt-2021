@@ -6,5 +6,6 @@
   "colorError": "#f00",
   "colorSuccess": "#0f0",
   "colorDark": "#111",
-  "colorLight": "#fff"
+  "colorLight": "#fff",
+  "colorLightGray": "#eee"
 }

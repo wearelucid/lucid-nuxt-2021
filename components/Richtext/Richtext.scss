@@ -1,4 +1,5 @@
-// $c: 'richtext';
+$c: 'richtext';
 
-// .#{$c} {
-// }
+.#{$c} {
+  @include font-style-paragraph;
+}

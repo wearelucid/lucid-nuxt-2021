@@ -18,6 +18,7 @@ html {
 body {
   @include font-style-base;
   min-height: 100%;
+  padding: 2rem;
 }
 
 * {
@@ -50,7 +51,6 @@ h6 {
 }
 
 p {
-  @include font-style-paragraph;
   margin-bottom: 1em;
 }
 
@@ -111,4 +111,14 @@ hr {
 
 img {
   max-width: 100%;
+}
+
+blockquote {
+  background-color: $color-light-gray;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+pre {
+  font-family: $s-font-family-monospace;
 }

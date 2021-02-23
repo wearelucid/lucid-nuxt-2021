@@ -4,8 +4,7 @@
     <div v-for="item in items" :key="item.id">
       <div v-if="item.__typename === 'pageBuilder_pbSection_BlockType'">
         <h2 v-if="item.baseTitle">{{ item.baseTitle }}</h2>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <span v-if="item.baseRichtext" v-html="item.baseRichtext" />
+        <richtext v-if="item.baseRichtext" :content="item.baseRichtext" />
       </div>
       <div v-if="item.__typename === 'pageBuilder_pbImage_BlockType'">
         <img

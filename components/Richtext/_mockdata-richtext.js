@@ -183,64 +183,64 @@ const mockData = `
     <section>
 
       <form>
-        <p>
+        <div>
           <label for="example-input-email">Email address</label>
           <input type="email" id="example-input-email" placeholder="Enter email">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-password1">Number</label>
           <input type="number" id="example-input-number" placeholder="Number">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-password">Password</label>
           <input type="password" id="example-input-password" placeholder="Password">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-search">Search</label>
           <input type="search" id="example-input-serach" placeholder="Search ..">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-tel">Telephone number</label>
           <input type="tel" id="example-input-tel" placeholder="Telephone number">
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="example-input-text">Text</label>
           <input type="text" id="example-input-text" placeholder="Enter some text here">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-url">Url</label>
           <input type="url" id="example-input-url" placeholder="Enter a url here">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-color">Color</label>
           <input type="color" id="example-inupt-color" placeholder="#fff">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-date">Date</label>
           <input type="date" id="example-input-date" placeholder="date">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-date-time">Date / Time</label>
           <input type="datetime" id="example-input-date-time" placeholder="date / time">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-date-time-local">Date / Time local</label>
           <input type="datetime-local" id="example-input-date-time-local" placeholder="date / time local">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-month">Month</label>
           <input type="month" id="example-input-month" placeholder="Month">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-week">Week</label>
           <input type="week" id="example-input-week" placeholder="Week">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-time">Time</label>
           <input type="time" id="example-input-time" placeholder="Time">
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-select1">Example select</label>
           <select id="example-select1">
             <option>1</option>
@@ -249,8 +249,8 @@ const mockData = `
             <option>4</option>
             <option>5</option>
           </select>
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-select2">Example multiple select</label>
           <select multiple id="example-select2">
             <option>1</option>
@@ -259,15 +259,15 @@ const mockData = `
             <option>4</option>
             <option>5</option>
           </select>
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-textarea">Example textarea</label>
           <textarea id="example-textarea" rows="3"></textarea>
-        </p>
-        <p>
+        </div>
+        <div>
           <label for="example-input-file">File input</label>
           <input type="file" id="example-input-file">
-        </p>
+        </div>
         <fieldset>
           <legend>I am legend</legend>
           <div>
