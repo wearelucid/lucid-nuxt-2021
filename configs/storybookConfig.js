@@ -5,6 +5,7 @@ import colorConfig from './colors.json'
 
 /**
  * Create Storybook Viewports
+ * ! These viewports are defined in `breakpoints.json`
  * -> https://storybook.js.org/docs/react/essentials/viewport
  */
 const createStorybookViewportsFromJSON = () => {
@@ -40,6 +41,8 @@ const storybookConfig = {
     viewport: {
       viewports: {
         ...createStorybookViewportsFromJSON(),
+        // Add divider to separate project viewports from default
+        // viewports (INITIAL_VIEWPORTS) provided by `@storybook/addon-viewport`
         divider: {
           name: '– – – – –',
           width: null,
