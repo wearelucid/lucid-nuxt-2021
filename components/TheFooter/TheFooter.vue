@@ -36,7 +36,7 @@ export default {
         }
       }
     `
-    const { footer } = await this.$graphql.request(query, variables)
+    const { footer } = await this.$graphql.default.request(query, variables)
 
     // Throw error in component if no data comes back (-> $fetchState.error):
     if (footer?.baseTitle == null) {

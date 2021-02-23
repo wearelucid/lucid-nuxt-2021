@@ -16,7 +16,7 @@ export default {
       site: app.i18n.locale,
       section: 'home',
     }
-    const { page } = await $graphql.request(homePageQuery, variables)
+    const { page } = await $graphql.default.request(homePageQuery, variables)
     if (page == null) {
       error({ statusCode: 404, message: app.i18n.t('error.message404') })
     }

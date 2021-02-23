@@ -121,7 +121,7 @@ export default {
 
   // nuxt-graphql-request Options (https://github.com/gomah/nuxt-graphql-request)
   graphql: {
-    endpoint: process.env.API_URL,
+    clients: { default: { endpoint: process.env.API_URL } },
     // See: https://github.com/prisma-labs/graphql-request#passing-more-options-to-fetch
     options: {},
   },

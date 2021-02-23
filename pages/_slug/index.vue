@@ -33,7 +33,7 @@ export default {
         prefix: app.i18n.locale,
       }),
     }
-    const { page } = await $graphql.request(slugPageQuery, variables)
+    const { page } = await $graphql.default.request(slugPageQuery, variables)
     if (page == null) {
       error({ statusCode: 404, message: app.i18n.t('error.message404') })
     }

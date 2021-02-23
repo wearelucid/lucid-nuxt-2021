@@ -62,7 +62,10 @@ export default {
       navHandle: 'mainNav',
       site: this.$i18n.locale,
     }
-    const { menu } = await this.$graphql.request(mainNavQuery, variables)
+    const { menu } = await this.$graphql.default.request(
+      mainNavQuery,
+      variables
+    )
     if (!menu || !menu.length) {
       throw new Error(
         this.$i18n.t('error.errorInComponent', {

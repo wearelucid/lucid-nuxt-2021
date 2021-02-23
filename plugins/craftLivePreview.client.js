@@ -11,7 +11,7 @@ export default function ({ query, enablePreview, $graphql, $config }) {
   if (craftPreview) {
     // Add query params to GraphQL endpoint (override default setting specified in nuxt.config.js):
     // https://example.com/api/blabla?x-craft-live-preview=asdf&token=1234
-    $graphql.url = withQuery($config.apiUrl, {
+    $graphql.default.url = withQuery($config.apiUrl, {
       'x-craft-live-preview': craftPreview,
       token: craftToken,
     })
