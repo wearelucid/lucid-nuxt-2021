@@ -100,6 +100,7 @@ export default {
   // Generate Options
   generate: {
     fallback: true,
+    crawler: false, // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-generate/#crawler
     routes: async () => await fetchRoutesToBeGenerated(process.env.API_URL),
   },
 
