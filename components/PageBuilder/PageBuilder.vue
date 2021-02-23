@@ -11,8 +11,9 @@
           v-if="item.baseImage && item.baseImage.length"
           :src="item.baseImage[0].url"
           :alt="item.baseImage[0].title"
-          width="auto"
-          height="300px"
+          width="210px"
+          height="210px"
+          style="height: auto"
         />
       </div>
       <div v-if="item.__typename === 'pageBuilder_pbLink_BlockType'">
