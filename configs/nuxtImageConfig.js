@@ -37,6 +37,7 @@ const offsetBreakpointValues = (breakpointsArr = []) => {
       breakpoints[key] = 999999
     }
   }
+  return breakpoints
 }
 
 /**
@@ -56,6 +57,14 @@ const createNuxtImageConfig = (domains = []) => {
   const parsedBreakpoints = parseJsonBreakpoints(jsonBreakpoints)
   const sortedBreakpointsArr = sortBreakpointsByPixelValue(parsedBreakpoints)
   const screens = offsetBreakpointValues(sortedBreakpointsArr)
+
+  // console.log({
+  //   jsonBreakpoints,
+  //   parsedBreakpoints,
+  //   sortedBreakpointsArr,
+  //   screens,
+  // })
+
   return { domains, screens }
 }
 
