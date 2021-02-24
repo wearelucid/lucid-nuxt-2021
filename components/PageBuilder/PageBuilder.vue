@@ -7,12 +7,12 @@
         <richtext v-if="item.baseRichtext" :content="item.baseRichtext" />
       </div>
       <div v-if="item.__typename === 'pageBuilder_pbImage_BlockType'">
-        <ResponsiveImage
-          v-if="item.baseImage && item.baseImage.length"
+        <nuxt-img
           :alt="item.baseImage[0].title"
           :src="item.baseImage[0].url"
-          :width="'210'"
-          :height="'210'"
+          width="210"
+          height="210"
+          sizes="small:50vw medium:100vw large:400px"
         />
       </div>
       <div v-if="item.__typename === 'pageBuilder_pbLink_BlockType'">
