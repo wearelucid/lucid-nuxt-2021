@@ -4,7 +4,7 @@
     :src="src"
     :width="width"
     :height="height"
-    :sizes="`sm:${sizeSmall} md:${sizeMedium} lg:${sizeLarge}`"
+    :sizes="`small:${sizeSmall} medium:${sizeMedium} large:${sizeLarge}`"
   />
 </template>
 
@@ -37,7 +37,7 @@ export default {
     },
     sizeLarge: {
       type: String,
-      default: 'lg:800px',
+      default: '800px',
     },
   },
 }

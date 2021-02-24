@@ -3,6 +3,7 @@ import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated
 import createI18nConfig from './configs/i18n/i18nConfig'
 import colorConfig from './configs/colors.json'
 import storybookConfig from './configs/storybookConfig'
+import createNuxtImageConfig from './configs/nuxtImageConfig'
 
 /**
  * Set the default locale (used by i18n and pwa/manifest module)
@@ -84,19 +85,8 @@ export default {
     ],
   },
 
-  // @nuxt/image config (https://image.nuxtjs.org/api/options)
-  image: {
-    domains: [process.env.IMAGES_URL],
-    screens: {
-      // TODO: Add predefined breakpoints from a gloablly shared js/json.
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
-      '2xl': 1536,
-    },
-  },
+  // @nuxt/image config
+  image: createNuxtImageConfig([process.env.IMAGES_URL]),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['nuxt-i18n', '@nuxtjs/sitemap'],
