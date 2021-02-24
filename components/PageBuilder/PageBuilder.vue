@@ -10,7 +10,7 @@
         <nuxt-img
           :alt="item.baseImage[0].title"
           :src="item.baseImage[0].url"
-          sizes="small:100vw medium:50vw large:768px"
+          sizes="initial:100vw small:50vw medium:500px large:768px"
         />
       </div>
       <div v-if="item.__typename === 'pageBuilder_pbLink_BlockType'">
