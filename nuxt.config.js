@@ -3,6 +3,7 @@ import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated
 import createI18nConfig from './configs/i18n/i18nConfig'
 import colorConfig from './configs/colors.json'
 import storybookConfig from './configs/storybookConfig'
+import createNuxtImageConfig from './configs/nuxtImageConfig'
 
 /**
  * Set the default locale (used by i18n and pwa/manifest module)
@@ -64,6 +65,7 @@ export default {
     '@nuxtjs/stylelint-module',
     'nuxt-graphql-request',
     '@nuxtjs/pwa',
+    '@nuxt/image',
   ],
 
   // Style Resources Config
@@ -82,6 +84,9 @@ export default {
       '{components,layouts,pages}/**/*.scss',
     ],
   },
+
+  // @nuxt/image config
+  image: createNuxtImageConfig([process.env.IMAGES_URL]),
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['nuxt-i18n', '@nuxtjs/sitemap'],
