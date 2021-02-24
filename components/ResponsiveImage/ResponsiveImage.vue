@@ -1,9 +1,6 @@
 <template>
   <nuxt-img
-    :alt="alt"
-    :src="src"
-    :width="width"
-    :height="height"
+    v-bind="$props"
     :sizes="`small:${sizeSmall} medium:${sizeMedium} large:${sizeLarge}`"
   />
 </template>
