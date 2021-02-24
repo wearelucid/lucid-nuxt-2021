@@ -9,7 +9,7 @@ fragment pbImage on pageBuilder_pbImage_BlockType {
   __typename
   id
   baseImage {
-    url @transform(width: 420, height: 420, mode: "fit", format: "webp")
+    url @transform(width: 768, height: 768, mode: "fit", format: "webp")
     title
   }
 }
