@@ -99,9 +99,9 @@ export default {
 
     loaders: {
       scss: {
-        // Set `$is-dev-env` variable in scss
         additionalData: `$is-dev-env: ${
-          process.env.NODE_ENV === 'development' ? 'true' : 'false'
+          // Expose `$is-dev-env` variable to scss
+          process.env.NODE_ENV === 'development'
         };`,
         sassOptions: {
           // Add node-sass-json-importer (https://github.com/pmowrer/node-sass-json-importer)
