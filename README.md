@@ -5,6 +5,7 @@
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
 - .env file (`cp .env.example .env`)
 - Optional: It's recommended to use [VS Code](#VS-Code)
+- If you use a GUI app for Git (Sourcetree), add a [`~/.huskyrc`](#use-with-gui-git-clients-ie-sourcetree) file
 
 ## First Things First
 
