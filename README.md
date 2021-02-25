@@ -97,7 +97,7 @@ This boilerplate uses [@nuxtjs/style-resources](https://github.com/nuxt-communit
 
 ### Breakpoints / Media Queries
 
-Add breakpoints to [`breakpoints.json`](./configs/breakpoints.json). Breakpoints are available in [Storybook](./configs/storybookConfig.js).
+Add breakpoints to [`breakpoints.json`](./configs/breakpoints.json). Breakpoints are available in SASS, [Storybook](./configs/storybookConfig.js) and [@nuxt/image](./configs/nuxtImageConfig.js).
 
 #### [`sass-mq`](https://github.com/sass-mq/sass-mq) Mixin Usage
 
