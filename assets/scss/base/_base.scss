@@ -18,7 +18,13 @@ html {
 body {
   @include font-style-base;
   min-height: 100%;
-  padding: 2rem;
+  padding: 2rem 0;
+}
+
+header,
+main,
+footer {
+  @include set-gutter('large');
 }
 
 * {
