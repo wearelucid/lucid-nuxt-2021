@@ -98,8 +98,16 @@ export default {
     transpile: ['vue-link'],
 
     loaders: {
-      // Add node-sass-json-importer (https://github.com/pmowrer/node-sass-json-importer)
-      scss: { sassOptions: { importer: jsonImporter({ convertCase: true }) } },
+      scss: {
+        // Set `$is-dev-env` variable in scss
+        additionalData: `$is-dev-env: ${
+          process.env.NODE_ENV === 'development' ? 'true' : 'false'
+        };`,
+        sassOptions: {
+          // Add node-sass-json-importer (https://github.com/pmowrer/node-sass-json-importer)
+          importer: jsonImporter({ convertCase: true }),
+        },
+      },
     },
   },
 
