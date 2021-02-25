@@ -10,12 +10,22 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "netlify": "nuxt generate --modern",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint:css": "stylelint '**/*.scss'",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:css": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:fix": "yarn lint:js --fix && yarn lint:css --fix",
     "storybook": "nuxt storybook",
     "storybook:build": "nuxt storybook build"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint",
+    "*.{vue,css,scss}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@nuxt/ufo": "^0.5.4",
@@ -31,6 +41,8 @@
     "what-input": "^5.2.10"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@nuxt/image": "^0.4.1",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
@@ -44,6 +56,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "fibers": "^5.0.0",
     "graphql": "^15.4.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
     "node-sass": "^5.0.0",
     "node-sass-json-importer": "^4.3.0",
     "nuxt-graphql-request": "^4.0.0",
@@ -51,6 +65,8 @@
     "sass": "^1.32.7",
     "sass-loader": "10",
     "stylelint": "^13.10.0",
-    "stylelint-config-sass-guidelines": "^8.0.0"
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-standard": "^20.0.0"
   }
 }

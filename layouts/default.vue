@@ -1,8 +1,12 @@
 <template>
   <div>
-    <ThePreviewIndicator v-if="$nuxt.isPreview" />
-    <TheCraftNavigation />
-    <Nuxt />
+    <header>
+      <ThePreviewIndicator v-if="$nuxt.isPreview" />
+      <TheCraftNavigation />
+    </header>
+    <main>
+      <Nuxt />
+    </main>
     <TheFooter />
   </div>
 </template>

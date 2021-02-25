@@ -2,7 +2,7 @@
   <footer>
     <hr style="margin: 2em 0" />
     <p v-if="$fetchState.pending">Fetching Footer...</p>
-    <p v-else-if="$fetchState.error" style="color: red">
+    <p v-else-if="$fetchState.error" style="color: #f00">
       {{ $fetchState.error.message }}
     </p>
     <div v-else>

@@ -2,7 +2,7 @@
   <nav id="navigation" class="TheCraftNavigation">
     <div class="TheCraftNavigation__wrap">
       <p v-if="$fetchState.pending">Fetching menu...</p>
-      <p v-else-if="$fetchState.error" style="color: red">
+      <p v-else-if="$fetchState.error" style="color: #f00">
         {{ $fetchState.error.message }}
       </p>
       <ul v-else class="TheCraftNavigation__list">

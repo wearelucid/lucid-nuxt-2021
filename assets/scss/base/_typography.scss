@@ -16,6 +16,7 @@
 
 @mixin font-style-paragraph {
   @include font-style-base;
+
   font-family: $s-font-family-serif;
   @include mq($from: medium) {
     font-size: $s-fz-18;
@@ -24,18 +25,21 @@
 
 @mixin font-style-heading-1 {
   @include font-style-base;
+
   font-size: $s-fz-30;
   font-weight: $s-font-weight-bold;
 }
 
 @mixin font-style-heading-2 {
   @include font-style-base;
+
   font-size: $s-fz-22;
   font-weight: $s-font-weight-bold;
 }
 
 @mixin font-style-heading-3 {
   @include font-style-base;
+
   font-size: $s-fz-18;
   font-weight: $s-font-weight-bold;
 }

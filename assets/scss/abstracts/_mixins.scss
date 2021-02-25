@@ -94,7 +94,7 @@
     @include mq($from: medium) {
       margin-left: auto;
       margin-right: auto;
-      max-width: px-to-rem($s-size-content-max-width-small) + 2 *
+      max-width: px2rem($s-size-content-max-width-small) + 2 *
         ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }
@@ -105,7 +105,7 @@
     @include mq($from: medium) {
       margin-left: auto;
       margin-right: auto;
-      max-width: px-to-rem($s-size-content-max-width-medium) + 2 *
+      max-width: px2rem($s-size-content-max-width-medium) + 2 *
         ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }
@@ -116,7 +116,7 @@
     @include mq($from: medium) {
       margin-left: auto;
       margin-right: auto;
-      max-width: px-to-rem($s-size-content-max-width-large) + 2 *
+      max-width: px2rem($s-size-content-max-width-large) + 2 *
         ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }

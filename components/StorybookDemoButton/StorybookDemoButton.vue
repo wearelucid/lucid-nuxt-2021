@@ -42,9 +42,9 @@ export default {
   border-radius: 0.5em;
 }
 .color-primary {
-  background-color: blue;
+  background-color: #00f;
 }
 .color-secondary {
-  background-color: red;
+  background-color: #f00;
 }
 </style>

@@ -2,21 +2,22 @@
  * Functions
  */
 
-@function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+/// Strip units from a value
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/// Calculate rems from a px value
+@function px2rem($px, $base-font-value: 16px) {
+  @if not unitless($px) {
+    $px: strip-units($px);
   }
-
-  @return $number;
-}
-
-/*
- * PxtoRem, PxToEm
- */
-@function px-to-em($px, $ref: $s-fz-medium) {
-  @return to-em(to-px($px) / to-px($ref));
-}
-
-@function px-to-rem($px) {
-  @return to-rem(to-px($px) / to-px(10));
+  @if not unitless($base-font-value) {
+    $base-font-value: strip-units($base-font-value);
+  }
+  @if ($px != 0) {
+    @return ($px / $base-font-value) * 1rem;
+  } @else {
+    @return 0;
+  }
 }

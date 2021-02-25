@@ -2,6 +2,7 @@ $c: 'TheCraftNavigation';
 
 .#{$c} {
   @include set-gutter('full-width');
+
   margin-bottom: $s-size-spacer-40;
   z-index: z('nav');
 

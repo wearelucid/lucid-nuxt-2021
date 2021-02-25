@@ -5,6 +5,7 @@
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
 - .env file (`cp .env.example .env`)
 - Optional: It's recommended to use [VS Code](#VS-Code)
+- If you use a GUI app for Git (Sourcetree), add a [`~/.huskyrc`](#use-with-gui-git-clients-ie-sourcetree) file
 
 ## First Things First
 
@@ -44,6 +45,26 @@ Run Storybook:
 ```bash
 # Run Storybook on http://localhost:4000
 $ yarn storybook
+```
+
+## Linting tools
+
+- [ESLint](https://github.com/nuxt/eslint-config)
+- [Prettier](https://github.com/prettier/prettier)
+- [StyleLint](https://github.com/stylelint/stylelint)
+- [Lint staged files](https://github.com/okonet/lint-staged)
+- [Commitlint](https://github.com/conventional-changelog/commitlint) with [Conventional Commits](https://www.conventionalcommits.org/en) (@commitlint/config-conventional)
+  - Allowed types: `[build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]`
+
+### Use with GUI Git Clients (i.e. Sourcetree)
+
+In order to [run husky v4+ with Sourcetree](https://typicode.github.io/husky/#/?id=command-not-found) one can add a `~/.huskyrc` file.
+
+```bash
+# ~/.huskyrc
+# This loads nvm.sh and sets the correct PATH before running hook
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 ```
 
 ## SASS Architecture

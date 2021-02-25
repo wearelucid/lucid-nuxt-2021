@@ -32,7 +32,8 @@ const offsetBreakpointValues = (breakpointsArr = []) => {
     const key = breakpointsArr[index][0]
     const value = breakpointsArr[index + 1]?.[1]
     if (value) {
-      breakpoints[key] = value
+      // Remove 1px because of max-width instead of min-width
+      breakpoints[key] = value - 1
     } else {
       breakpoints[key] = 999999
     }

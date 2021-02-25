@@ -61,8 +61,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/style-resources',
+    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/style-resources',
     'nuxt-graphql-request',
     '@nuxtjs/pwa',
     '@nuxt/image',
