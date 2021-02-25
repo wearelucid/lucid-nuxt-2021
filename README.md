@@ -46,6 +46,26 @@ Run Storybook:
 $ yarn storybook
 ```
 
+## Linting tools
+
+- [ESLint](https://github.com/nuxt/eslint-config)
+- [Prettier](https://github.com/prettier/prettier)
+- [StyleLint](https://github.com/stylelint/stylelint)
+- [Lint staged files](https://github.com/okonet/lint-staged)
+- [Commitlint](https://github.com/conventional-changelog/commitlint)
+  - Using [Conventional Commits](https://www.conventionalcommits.org/en) (@commitlint/config-conventional)
+
+### Use with GUI Git Clients (i.e. Sourcetree)
+
+In order to [run husky v4+ with Sourcetree](https://typicode.github.io/husky/#/?id=command-not-found) one can add a `~/.huskyrc` file.
+
+```bash
+# ~/.huskyrc
+# This loads nvm.sh and sets the correct PATH before running hook
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+```
+
 ## SASS Architecture
 
 This boilerplate is following the [SASS 7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern).
