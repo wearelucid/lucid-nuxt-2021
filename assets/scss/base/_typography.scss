@@ -28,6 +28,10 @@
 
   font-size: $s-fz-30;
   font-weight: $s-font-weight-bold;
+
+  @include mq($from: medium) {
+    font-size: $s-fz-48;
+  }
 }
 
 @mixin font-style-heading-2 {

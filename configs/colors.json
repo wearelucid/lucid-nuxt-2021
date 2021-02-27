@@ -1,5 +1,5 @@
 {
-  "colorPrimary": "#00f",
+  "colorPrimary": "#0070F3",
   "colorSecondary": "#54e8a5",
   "colorBackgroundLight": "#fff",
   "colorBackgroundDark": "#111",
@@ -7,5 +7,6 @@
   "colorSuccess": "#0f0",
   "colorDark": "#111",
   "colorLight": "#fff",
-  "colorLightGray": "#eee"
+  "colorGray": "#aaa",
+  "colorGrayLight": "#f5f5f5"
 }

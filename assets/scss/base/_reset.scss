@@ -2,42 +2,60 @@
  * Basic resets on top of [normalize-scss](../vendors/_normalize.scss).
  */
 
-blockquote,
-body,
-caption,
-dd,
-dl,
-fieldset,
-figure,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-legend,
-ol,
-p,
-pre,
-table,
-td,
-th,
-ul {
-  font-weight: normal;
+* {
+  /* Reset margins and padding */
   margin: 0;
   padding: 0;
 }
 
-/*
- * Remove trailing margins from nested lists.
- */
-li > {
-  ol,
-  ul {
+address,
+area,
+article,
+aside,
+audio,
+blockquote,
+button,
+datalist,
+details,
+dl,
+fieldset,
+figure,
+form,
+input,
+iframe,
+img,
+meter,
+nav,
+ol,
+optgroup,
+option,
+output,
+p,
+pre,
+progress,
+ruby,
+section,
+select,
+table,
+textarea,
+ul,
+video {
+  /* Margins for most elements */
+  margin-bottom: 1rem;
+}
+
+select[multiple] {
+  option {
     margin-bottom: 0;
   }
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  /* Remove trailing margins from nested lists */
+  margin-bottom: 0;
 }
 
 /*
@@ -46,6 +64,7 @@ li > {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  width: 100%;
 }
 
 td,
@@ -59,4 +78,9 @@ input {
 
 address {
   font-style: normal;
+}
+
+textarea {
+  /* Don't let the <textarea> extend off the screen naturally or when dragged by the user */
+  max-width: 100%;
 }

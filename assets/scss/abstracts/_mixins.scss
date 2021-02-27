@@ -177,7 +177,7 @@
 // Relies upon https://github.com/ten1seven/what-input
 @mixin keyboard-focus($color: $color-primary, $offset: 1rem) {
   [data-whatintent='keyboard'] &:focus {
-    outline: 1px solid $color;
+    outline: px2rem(2) solid $color;
     outline-offset: $offset;
   }
 

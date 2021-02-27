@@ -1,5 +1,7 @@
 /*
+ * ------------------------------------------------
  * Base
+ * ------------------------------------------------
  */
 
 html {
@@ -16,9 +18,22 @@ html {
   text-size-adjust: none;
 }
 
-body {
+body,
+input,
+select,
+button,
+textarea {
+  /* Set body font family and some finicky elements */
   @include font-style-base;
+}
 
+::selection {
+  /* Set background color for selected text */
+  background: $color-primary;
+  color: $color-light;
+}
+
+body {
   min-height: 100%;
   padding: 2rem 0;
 }
@@ -26,7 +41,7 @@ body {
 header,
 main,
 footer {
-  @include set-gutter('large');
+  @include set-gutter('medium');
 }
 
 * {
@@ -38,8 +53,11 @@ footer {
 }
 
 /*
- * Elements
+ * ------------------------------------------------
+ * Headings
+ * ------------------------------------------------
  */
+
 h1 {
   @include font-style-heading-1;
 
@@ -61,9 +79,42 @@ h6 {
   margin-bottom: 0.5em;
 }
 
+/*
+ * ------------------------------------------------
+ * Text
+ * ------------------------------------------------
+ */
+
 p {
   margin-bottom: 1em;
 }
+
+abbr {
+  cursor: help;
+}
+
+mark {
+  background: $color-secondary;
+  padding: px2rem(1) px2rem(4);
+}
+
+blockquote {
+  background-color: $color-gray-light;
+  border-left: 0.5rem solid $color-dark;
+  margin: 1em 0;
+  padding: 1em;
+
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/*
+ * ------------------------------------------------
+ * Links and Buttons
+ * ------------------------------------------------
+ */
 
 a,
 button,
@@ -88,18 +139,66 @@ input[type='submit'],
 input[type='reset'] {
   @include reset-button;
 
-  border: 1px solid $color-dark;
-  color: $color-dark;
-  margin: 1em 0.5em;
+  background: $color-primary;
+  border: px2rem(1) solid $color-primary;
+  border-radius: px2rem($s-border-radius-default);
+  box-sizing: border-box;
+  color: $color-light;
+  cursor: pointer;
   padding: 0.5em 1em;
-  transition: color $s-animation-duration-default $s-animation-easing-default,
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $s-animation-duration-default
+      $s-animation-easing-default,
+    color $s-animation-duration-default $s-animation-easing-default,
     border-color $s-animation-duration-default $s-animation-easing-default;
+  white-space: nowrap;
 
   @include on-event {
-    border-color: $color-primary;
-    color: $color-primary;
+    background: $color-dark;
+    border-color: $color-dark;
+    color: $color-light;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 }
+
+/*
+ * ------------------------------------------------
+ * Forms
+ * ------------------------------------------------
+ */
+
+textarea,
+select,
+input {
+  background: $color-gray-light;
+  border: px2rem(1) solid $color-gray;
+  border-radius: px2rem($s-border-radius-default);
+  box-shadow: none;
+  color: $color-dark;
+  padding: px2rem(6) px2rem(12);
+}
+
+fieldset {
+  border: px2rem(1) solid $color-gray;
+  border-radius: px2rem($s-border-radius-default);
+  margin-top: 1rem;
+  padding: 2rem;
+}
+
+legend {
+  padding: auto 1em;
+}
+
+/*
+ * ------------------------------------------------
+ * Lists
+ * ------------------------------------------------
+ */
 
 ul {
   list-style: '–' outside none;
@@ -118,20 +217,93 @@ ol {
   }
 }
 
-hr {
-  margin: 1em 0;
+dt {
+  font-weight: $s-font-weight-bold;
 }
+
+dd::before {
+  /* Add an arrow to data table definitions */
+  content: '→ ';
+}
+
+/*
+ * ------------------------------------------------
+ * Images
+ * ------------------------------------------------
+ */
 
 img {
   max-width: 100%;
 }
 
-blockquote {
-  background-color: $color-light-gray;
-  margin: 1em 0;
-  padding: 1em;
+figure {
+  figcaption {
+    font-style: italic;
+  }
+  img {
+    margin-bottom: 0;
+  }
+}
+
+/*
+ * ------------------------------------------------
+ * Monospace Things
+ * ------------------------------------------------
+ */
+
+pre,
+code,
+kbd,
+samp {
+  background: $color-gray-light;
+  border: px2rem(1) solid $color-gray;
+  border-radius: px2rem($s-border-radius-default);
+  font-family: $s-font-family-monospace;
+  padding: px2rem(1) px2rem(4);
 }
 
 pre {
-  font-family: $s-font-family-monospace;
+  max-width: 100%;
+  overflow: auto;
+  padding: px2rem(10) px2rem(20);
+}
+
+/*
+ * ------------------------------------------------
+ * Tables
+ * ------------------------------------------------
+ */
+
+td,
+th {
+  border: px2rem(1) solid $color-gray;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background: $color-gray-light;
+}
+
+tr:nth-child(odd) {
+  /* Set every other cell slightly darker. Improves readability. */
+  background: $color-gray-light;
+}
+
+table caption {
+  font-weight: $s-font-weight-bold;
+  margin-bottom: 0.5em;
+}
+
+/*
+ * ------------------------------------------------
+ * Misc
+ * ------------------------------------------------
+ */
+
+hr {
+  /* Reset the border of the <hr> separator, then set a better line */
+  border: 0;
+  border-bottom: px2rem(1) solid $color-gray;
+  margin: 4rem auto;
 }
