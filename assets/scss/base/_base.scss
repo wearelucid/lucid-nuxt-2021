@@ -180,6 +180,7 @@ input {
   border-radius: px2rem($s-border-radius-default);
   box-shadow: none;
   color: $color-dark;
+  max-width: 100%;
   padding: px2rem(6) px2rem(12);
 }
 
