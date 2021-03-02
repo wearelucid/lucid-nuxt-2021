@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Craft-Content Example: -->
+    <!-- Craft content example: -->
     <div v-for="item in items" :key="item.id">
       <div v-if="item.__typename === 'pageBuilder_pbSection_BlockType'">
         <h2 v-if="item.baseTitle">{{ item.baseTitle }}</h2>
