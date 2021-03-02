@@ -1,7 +1,7 @@
 <template>
   <div v-if="page">
     <TheTemporaryLangSwitcher :page-translations="page.localized" />
-    <h1 class="title">{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
     <PageBuilder :items="page.pageBuilder" />
   </div>
 </template>

@@ -2,6 +2,13 @@
  * Home
  */
 
-// Add specific styles for the `/home` page here.
-// For example: .page--home {}
-// You will need to add the defined class to your `page.vue` file.
+// Add `/home.vue` page specific styles here.
+// You will need to add the defined classes to the tags in your `home.vue` file.
+// eg. <h1 class="Home__title>Home</h1>
+
+$c: 'Home';
+.#{$c} {
+  &__title {
+    // your styles
+  }
+}

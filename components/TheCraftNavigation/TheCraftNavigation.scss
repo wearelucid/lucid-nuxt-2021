@@ -1,7 +1,7 @@
 $c: 'TheCraftNavigation';
 
 .#{$c} {
-  margin-bottom: 2rem;
+  margin-bottom: px2rem(2);
   z-index: z('nav');
 
   &__link {
