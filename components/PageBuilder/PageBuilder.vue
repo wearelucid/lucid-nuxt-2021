@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <!-- Nuxt client navigation Example within SPA mode -->
+    <!-- Nuxt client navigation example within SPA mode -->
     <hr style="margin: 2em 0" />
     <h3>Some NuxtLinks for testing:</h3>
     <nuxt-link :to="localePath('/')">Back to Home localePath</nuxt-link><br />
