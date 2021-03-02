@@ -1,9 +1,6 @@
 <template>
   <div>
-    <header>
-      <ThePreviewIndicator v-if="$nuxt.isPreview" />
-      <TheCraftNavigation />
-    </header>
+    <TheHeader />
     <main>
       <Nuxt />
     </main>
