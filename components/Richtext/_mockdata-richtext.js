@@ -1,5 +1,60 @@
-const mockData = `
-  <!-- HTML5 Kitchen sink by @dbox -->
+const craftRedactorDemoOutput = `
+<h1>H1 Title</h1>
+<p>Some <strong>rich</strong> <em>text</em> here with a <a href="https://www.wearelucid.ch" target="_blank"
+    rel="noreferrer noopener">link</a>.</p>
+<h2>H2 Title</h2>
+<p>Dummy Text. Enamel pin wolf tbh crucifix squid ramps. Bushwick YOLO woke pour-over hell of. Small batch venmo
+  fingerstache taiyaki, normcore meh <em>tacos</em> vape. Chia unicorn yuccie, retro glossier irony affogato. Health
+  goth beard twee marfa prism pinterest coloring book keytar vape. Pabst banjo <strong>YOLO</strong> williamsburg.
+</p>
+<figure><img src="https://lucid-craft-2021.lucid.build/uploads/images/gaspar-manuel-zaldo-urMEnqK1eoQ-unsplash.jpg"
+    alt="Image inside Redactor Text">
+  <figcaption>Image inside Redactor Text</figcaption>
+</figure>
+<p>Dummy Text. 8-bit swag flannel heirloom. Heirloom actually stumptown, farm-to-table pickled vaporware fam
+  hammock. Organic aesthetic paleo lomo, whatever 8-bit tumeric hexagon pabst banh mi snackwave jean shorts
+  succulents DIY. Keytar jianbing sustainable, selfies humblebrag adaptogen letterpress seitan. Chartreuse selvage
+  pour-over meggings unicorn lo-fi cardigan flexitarian VHS lomo palo santo shaman la croix. Direct trade actually
+  occupy irony fashion axe narwhal pug, poutine paleo kinfolk.<br></p>
+<h3>H3 Title</h3>
+<h4>H4 Title</h4>
+<h5>H5 Title</h5>
+<h6>H6 Title</h6>
+<p>Dummy Text. Venmo forage messenger bag, <a href="https://www.wearelucid.ch" target="_blank"
+    rel="noreferrer noopener">poutine</a> tilde blue bottle 8-bit. Next level pabst skateboard shoreditch mustache,
+  echo park master cleanse small batch sriracha venmo deep v art party.</p>
+<blockquote>This is a quote.<br></blockquote>
+<p>Dummy Text. Venmo forage messenger bag, poutine tilde blue bottle 8-bit. Next level pabst skateboard shoreditch
+  mustache, echo park master cleanse small batch sriracha venmo deep v art party.</p>
+<pre>/* A code block: */
+.fear {
+display: none;
+}</pre>
+<p>Dummy Text. Venmo forage messenger bag, poutine tilde blue bottle 8-bit. Next level pabst skateboard shoreditch
+  mustache, echo park master cleanse small batch sriracha venmo deep v art party.</p>
+<p>Here comes a list:</p>
+<ul>
+  <li>Item 1</li>
+  <li>Item 2<ul>
+      <li>Nested Item</li>
+    </ul>
+  </li>
+  <li>Item 3</li>
+</ul>
+<p>Ordered list:</p>
+<ol>
+  <li>Step 1</li>
+  <li>Step 2</li>
+  <li>????</li>
+  <li>PROFIT!!!</li>
+</ol>
+<p><a href="https://lucid-nuxt-2021.netlify.app/en/" target="_blank" rel="noreferrer noopener">Homepage</a></p>
+<p><a href="https://lucid-nuxt-2021.netlify.app/en/test-page/nested-test-page" target="_blank"
+    rel="noreferrer noopener">Nested Test Page</a></p>
+`
+
+const kitchenSink = `
+  <!-- HTML5 Kitchen sink -->
   <main>
     <section>
       <hgroup>
@@ -13,22 +68,20 @@ const mockData = `
     </section>
     <hr>
     <section>
-      <header>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
       <article>
         <p>This paragraph is nested inside an article. It contains many different, sometimes useful, <a href="https://www.w3schools.com/tags/">HTML5 tags</a>. Of course there are classics like <em>emphasis</em>, <strong>strong</strong>, and <small>small</small>        but there are many others as well. Hover the following text for abbreviation tag: <abbr title="abbreviation">abbr</abbr>. Similarly, you can use acronym tag like this: <acronym title="For The Win">ftw</acronym>. You can define <del>deleted text</del>        which often gets replaced with <ins>inserted</ins> text.</p>
         <p>You can also use <kbd>keyboard text</kbd>, which sometimes is styled similarly to the <code>&lt;code&gt;</code> or <samp>samp</samp> tags. Even more specifically, there is a tag just for <var>variables</var>. Not to be mistaken with blockquotes
           below, the quote tag lets you denote something as <q>quoted text</q>. Lastly don't forget the sub (H<sub>2</sub>O) and sup (E = MC<sup>2</sup>) tags. </p>
+        <p>Text can be <mark>marked</mark> with a <code>&lt;mark&gt;</code> tag.</p>
       </article>
       <aside>This is an aside.</aside>
-      <footer>This is footer for this section</footer>
     </section>
     <hr>
     <section>
@@ -46,6 +99,11 @@ const mockData = `
     <section>
       <table>
         <caption>Tables can have captions now.</caption>
+        <colgroup>
+          <col span="1" style="width: 25%;">
+          <col span="1" style="width: 15%;">
+          <col span="1" style="width: 60%;">
+        </colgroup>
         <tbody>
           <tr>
             <th>Person</th>
@@ -159,17 +217,18 @@ const mockData = `
     <hr>
     <section>
       <pre>
-  pre {
-    display: block;
-    padding: 7px;
-    background-color: #F5F5F5;
-    border: 1px solid #E1E1E8;
-    border-radius: 3px;
-    white-space: pre-wrap;
-    word-break: break-all;
-    font-family: Menlo, Monaco;
-    line-height: 160%;
-  }</pre>
+.infinity-edge-pools {
+  overflow: hidden;
+}
+
+  ____
+< mooh >
+  ----
+      \\   ^__^
+       \\  (oo)\\_______
+          (__)\\       )\\/\\
+              ||----w |
+              ||     ||</pre>
 
     </section>
     <hr />
@@ -185,87 +244,105 @@ const mockData = `
       <form>
         <div>
           <label for="example-input-email">Email address</label>
+          <br />
           <input type="email" id="example-input-email" placeholder="Enter email">
         </div>
         <div>
           <label for="example-input-password1">Number</label>
+          <br />
           <input type="number" id="example-input-number" placeholder="Number">
         </div>
         <div>
           <label for="example-input-password">Password</label>
+          <br />
           <input type="password" id="example-input-password" placeholder="Password">
         </div>
         <div>
           <label for="example-input-search">Search</label>
+          <br />
           <input type="search" id="example-input-serach" placeholder="Search ..">
         </div>
         <div>
           <label for="example-input-tel">Telephone number</label>
+          <br />
           <input type="tel" id="example-input-tel" placeholder="Telephone number">
         </div>
 
         <div>
           <label for="example-input-text">Text</label>
+          <br />
           <input type="text" id="example-input-text" placeholder="Enter some text here">
         </div>
         <div>
           <label for="example-input-url">Url</label>
+          <br />
           <input type="url" id="example-input-url" placeholder="Enter a url here">
         </div>
         <div>
           <label for="example-input-color">Color</label>
+          <br />
           <input type="color" id="example-inupt-color" placeholder="#fff">
         </div>
         <div>
           <label for="example-input-date">Date</label>
+          <br />
           <input type="date" id="example-input-date" placeholder="date">
         </div>
         <div>
           <label for="example-input-date-time">Date / Time</label>
+          <br />
           <input type="datetime" id="example-input-date-time" placeholder="date / time">
         </div>
         <div>
           <label for="example-input-date-time-local">Date / Time local</label>
+          <br />
           <input type="datetime-local" id="example-input-date-time-local" placeholder="date / time local">
         </div>
         <div>
           <label for="example-input-month">Month</label>
+          <br />
           <input type="month" id="example-input-month" placeholder="Month">
         </div>
         <div>
           <label for="example-input-week">Week</label>
+          <br />
           <input type="week" id="example-input-week" placeholder="Week">
         </div>
         <div>
           <label for="example-input-time">Time</label>
+          <br />
           <input type="time" id="example-input-time" placeholder="Time">
         </div>
         <div>
           <label for="example-select1">Example select</label>
+          <br />
           <select id="example-select1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+            <option>Option 5</option>
           </select>
         </div>
         <div>
           <label for="example-select2">Example multiple select</label>
+          <br />
           <select multiple id="example-select2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+            <option>Option 5</option>
           </select>
         </div>
         <div>
           <label for="example-textarea">Example textarea</label>
+          <br />
           <textarea id="example-textarea" rows="3"></textarea>
         </div>
         <div>
           <label for="example-input-file">File input</label>
+          <br />
           <input type="file" id="example-input-file">
         </div>
         <fieldset>
@@ -295,8 +372,9 @@ const mockData = `
         </fieldset>
         <p>
           <button type="button" name="button">Button</button>
-          <input type="button" name="input" value="Input Button">
+          <button type="button" name="disabled button" disabled>Disabled</button>
           <input type="submit" name="submit" value="Submit Button">
+          <input type="submit" name="disabled submit" value="Disabled Submit" disabled>
           <input type="reset" name="reset" value="Reset Button">
         </p>
       </form>
@@ -305,4 +383,8 @@ const mockData = `
   <!-- end kitchen sink -->
 `
 
-export default mockData
+export {
+  craftRedactorDemoOutput as default,
+  craftRedactorDemoOutput,
+  kitchenSink,
+}

@@ -7,9 +7,9 @@
 <script>
 export default {
   props: {
-    round: {
+    rounded: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     type: {
       type: String,
@@ -22,14 +22,14 @@ export default {
   },
   computed: {
     btnClass() {
-      const classes = []
-      if (this.round) {
+      const classes = ['demo-button']
+      if (this.rounded) {
         classes.push('rounded')
       }
       if (this.type === 'primary') {
-        classes.push('color-primary')
+        classes.push('primary')
       } else if (this.type === 'secondary') {
-        classes.push('color-secondary')
+        classes.push('secondary')
       }
       return classes.join(' ')
     },
@@ -37,14 +37,20 @@ export default {
 }
 </script>
 
-<style scoped>
-.rounded {
-  border-radius: 0.5em;
-}
-.color-primary {
-  background-color: #00f;
-}
-.color-secondary {
-  background-color: #f00;
+<style lang="scss" scoped>
+.demo-button {
+  &:not(.rounded) {
+    border-radius: 0;
+  }
+
+  &.secondary {
+    background: $color-secondary;
+    border-color: $color-secondary;
+
+    @include on-event {
+      background: $color-light;
+      color: $color-secondary;
+    }
+  }
 }
 </style>

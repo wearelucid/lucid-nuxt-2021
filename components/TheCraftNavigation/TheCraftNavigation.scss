@@ -1,14 +1,8 @@
 $c: 'TheCraftNavigation';
 
 .#{$c} {
-  @include set-gutter('full-width');
-
-  margin-bottom: $s-size-spacer-40;
+  margin-bottom: 2rem;
   z-index: z('nav');
-
-  &__sub-list {
-    margin-left: $s-size-spacer-20;
-  }
 
   &__link {
     text-decoration: none;

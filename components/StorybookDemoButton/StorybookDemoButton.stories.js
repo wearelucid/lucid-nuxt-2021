@@ -10,10 +10,10 @@ export default {
       },
       defaultValue: 'primary',
     },
-    round: { control: 'boolean' },
+    rounded: { control: 'boolean' },
     text: {
       control: 'text',
-      defaultValue: 'Awesome Button',
+      defaultValue: 'Demo Button',
     },
   },
 }
