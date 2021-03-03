@@ -141,7 +141,7 @@ input[type='reset'] {
 
   background: $color-primary;
   border: px2rem(1) solid $color-primary;
-  border-radius: px2rem($s-border-radius-default);
+  border-radius: $s-border-radius-default;
   box-sizing: border-box;
   color: $color-light;
   cursor: pointer;
@@ -177,7 +177,7 @@ select,
 input {
   background: $color-gray-light;
   border: px2rem(1) solid $color-gray;
-  border-radius: px2rem($s-border-radius-default);
+  border-radius: $s-border-radius-default;
   box-shadow: none;
   color: $color-dark;
   max-width: 100%;
@@ -186,7 +186,7 @@ input {
 
 fieldset {
   border: px2rem(1) solid $color-gray;
-  border-radius: px2rem($s-border-radius-default);
+  border-radius: $s-border-radius-default;
   margin-top: 1rem;
   padding: 2rem;
 }
@@ -258,7 +258,7 @@ kbd,
 samp {
   background: $color-gray-light;
   border: px2rem(1) solid $color-gray;
-  border-radius: px2rem($s-border-radius-default);
+  border-radius: $s-border-radius-default;
   font-family: $s-font-family-monospace;
   padding: px2rem(1) px2rem(4);
 }
