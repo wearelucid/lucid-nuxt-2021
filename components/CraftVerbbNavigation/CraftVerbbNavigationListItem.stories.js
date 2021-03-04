@@ -47,3 +47,19 @@ External.args = {
   type: '',
   children: [],
 }
+
+export const WithChildren = Template.bind({})
+WithChildren.args = {
+  ...Internal.args,
+  id: '456',
+  title: 'I have children',
+  children: [Internal.args, Passive.args, External.args],
+}
+
+export const WithGrandChildren = Template.bind({})
+WithGrandChildren.args = {
+  ...Internal.args,
+  id: '567',
+  title: 'I have grand children',
+  children: [Internal.args, WithChildren.args],
+}
