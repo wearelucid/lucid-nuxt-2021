@@ -147,7 +147,10 @@ export default {
    * remove this config item and search for implementations in components
    * (i.e. `i18n.$t` or `i18n.t`)
    */
-  i18n: createI18nConfig(DEFAULT_LOCALE),
+  i18n: createI18nConfig({
+    defaultLocale: DEFAULT_LOCALE,
+    detectBrowserLanguageDisabled: process.env.NODE_ENV === 'development',
+  }),
 
   // @nuxtjs/pwa Options (https://pwa.nuxtjs.org/)
   pwa: {

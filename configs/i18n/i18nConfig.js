@@ -4,7 +4,10 @@ import i18nMessages from './messages'
  * * i18n Config
  * see https://i18n.nuxtjs.org/
  */
-const createI18nConfig = (defaultLocale = 'de') => {
+const createI18nConfig = ({
+  defaultLocale = 'de',
+  detectBrowserLanguageDisabled = false,
+} = {}) => {
   return {
     locales: [
       {
@@ -26,11 +29,13 @@ const createI18nConfig = (defaultLocale = 'de') => {
      * This only applies to the home page if `onlyOnRoot` is set to `true`.
      * https://github.com/wearelucid/lucid-nuxt-2021/issues/25
      */
-    detectBrowserLanguage: {
-      onlyOnRoot: true, // Only detect and redirect on home page
-      useCookie: true, // Store selected lang in a cookie
-      cookieCrossOrigin: true, // Make it work inside iframe
-    },
+    detectBrowserLanguage: detectBrowserLanguageDisabled
+      ? false
+      : {
+          onlyOnRoot: true, // Only detect and redirect on home page
+          useCookie: true, // Store selected lang in a cookie
+          cookieCrossOrigin: true, // Make it work inside iframe
+        },
     vueI18n: {
       fallbackLocale: defaultLocale,
       messages: i18nMessages,
