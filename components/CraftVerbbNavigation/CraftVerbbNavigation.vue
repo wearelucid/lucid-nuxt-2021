@@ -4,7 +4,13 @@
     <p v-else-if="$fetchState.error" style="color: #f00">
       {{ $fetchState.error.message }}
     </p>
-    <CraftVerbbNavigationList v-else :items="menu" />
+    <CraftVerbbNavigationList v-else>
+      <CraftVerbbNavigationListItem
+        v-for="item in menu"
+        :key="item.id"
+        v-bind="item"
+      />
+    </CraftVerbbNavigationList>
   </div>
 </template>
 

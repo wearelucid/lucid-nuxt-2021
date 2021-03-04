@@ -1,9 +1,16 @@
 import CraftVerbbNavigationListItem from './CraftVerbbNavigationListItem'
+import CraftVerbbNavigationList from './CraftVerbbNavigationList'
 
 export default {
   component: CraftVerbbNavigationListItem,
   title: 'CraftVerbbNavigationListItem',
-  decorators: [() => ({ template: '<ul><story /></ul>' })],
+  decorators: [
+    () => ({
+      components: { CraftVerbbNavigationList },
+      template:
+        '<CraftVerbbNavigationList><story /></CraftVerbbNavigationList>',
+    }),
+  ],
 }
 
 const Template = (args, { argTypes }) => ({

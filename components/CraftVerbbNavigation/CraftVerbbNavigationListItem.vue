@@ -20,7 +20,13 @@
     >
       {{ title }}
     </NuxtLink>
-    <CraftVerbbNavigationList v-if="children.length" :items="children" />
+    <CraftVerbbNavigationList v-if="children && children.length">
+      <CraftVerbbNavigationListItem
+        v-for="item in children"
+        :key="item.id"
+        v-bind="item"
+      />
+    </CraftVerbbNavigationList>
   </li>
 </template>
 
