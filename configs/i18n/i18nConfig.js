@@ -6,7 +6,7 @@ import i18nMessages from './messages'
  */
 const createI18nConfig = ({
   defaultLocale = 'de',
-  detectBrowserLanguageDisabled = false,
+  browserLanguageDetection = true,
 } = {}) => {
   return {
     locales: [
@@ -29,13 +29,13 @@ const createI18nConfig = ({
      * This only applies to the home page if `onlyOnRoot` is set to `true`.
      * https://github.com/wearelucid/lucid-nuxt-2021/issues/25
      */
-    detectBrowserLanguage: detectBrowserLanguageDisabled
-      ? false
-      : {
+    detectBrowserLanguage: browserLanguageDetection
+      ? {
           onlyOnRoot: true, // Only detect and redirect on home page
           useCookie: true, // Store selected lang in a cookie
           cookieCrossOrigin: true, // Make it work inside iframe
-        },
+        }
+      : false,
     vueI18n: {
       fallbackLocale: defaultLocale,
       messages: i18nMessages,

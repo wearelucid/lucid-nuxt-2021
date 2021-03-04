@@ -149,7 +149,7 @@ export default {
    */
   i18n: createI18nConfig({
     defaultLocale: DEFAULT_LOCALE,
-    detectBrowserLanguageDisabled: process.env.NODE_ENV === 'development',
+    browserLanguageDetection: process.env.NODE_ENV !== 'development',
   }),
 
   // @nuxtjs/pwa Options (https://pwa.nuxtjs.org/)
