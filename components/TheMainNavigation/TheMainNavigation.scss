@@ -1,6 +1,6 @@
 $c: 'TheMainNavigation';
 
 .#{$c} {
-  margin-bottom: 2rem;
+  margin-bottom: $s-size-spacer-20;
   z-index: z('nav');
 }
