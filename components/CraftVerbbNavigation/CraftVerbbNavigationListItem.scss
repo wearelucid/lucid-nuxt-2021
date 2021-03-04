@@ -1,0 +1,32 @@
+$c: 'CraftVerbbNavigationListItem';
+
+.#{$c} {
+  margin: 0.5rem 0;
+
+  &__link,
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    color: $color-gray;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &.nuxt-link-active {
+      color: $color-primary;
+    }
+
+    &.nuxt-link-exact-active {
+      text-decoration: underline;
+    }
+
+    &--external {
+      &::after {
+        content: ' ↗';
+      }
+    }
+  }
+}
