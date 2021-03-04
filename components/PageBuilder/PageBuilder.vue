@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- TODO: This is just a first test. -->
+    <!-- Craft content example: -->
     <div v-for="item in items" :key="item.id">
       <div v-if="item.__typename === 'pageBuilder_pbSection_BlockType'">
         <h2 v-if="item.baseTitle">{{ item.baseTitle }}</h2>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <!-- TODO: Delete these links later, keep them for now to test nuxt client navigation within SPA mode -->
+    <!-- Nuxt client navigation example within SPA mode -->
     <hr style="margin: 2em 0" />
     <h3>Some NuxtLinks for testing:</h3>
     <nuxt-link :to="localePath('/')">Back to Home localePath</nuxt-link><br />
