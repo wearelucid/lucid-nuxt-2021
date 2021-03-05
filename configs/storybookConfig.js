@@ -31,7 +31,7 @@ const storybookConfig = {
   parameters: {
     // https://storybook.js.org/docs/react/essentials/backgrounds
     backgrounds: {
-      default: colorConfig.colorBackgroundLight,
+      default: 'light',
       values: [
         { name: 'light', value: colorConfig.colorBackgroundLight },
         { name: 'dark', value: colorConfig.colorBackgroundDark },
