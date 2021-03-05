@@ -2,7 +2,6 @@ fragment verbbNavigationNodeFields on NodeInterface {
   id
   title
   url
-  nodeUri
   level
   newWindow
   type

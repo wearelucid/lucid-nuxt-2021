@@ -24,14 +24,14 @@ export default {
   // Environment variables that are required at build time (rather than runtime)
   // https://nuxtjs.org/docs/2.x/directory-structure/nuxt-config/#env
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    // baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
 
   // Environment variables that are required at runtime
   // https://nuxtjs.org/docs/2.x/directory-structure/nuxt-config/#runtimeconfig
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
-    // baseURL: process.env.BASE_URL || 'https://nuxtjs.org',
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
     apiUrl: process.env.API_URL,
   },
 

@@ -15,8 +15,8 @@
     <NuxtLink
       v-else
       :class="`${$options.name}__link`"
-      :to="cleanPath(nodeUri)"
-      :exact="isHomePath(cleanPath(nodeUri))"
+      :to="computedPathForInternalLink"
+      :exact="isHomePath"
     >
       {{ title }}
     </NuxtLink>
@@ -31,7 +31,9 @@
 </template>
 
 <script>
-import { withLeadingSlash, withoutTrailingSlash } from '@nuxt/ufo'
+import { parseURL, withLeadingSlash, withoutTrailingSlash } from '@nuxt/ufo'
+import consola from 'consola'
+const logger = consola.withTag('CraftVerbbNavigationListItem')
 
 export default {
   name: 'CraftVerbbNavigationListItem',
@@ -45,10 +47,6 @@ export default {
       required: true,
     },
     type: {
-      type: String,
-      default: '',
-    },
-    nodeUri: {
       type: String,
       default: '',
     },
@@ -67,24 +65,66 @@ export default {
   },
   computed: {
     computedType() {
-      // no type -> it's a custom link
+      // If there is no type, it's probably a manual link
       if (!this.type) {
-        // starts with http -> treat as external
-        if (this.nodeUri.startsWith('http')) return 'external'
-        // otherwise treat as internal
+        // Check if it's internal anyway
+        if (this.isInternalLink) return 'internal'
+        // Otherwise treat as external
+        return 'external'
+      }
+
+      // Check for entries
+      if (this.type.includes('Entry')) {
+        // Warn for entries with mismatching host
+        if (!this.isInternalLink) {
+          logger.warn(
+            `Mismatching host, check $config.baseURL: ${
+              this.parsedURL.host
+            } vs. ${parseURL(this.$config.baseURL).host}`
+          )
+        }
         return 'internal'
       }
-      // passive items don't render links, only show a title
+
+      // Check for titles (aka 'passive' items),
+      // they don't render links, only show a title
       if (this.type.includes('PassiveType')) return 'passive'
 
-      // default -> internal link (would be of type entry)
-      return 'internal'
+      // Error if no type could be determined
+      logger.error(
+        `Could not determine a type for item ${this.title} of type ${this.type} with url ${this.url}`
+      )
+      return null
+    },
+    parsedURL() {
+      return parseURL(this.url)
+    },
+    computedPathForInternalLink() {
+      if (this.url == null) return
+      // Include `search` aka params
+      const { pathname, search } = this.parsedURL
+      return this.cleanPath(pathname + search)
+    },
+    isHomePath() {
+      // Without i18n:
+      // return this.computedPathForInternalLink === '/'
+      return (
+        this.computedPathForInternalLink === '/' ||
+        this.computedPathForInternalLink === `/${this.$i18n.locale}`
+      )
+    },
+    isInternalLink() {
+      const { host, pathname } = this.parsedURL
+      const baseUrlHost = parseURL(this.$config.baseURL).host
+
+      // If there is no host, it could be a manual link (e.g. /about)
+      if (!host && pathname) return true
+
+      // If there is a host: Check if it's equal to env config
+      return host === baseUrlHost
     },
   },
   methods: {
-    isHomePath(path) {
-      return path === '/' || path === `/${this.$i18n.locale}`
-    },
     cleanPath: (path) => withoutTrailingSlash(withLeadingSlash(path)) || '/',
   },
 }
