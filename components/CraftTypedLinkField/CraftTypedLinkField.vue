@@ -16,6 +16,7 @@ import { ForNuxt } from 'vue-link'
 import { parseURL } from '@nuxt/ufo'
 
 export default {
+  name: 'CraftTypedLinkField',
   components: {
     VueLink: ForNuxt,
   },

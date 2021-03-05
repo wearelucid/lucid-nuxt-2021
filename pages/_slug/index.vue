@@ -2,7 +2,7 @@
   <div v-if="page">
     <TheTemporaryLangSwitcher :page-translations="page.localized" />
     <h1 class="title">{{ page.title }}</h1>
-    <PageBuilder :items="page.pageBuilder" />
+    <CraftNeoFieldBlocksPageBuilder :items="page.pageBuilder" />
   </div>
 </template>
 

@@ -3,7 +3,7 @@ import CraftVerbbNavigationList from './CraftVerbbNavigationList'
 
 export default {
   component: CraftVerbbNavigationListItem,
-  title: 'CraftVerbbNavigationListItem',
+  title: 'Components/Craft/CraftVerbbNavigationListItem',
   decorators: [
     () => ({
       components: { CraftVerbbNavigationList },

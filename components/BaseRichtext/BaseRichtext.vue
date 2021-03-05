@@ -1,11 +1,11 @@
 <template>
   <!-- eslint-disable-next-line vue/no-v-html -->
-  <span class="richtext" v-html="content" />
+  <span :class="$options.name" v-html="content" />
 </template>
 
 <script>
 export default {
-  name: 'Richtext',
+  name: 'BaseRichtext',
   props: {
     content: {
       type: String,
@@ -15,4 +15,4 @@ export default {
 }
 </script>
 
-<style src="./Richtext.scss" lang="scss" scoped />
+<style src="./BaseRichtext.scss" lang="scss" scoped />
