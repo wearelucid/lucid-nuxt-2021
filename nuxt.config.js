@@ -1,6 +1,6 @@
 import jsonImporter from 'node-sass-json-importer'
 import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
-import createI18nConfig from './configs/i18n/i18nConfig'
+import createI18nConfig from './i18n/i18nConfig'
 import colorConfig from './configs/colors.json'
 import storybookConfig from './configs/storybookConfig'
 import createNuxtImageConfig from './configs/nuxtImageConfig'
@@ -142,8 +142,8 @@ export default {
   },
 
   /**
-   * TODO: Configure i18n in './configs/i18n/i18nConfig'
-   * If you don't need i18n: Remove dependency, delete '/configs/i18n' folder,
+   * TODO: Configure i18n in './i18n/i18nConfig'
+   * If you don't need i18n: Remove dependency, delete '/i18n' folder,
    * remove this config item and search for implementations in components
    * (i.e. `i18n.$t` or `i18n.t`)
    */
