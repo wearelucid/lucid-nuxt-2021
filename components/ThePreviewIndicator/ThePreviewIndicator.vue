@@ -1,8 +1,9 @@
 <template>
-  <!-- TODO: This is just a first test. -->
   <ClientOnly>
-    <p style="color: #f00">
-      I am a preview! $nuxt.isPreview: {{ $nuxt.isPreview }}
-    </p>
+    <div class="ThePreviewIndicator">
+      <span>Preview mode</span>
+    </div>
   </ClientOnly>
 </template>
+
+<style src="./ThePreviewIndicator.scss" lang="scss" scoped />
