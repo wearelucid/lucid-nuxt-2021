@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>{{ message }}</h1>
+  <main :class="['Page', 'Page--error']">
+    <h1 class="Page__title">{{ message }}</h1>
     <p v-if="statusCode === 404">
       <a v-if="typeof $route === 'undefined'" href="/">
         {{ $t('error.backToHome') }}
@@ -9,7 +9,7 @@
         {{ $t('error.backToHome') }}
       </NuxtLink>
     </p>
-  </div>
+  </main>
 </template>
 
 <script>

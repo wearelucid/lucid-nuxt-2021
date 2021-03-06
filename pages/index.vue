@@ -1,9 +1,9 @@
 <template>
-  <div v-if="page" :class="$options.name">
+  <main v-if="page" :class="['Page', 'Page--home', $options.name]">
     <TheTemporaryLangSwitcher :page-translations="page.localized" />
-    <h1 :class="`${$options.name}__title`">{{ page.title }}</h1>
+    <h1 class="Page__title">{{ page.title }}</h1>
     <CraftNeoFieldBlocksPageBuilder :items="page.pageBuilder" />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -27,5 +27,3 @@ export default {
   },
 }
 </script>
-
-<style src="~/assets/scss/pages/homepage.scss" lang="scss" />
