@@ -23,7 +23,7 @@ export default {
     return { page }
   },
   head() {
-    return this.$craftSEOmatic(this.page.seomatic)
+    return this.$craftSEOmatic(this.page?.seomatic)
   },
 }
 </script>
