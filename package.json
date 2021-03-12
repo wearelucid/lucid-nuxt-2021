@@ -39,7 +39,7 @@
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@nuxt/image": "^0.4.1",
-    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/storybook": "^3.3.0",
@@ -61,6 +61,6 @@
     "stylelint": "^13.10.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-sass-guidelines": "^8.0.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^21.0.0"
   }
 }
