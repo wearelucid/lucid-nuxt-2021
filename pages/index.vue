@@ -8,9 +8,11 @@
 
 <script>
 import homePageQuery from '~/graphql/queries/homePage.gql'
+import craftSEOmatic from '~/mixins/craftSEOmatic'
 
 export default {
   name: 'HomePage',
+  mixins: [craftSEOmatic],
   async asyncData({ app, $graphql, error }) {
     const variables = {
       site: app.i18n.locale,
@@ -21,9 +23,6 @@ export default {
       error({ statusCode: 404, message: app.i18n.t('error.message404') })
     }
     return { page }
-  },
-  head() {
-    return this.$craftSEOmatic(this.page?.seomatic)
   },
 }
 </script>
