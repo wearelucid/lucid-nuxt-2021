@@ -65,6 +65,9 @@ export default {
   },
   computed: {
     computedType() {
+      // Links that open a new window should be treated as external links
+      if (this.newWindow === '1') return 'external'
+
       // If there is no type, it's probably a manual link
       if (!this.type) {
         // Check if it's internal anyway

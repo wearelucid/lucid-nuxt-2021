@@ -4,7 +4,7 @@
     v-if="url"
     :to="isInternalLink ? getPathFromUrl(url) : url"
     :new-tab="target === '_blank'"
-    :external="!isInternalLink"
+    :external="!isInternalLink || target === '_blank'"
     :title="title"
   >
     {{ customText ? customText : text }}
