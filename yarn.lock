@@ -1741,10 +1741,10 @@
     node-html-parser "^3.1.2"
     ufo "^0.6.10"
 
-"@nuxt/image@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.4.1.tgz#b22cf7b671310c6d36c43dd55674ecb6dbe1096a"
-  integrity sha512-4CjvUgincnXR5Sesy8CvyB+L8DdgA3+QZJuDIN8Jm+WN2p/5MkIuK71Nh0MsAjJC4DLmk9YzGwxnu+A+hQElrg==
+"@nuxt/image@0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.4.5.tgz#293a267740ffad2a12f5785b9bfc738b8ce631ec"
+  integrity sha512-ywOenmzQMgLKxxaJY+PTE6pdKqOtp5ePdX5G6/v0jzRGOOlagoLrxJgGpR9FNotWPZvkABshqfZeNQA0ynwaVQ==
   dependencies:
     allowlist "^0.1.1"
     consola "^2.15.3"
@@ -1755,8 +1755,9 @@
     ipx "^0.6.0"
     is-https "^3.0.2"
     node-fetch "^2.6.1"
+    p-limit "^3.1.0"
     requrl "^3.0.2"
-    ufo "^0.6.6"
+    ufo "^0.6.11"
     upath "^2.0.1"
 
 "@nuxt/loading-screen@^2.0.3":
@@ -10255,7 +10256,7 @@ p-limit@^2.0.0, p-limit@^2.2.0:
   dependencies:
     p-try "^2.0.0"
 
-p-limit@^3.0.2:
+p-limit@^3.0.2, p-limit@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-3.1.0.tgz#e1daccbe78d0d1388ca18c64fea38e3e57e3706b"
   integrity sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==
