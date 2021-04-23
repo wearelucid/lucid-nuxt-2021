@@ -13,6 +13,7 @@
         :alt="item.baseImage[0].title"
         :src="item.baseImage[0].url"
         sizes="initial:100vw small:50vw medium:500px large:768px"
+        loading="lazy"
       />
 
       <CraftTypedLinkField
