@@ -89,6 +89,11 @@ export default {
   // @nuxt/image config
   image: createNuxtImageConfig([process.env.IMAGES_URL]),
 
+  // ? Do you need nuxt-mq? Here you go:
+  // nuxt-mq config (https://github.com/vanhoofmaarten/nuxt-mq)
+  // import { nuxtMqBreakpoints } from './configs/breakpoints'
+  // mq: { breakpoints: nuxtMqBreakpoints, defaultBreakpoint: 'large' },
+
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['nuxt-i18n', '@nuxtjs/sitemap'],
 

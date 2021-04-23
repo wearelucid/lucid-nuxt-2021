@@ -27,6 +27,7 @@
 }
 
 $s-zindex-map: (
-  'nav': 100,
-  'previewIndicator': 900,
+  'nav': 20,
+  'previewIndicator': 99,
+  // ! Stay below 100 because sass-mq's debug output is set to 100 (::before of body element)
 ) !default;
