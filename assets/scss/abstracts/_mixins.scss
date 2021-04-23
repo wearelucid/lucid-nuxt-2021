@@ -62,12 +62,8 @@
  * Reset Link
  */
 @mixin reset-link() {
-  color: $color-dark;
+  color: inherit;
   cursor: pointer;
-
-  &:hover {
-    color: $color-primary;
-  }
 }
 
 /*
