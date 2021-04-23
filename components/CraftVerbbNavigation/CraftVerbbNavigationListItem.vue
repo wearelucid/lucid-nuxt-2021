@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { parseURL, withLeadingSlash, withoutTrailingSlash } from '@nuxt/ufo'
+import { parseURL, withLeadingSlash, withoutTrailingSlash } from 'ufo'
 import consola from 'consola'
 const logger = consola.withTag('CraftVerbbNavigationListItem')
 

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { parseURL, withoutTrailingSlash } from '@nuxt/ufo'
+import { parseURL, withoutTrailingSlash } from 'ufo'
 
 export default {
   props: {

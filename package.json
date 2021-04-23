@@ -23,7 +23,6 @@
     "*.{vue,css,scss}": "stylelint"
   },
   "dependencies": {
-    "@nuxt/ufo": "^0.5.4",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.6.5",
@@ -32,6 +31,7 @@
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.18.0",
     "sass-mq": "^5.0.1",
+    "ufo": "^0.6.11",
     "vue-link": "^1.6.1",
     "what-input": "^5.2.10"
   },

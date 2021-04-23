@@ -1,4 +1,4 @@
-import { withQuery } from '@nuxt/ufo'
+import { withQuery } from 'ufo'
 
 /**
  * Automatically detect Craft live preview

@@ -1,4 +1,4 @@
-import { withoutLeadingSlash, withoutTrailingSlash } from '@nuxt/ufo'
+import { withoutLeadingSlash, withoutTrailingSlash } from 'ufo'
 import slugPageQuery from '~/graphql/queries/slugPage.gql'
 import { removeLanguagePrefixFromPath } from '~/i18n/helpers'
 

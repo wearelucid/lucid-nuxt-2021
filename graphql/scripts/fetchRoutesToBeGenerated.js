@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch'
-import { parseURL } from '@nuxt/ufo'
+import { parseURL } from 'ufo'
 const consola = require('consola')
 
 export default async function (apiUrl) {

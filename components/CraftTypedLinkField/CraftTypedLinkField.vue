@@ -13,7 +13,7 @@
 
 <script>
 import { ForNuxt } from 'vue-link'
-import { parseURL } from '@nuxt/ufo'
+import { parseURL } from 'ufo'
 
 export default {
   name: 'CraftTypedLinkField',
