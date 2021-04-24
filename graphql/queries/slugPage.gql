@@ -21,6 +21,7 @@ query SlugPage($site: [String], $uri: [String]) {
     }
     localized {
       url
+      uri
       language
     }
     ...seomatic

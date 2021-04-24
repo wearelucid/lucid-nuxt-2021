@@ -1,17 +1,17 @@
 <template>
-  <!-- TODO: This is just a first test. -->
   <aside>
+    <hr style="margin: 1em 0" />
     <p>
       {{ $i18n.localeProperties.name }}
       is the current lang (code: {{ $i18n.locale }})
     </p>
     <div v-if="pageTranslations.length">
       <NuxtLink
-        v-for="locale in pageTranslations"
+        v-for="locale in localeLinksToRender"
         :key="locale.language"
-        :to="withoutTrailingSlash(getPathFromUrl(locale.url)) || '/'"
+        :to="locale.routerLink"
       >
-        {{ $i18n.locales.find((l) => l.iso === locale.language).name }}
+        {{ locale.name }}
       </NuxtLink>
     </div>
     <div v-else>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { parseURL, withoutTrailingSlash } from 'ufo'
+import { withLeadingSlash, withoutTrailingSlash } from 'ufo'
 
 export default {
   props: {
@@ -31,9 +31,37 @@ export default {
       default: () => [],
     },
   },
+  computed: {
+    localeLinksToRender() {
+      return this.pageTranslations.map((craftPageTranslation) => {
+        const matchedI18nLocale = this.getNuxtI18nLocaleFromCraftTranslation(
+          craftPageTranslation
+        )
+        return {
+          ...craftPageTranslation,
+          name: matchedI18nLocale?.name,
+          // https://i18n.nuxtjs.org/api#methods
+          routerLink: this.localePath(
+            {
+              path: withLeadingSlash(
+                withoutTrailingSlash(craftPageTranslation?.uri)
+              ),
+            },
+            matchedI18nLocale?.code
+          ),
+        }
+      })
+    },
+  },
   methods: {
-    withoutTrailingSlash,
-    getPathFromUrl: (url) => parseURL(url).pathname,
+    /**
+     * Match craft translation language with nuxt-i18n locale by iso string (i.e. 'en-US')
+     */
+    getNuxtI18nLocaleFromCraftTranslation(craftPageTranslation) {
+      return this.$i18n.locales.find(
+        (l) => l.iso === craftPageTranslation.language
+      )
+    },
   },
 }
 </script>
