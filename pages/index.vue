@@ -13,14 +13,14 @@ import craftSEOmatic from '~/mixins/craftSEOmatic'
 export default {
   name: 'HomePage',
   mixins: [craftSEOmatic],
-  async asyncData({ app, $graphql, error }) {
+  async asyncData({ error, $graphql, i18n }) {
     const variables = {
-      site: app.i18n.locale,
+      site: i18n.locale,
       section: 'home',
     }
     const { page } = await $graphql.default.request(homePageQuery, variables)
     if (page == null) {
-      error({ statusCode: 404, message: app.i18n.t('error.message404') })
+      error({ statusCode: 404, message: i18n.t('error.message404') })
     }
     return { page }
   },
