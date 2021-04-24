@@ -5,12 +5,18 @@ fragment pbSection on pageBuilder_pbSection_BlockType {
   baseRichtext
 }
 
+fragment pbImageProps on images_Asset {
+  id
+  url @transform(width: 1024, height: 1024, mode: "fit", format: "webp")
+  title
+  # imageAlt
+}
+
 fragment pbImage on pageBuilder_pbImage_BlockType {
   typeHandle
   id
   baseImage {
-    url @transform(width: 768, height: 768, mode: "fit", format: "webp")
-    title
+    ...pbImageProps
   }
 }
 
