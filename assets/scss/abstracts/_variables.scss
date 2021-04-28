@@ -3,6 +3,26 @@
  */
 
 /*
+ * Breakpoints
+ * Use mq mixin like `@include mq($from: medium) {}`
+ * https://sass-mq.github.io/sass-mq/#undefined-mixin-mq
+ * -> See _mediaqueries.scss for more config
+ *
+ * Breakpoints definition:
+ * -> See 'configs/breakpoints.json'
+ */
+
+// Import JSON data with node-sass-json-importer
+@import '../../../configs/breakpoints.json';
+
+// Assign breakpoints definition to settings variable:
+// @debug $json-breakpoints;
+$s-breakpoints: $json-breakpoints;
+
+// Debug breakpoints: Display the currently active breakpoint in the top right corner
+$s-debug-breakpoints: $is-dev-env;
+
+/*
  * Font Settings
  */
 
@@ -52,23 +72,3 @@ $s-size-content-max-width-large: 1200px;
  */
 $s-animation-duration-default: 0.3s;
 $s-animation-easing-default: ease-in-out;
-
-/*
- * Breakpoints
- * Use mq mixin like `@include mq($from: medium) {}`
- * https://sass-mq.github.io/sass-mq/#undefined-mixin-mq
- * -> See _mediaqueries.scss for more config
- *
- * Breakpoints definition:
- * -> See 'configs/breakpoints.json'
- */
-
-// Import JSON data with node-sass-json-importer
-@import '../../../configs/breakpoints.json';
-
-// Assign breakpoints definition to settings variable:
-// @debug $json-breakpoints;
-$s-breakpoints: $json-breakpoints;
-
-// Debug breakpoints: Display the currently active breakpoint in the top right corner
-$s-debug-breakpoints: $is-dev-env;

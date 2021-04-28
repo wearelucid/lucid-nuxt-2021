@@ -3,6 +3,9 @@
  * https://github.com/sass-mq/sass-mq
  */
 
+// Import sass-mq
+@import '~sass-mq';
+
 // To enable support for browsers that do not support @media queries,
 // (IE <= 8, Firefox <= 3, Opera <= 9) set $mq-responsive to false
 // Create a separate stylesheet served exclusively to these browsers,
@@ -30,6 +33,3 @@ $mq-static-breakpoint: large;
 // right corner of your site during development, add the breakpoints
 // to this list, ordered by width. For example: (mobile, tablet, desktop).
 $mq-show-breakpoints: create-debug-breakpoints-list();
-
-// Import sass-mq
-@import '~sass-mq';
