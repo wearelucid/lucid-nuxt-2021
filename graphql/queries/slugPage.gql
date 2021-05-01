@@ -11,7 +11,7 @@ query SlugPage($site: [String], $uri: [String]) {
     url
     uri
     language
-    ... on pages_pages_Entry {
+    ... on pages_page_Entry {
       id
       pageBuilder {
         ...pbSection
