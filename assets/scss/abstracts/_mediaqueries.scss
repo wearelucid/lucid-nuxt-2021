@@ -4,7 +4,7 @@
  */
 
 // Import sass-mq
-@import '~sass-mq';
+@import '../vendors/sass-mq';
 
 // To enable support for browsers that do not support @media queries,
 // (IE <= 8, Firefox <= 3, Opera <= 9) set $mq-responsive to false
