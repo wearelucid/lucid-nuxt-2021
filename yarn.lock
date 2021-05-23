@@ -2982,9 +2982,9 @@
   integrity sha512-b+zB8A2so8eCE0JsxjL24J7vdGl8rzPQ09hZNhystm+KqSbKcAej1A+Hbva1rCMmTTqA+hFnUSDc5kouEo0JzA==
 
 "@wearelucid/nuxt-seomatic@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@wearelucid/nuxt-seomatic/-/nuxt-seomatic-1.1.2.tgz#bf30c709328d024ee108233412960b9462330375"
-  integrity sha512-Ofi9ydv5zsihY3OiLSgOZn9Ce3i9/wY+SSR2VhDoEUeGNktTCkWGcFvx4+d6EGipSaqDICiGJLKMdHdNvFxkZw==
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@wearelucid/nuxt-seomatic/-/nuxt-seomatic-1.1.3.tgz#d8b6571078fa82f370e854280ba6b75b951718c3"
+  integrity sha512-AY0g8RfNhKJKHLIQQw+r+55Y0/LxNTcNcDIqCIW3CF0V2R6P2MF7fvB/MvmjUo2nzcA3V7B2g/PYiEgk9kh+vw==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
