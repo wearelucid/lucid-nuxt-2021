@@ -9,6 +9,7 @@
     "stylelint.vscode-stylelint",
     "octref.vetur",
     "sdras.vue-vscode-snippets",
-    "gruntfuggly.todo-tree"
+    "gruntfuggly.todo-tree",
+    "mrmlnc.vscode-scss"
   ]
 }
