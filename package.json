@@ -25,6 +25,7 @@
   "dependencies": {
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@wearelucid/nuxt-seomatic": "^1.1.2",
     "core-js": "^3.6.5",
     "graphql-tag": "^2.11.0",
     "normalize-scss": "^7.0.1",

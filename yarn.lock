@@ -2981,6 +2981,11 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.11.tgz#20d22dd0da7d358bb21c17f9bde8628152642c77"
   integrity sha512-b+zB8A2so8eCE0JsxjL24J7vdGl8rzPQ09hZNhystm+KqSbKcAej1A+Hbva1rCMmTTqA+hFnUSDc5kouEo0JzA==
 
+"@wearelucid/nuxt-seomatic@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@wearelucid/nuxt-seomatic/-/nuxt-seomatic-1.1.2.tgz#bf30c709328d024ee108233412960b9462330375"
+  integrity sha512-Ofi9ydv5zsihY3OiLSgOZn9Ce3i9/wY+SSR2VhDoEUeGNktTCkWGcFvx4+d6EGipSaqDICiGJLKMdHdNvFxkZw==
+
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"

@@ -48,11 +48,7 @@ export default {
   css: ['./assets/scss/global.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-    'plugins/craftLivePreview.client.js',
-    'plugins/craftSEOmatic.js',
-    'plugins/whatinput.js',
-  ],
+  plugins: ['plugins/craftLivePreview.client.js', 'plugins/whatinput.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -95,7 +91,7 @@ export default {
   // mq: { breakpoints: nuxtMqBreakpoints, defaultBreakpoint: 'large' },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['nuxt-i18n', '@nuxtjs/sitemap'],
+  modules: ['nuxt-i18n', '@nuxtjs/sitemap', '@wearelucid/nuxt-seomatic'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
