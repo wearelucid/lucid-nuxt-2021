@@ -5,10 +5,11 @@
  * Do not import variables or mixins only actual styles!.
  */
 
-@import './vendors/normalize';
+@use 'vendors/normalize';
 
-@import './base/reset';
-@import './base/base';
-@import './base/animations';
+@use 'base/fonts';
+@use 'base/reset';
+@use 'base/base';
+@use 'base/animations';
 
-@import './pages/pages';
+@use 'pages/pages';

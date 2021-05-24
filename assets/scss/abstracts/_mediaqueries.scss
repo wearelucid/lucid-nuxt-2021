@@ -1,35 +1,23 @@
 /*
  * Mediaqueries (aka sass-mq)
  * https://github.com/sass-mq/sass-mq
+ *
+ * Use mq mixin like `@include mq($from: medium) {}`
+ * https://sass-mq.github.io/sass-mq/#undefined-mixin-mq
+ * -> See _mediaqueries.scss for more config
+ *
+ * Breakpoints definition:
+ * -> See 'configs/breakpoints.mjs'
  */
 
-// Import sass-mq
-@import '../vendors/sass-mq';
+@use 'variables' as *;
+@use 'globals' as *;
+@use 'breakpoints' as *;
+@use 'functions' as *;
 
-// To enable support for browsers that do not support @media queries,
-// (IE <= 8, Firefox <= 3, Opera <= 9) set $mq-responsive to false
-// Create a separate stylesheet served exclusively to these browsers,
-// meaning @media queries will be rasterized, relying on the cascade itself
-$mq-responsive: true;
-
-// Name your breakpoints in a way that creates a ubiquitous language
-// across team members. It will improve communication between
-// stakeholders, designers, developers, and testers.
-$mq-breakpoints: $s-breakpoints;
-
-// Define the breakpoint from the $mq-breakpoints list that should
-// be used as the target width when outputting a static stylesheet
-// (when $mq-responsive is set to 'false').
-$mq-static-breakpoint: large;
-
-@function create-debug-breakpoints-list() {
-  @if $s-debug-breakpoints {
-    @return map-keys($s-breakpoints);
-  }
-  @return ();
-}
-
-// If you want to display the currently active breakpoint in the top
-// right corner of your site during development, add the breakpoints
-// to this list, ordered by width. For example: (mobile, tablet, desktop).
-$mq-show-breakpoints: create-debug-breakpoints-list();
+@forward '../vendors/sass-mq' with (
+  $mq-breakpoints: $breakpoints,
+  $mq-responsive: true,
+  $mq-static-breakpoint: large,
+  $mq-show-breakpoints: create-debug-breakpoints-list($breakpoints, $should-show: $debug-breakpoints)
+);

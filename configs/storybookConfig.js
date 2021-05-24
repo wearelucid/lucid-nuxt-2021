@@ -1,21 +1,20 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
-import breakpointConfig from './breakpoints.json'
-import colorConfig from './colors.json'
+import breakpoints from './breakpoints.mjs'
+import colors from './colors.mjs'
 
 /**
  * Create Storybook Viewports
- * ! These viewports are defined in `breakpoints.json`
+ * ! These viewports are defined in `breakpoints.mjs`
  * -> https://storybook.js.org/docs/react/essentials/viewport
  */
-const createStorybookViewportsFromJSON = () => {
-  const jsonBreakpoints = breakpointConfig.jsonBreakpoints
+const createStorybookViewports = () => {
   const sbBreakpoints = {}
-  for (const bp in jsonBreakpoints) {
+  for (const bp in breakpoints) {
     sbBreakpoints[bp] = {
       name: bp,
       styles: {
-        width: jsonBreakpoints[bp],
+        width: `${breakpoints[bp]}px`,
         height: '100%',
       },
     }
@@ -33,14 +32,14 @@ const storybookConfig = {
     backgrounds: {
       default: 'light',
       values: [
-        { name: 'light', value: colorConfig.colorBackgroundLight },
-        { name: 'dark', value: colorConfig.colorBackgroundDark },
+        { name: 'light', value: colors['background-light'] },
+        { name: 'dark', value: colors['background-dark'] },
       ],
     },
     // https://storybook.js.org/docs/react/essentials/viewport
     viewport: {
       viewports: {
-        ...createStorybookViewportsFromJSON(),
+        ...createStorybookViewports(),
         // Add divider to separate project viewports from default
         // viewports (INITIAL_VIEWPORTS) provided by `@storybook/addon-viewport`
         divider: {

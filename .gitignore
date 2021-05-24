@@ -92,3 +92,8 @@ sw.*
 # Storybook
 .nuxt-storybook
 storybook-static
+
+# globals, breakpoints and colors
+_globals.scss
+_breakpoints.scss
+_colors.scss

@@ -1,15 +1,4 @@
-import breakpointsJson from './breakpoints.json'
-
-/**
- * Strip `px` suffix
- */
-const parseJsonBreakpoints = (jsonBreakpoints = {}) => {
-  const breakpoints = {}
-  for (const bp in jsonBreakpoints) {
-    breakpoints[bp] = parseInt(jsonBreakpoints[bp], 10)
-  }
-  return breakpoints
-}
+import breakpoints from './breakpoints.mjs'
 
 /**
  * This is probably optional but added as a safeguard anyway,
@@ -50,26 +39,22 @@ const substractOnePixelFromEachBreakpoint = (breakpoints = {}) =>
     return acc
   }, {})
 
-const { jsonBreakpoints } = breakpointsJson
-const minWidthBreakpoints = parseJsonBreakpoints(jsonBreakpoints)
-const sortedBreakpointsArr = sortBreakpointsByPixelValue(minWidthBreakpoints)
+const sortedBreakpointsArr = sortBreakpointsByPixelValue(breakpoints)
 const maxWidthBreakpoints = offsetBreakpointValues(sortedBreakpointsArr)
-const maxWidthBreakpointsMinusOne = substractOnePixelFromEachBreakpoint(
-  maxWidthBreakpoints
-)
+const maxWidthBreakpointsMinusOne =
+  substractOnePixelFromEachBreakpoint(maxWidthBreakpoints)
 const nuxtMqBreakpoints = maxWidthBreakpoints
 const nuxtImageBreakpoints = maxWidthBreakpointsMinusOne
 
 // console.log({
-//   jsonBreakpoints,
+//   breakpoints,
 //   minWidthBreakpoints,
 //   maxWidthBreakpoints,
 //   maxWidthBreakpointsMinusOne,
 // })
 
 export {
-  minWidthBreakpoints as default,
-  jsonBreakpoints,
+  breakpoints as default,
   maxWidthBreakpoints,
   maxWidthBreakpointsMinusOne,
   nuxtMqBreakpoints,

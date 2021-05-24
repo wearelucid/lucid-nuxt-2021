@@ -2,6 +2,10 @@
  * Typography
  */
 
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'mediaqueries' as *;
+
 @mixin font-style-base {
   font-family: $s-font-family-base;
   font-size: $s-fz-16;

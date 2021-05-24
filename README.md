@@ -74,30 +74,15 @@ This boilerplate is following the [SASS 7-1 pattern](https://sass-guidelin.es/#t
 The architecture consists of:
 
 - Abstracts: Tools, helpers, functions and mixins
-- Base: Holds what we might call the boilerplate code for the project, such as colors and typography declarations
+- Base: Base styles
 - Pages: Specific styles for pages
 - Vendors: External libraries
 
-Files which are declaring variables or global helpers/mixins, are being imported and summarized inside [`style-resources.scss`](./assets/scss/style-resources.scss).
-
 Note: Not all seven folders of the SASS 7-1 pattern have yet been setup. This is because folders such as `/themes` are very project specific.
-
-### Adding new _shared_ or _global_ files
-
-Before adding any new file, make sure to check out [this guide](https://sass-guidelin.es/#the-7-1-pattern) to declare in which folder the new file belongs – or if you need to create a new folder.
-
-Once the file is placed correctly, an import to that file needs to be set:
-
-- If your file declares variables or mixins, import it inside the [`style-resources.scss`](./assets/scss/style-resources.scss).
-- If you declare _actual styles,_ import them in [`global.scss`](./assets/scss/global.scss).
-
-### Nuxt Style Resources
-
-This boilerplate uses [@nuxtjs/style-resources](https://github.com/nuxt-community/style-resources-module).
 
 ### Breakpoints / Media Queries
 
-Add breakpoints to [`breakpoints.json`](./configs/breakpoints.json). Breakpoints are available in SASS, [Storybook](./configs/storybookConfig.js) and [@nuxt/image](./configs/nuxtImageConfig.js).
+Add breakpoints to [`breakpoints.mjs`](./configs/breakpoints.mjs). Breakpoints are available in SASS, [Storybook](./configs/storybookConfig.js) and [@nuxt/image](./configs/nuxtImageConfig.js).
 
 #### [`sass-mq`](https://github.com/sass-mq/sass-mq) Mixin Usage
 
@@ -107,14 +92,6 @@ Add breakpoints to [`breakpoints.json`](./configs/breakpoints.json). Breakpoints
     float: none;
   }
 }
-```
-
-#### Debug `sass-mq` breakpoints
-
-Display the currently active breakpoint in the top right corner:
-
-```scss
-$s-debug-breakpoints: true;
 ```
 
 ## VS Code
