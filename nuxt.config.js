@@ -100,10 +100,13 @@ export default {
 
     loaders: {
       scss: {
-        additionalData: `$is-dev-env: ${
-          // Expose `$is-dev-env` variable to scss
-          process.env.NODE_ENV === 'development'
-        };`,
+        additionalData: `
+          @use "sass:math";
+          $is-dev-env: ${
+            // Expose `$is-dev-env` variable to scss
+            process.env.NODE_ENV === 'development'
+          };
+        `,
         sassOptions: {
           // Add node-sass-json-importer (https://github.com/pmowrer/node-sass-json-importer)
           importer: jsonImporter({ convertCase: true }),
