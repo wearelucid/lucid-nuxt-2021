@@ -13,7 +13,9 @@ let sassVars = `/**
 sassVars += `$debug-breakpoints: ${debugBreakpoints};
 `
 
-writeFile('./assets/scss/abstracts/_globals.scss', sassVars, (err) => {
+const filePath = './assets/scss/abstracts/_globals.scss'
+
+writeFile(filePath, sassVars, (err) => {
   if (err) throw err
-  consola.log('🌎 globals.scss saved')
+  consola.log(`🌎 ${filePath} saved`)
 })

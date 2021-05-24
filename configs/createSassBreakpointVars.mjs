@@ -19,7 +19,9 @@ Object.keys(breakpoints).forEach((bp) => {
 
 sassVars += `$breakpoints: (\n${sassMap})\n`
 
-writeFile('./assets/scss/abstracts/_breakpoints.scss', sassVars, (err) => {
+const filePath = './assets/scss/abstracts/_breakpoints.scss'
+
+writeFile(filePath, sassVars, (err) => {
   if (err) throw err
-  consola.log('📺 breakpoints.scss saved')
+  consola.log(`📺 ${filePath} saved`)
 })

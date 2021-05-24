@@ -13,7 +13,9 @@ Object.keys(colors).forEach((c) => {
   sassVars += sassVar
 })
 
-writeFile('./assets/scss/abstracts/_colors.scss', sassVars, (err) => {
+const filePath = './assets/scss/abstracts/_colors.scss'
+
+writeFile(filePath, sassVars, (err) => {
   if (err) throw err
-  consola.log('🎨 colors.scss saved')
+  consola.log(`🎨 ${filePath} saved`)
 })
