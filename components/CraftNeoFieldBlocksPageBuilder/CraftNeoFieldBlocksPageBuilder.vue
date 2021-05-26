@@ -8,17 +8,13 @@
         <BaseRichtext v-if="item.baseRichtext" :content="item.baseRichtext" />
       </BaseSection>
 
-      <code v-if="item.typeHandle === 'pbImage'">
-        PageBuilder Images temporarily disabled because of nginx config not
-        ready yet
-      </code>
-      <!-- <NuxtImg
+      <NuxtImg
         v-if="item.typeHandle === 'pbImage'"
         :alt="item.baseImage[0].title"
         :src="item.baseImage[0].url"
         sizes="initial:100vw small:50vw medium:500px large:768px"
         loading="lazy"
-      /> -->
+      />
 
       <CraftTypedLinkField
         v-if="item.typeHandle === 'pbLink' && item.baseLink"

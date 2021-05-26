@@ -7,7 +7,7 @@ fragment pbSection on pageBuilder_pbSection_BlockType {
 
 fragment pbImageProps on images_Asset {
   id
-  url @transform(width: 1024, height: 1024, mode: "fit", format: "webp")
+  url @transform(width: 1024, height: 1024, mode: "fit", format: "jpg")
   title
   # imageAlt
 }
