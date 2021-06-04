@@ -7,8 +7,8 @@ const craftRedactorDemoOutput = `
   fingerstache taiyaki, normcore meh <em>tacos</em> vape. Chia unicorn yuccie, retro glossier irony affogato. Health
   goth beard twee marfa prism pinterest coloring book keytar vape. Pabst banjo <strong>YOLO</strong> williamsburg.
 </p>
-<figure><img src="https://lucid-craft-2021.lucid.build/uploads/images/gaspar-manuel-zaldo-urMEnqK1eoQ-unsplash.jpg"
-    alt="Image inside Redactor Text">
+<figure>
+  <img src="https://www.fillmurray.com/640/360" alt="Image inside Redactor Text">
   <figcaption>Image inside Redactor Text</figcaption>
 </figure>
 <p>Dummy Text. 8-bit swag flannel heirloom. Heirloom actually stumptown, farm-to-table pickled vaporware fam
