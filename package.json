@@ -20,7 +20,8 @@
     "sass-vars:colors": "node configs/createSassColorVars.mjs",
     "sass-vars:globals": "node configs/createSassGlobalVars.mjs",
     "sass-vars:all": "yarn sass-vars:globals && yarn sass-vars:colors && yarn sass-vars:breakpoints",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "commit": "cz"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -48,6 +49,7 @@
     "@nuxtjs/storybook": "^4.0.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "babel-eslint": "^10.1.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-nuxt": "^2.0.0",
@@ -63,5 +65,10 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-config-standard": "^22.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
