@@ -55,6 +55,7 @@ $ yarn storybook
 - [Lint staged files](https://github.com/okonet/lint-staged)
 - [Commitlint](https://github.com/conventional-changelog/commitlint) with [Conventional Commits](https://www.conventionalcommits.org/en) (@commitlint/config-conventional)
   - Allowed types: `[build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]`
+  - Run `$ yarn commit` to commit with [commitizen cli](https://github.com/commitizen/cz-cli) using [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 
 ### Use with GUI Git Clients (i.e. Sourcetree)
 
