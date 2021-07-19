@@ -1,8 +1,0 @@
-/*
- * Colors
- * We use node-sass-json-importer (https://github.com/pmowrer/node-sass-json-importer).
- * camelCase in JSON will be converted to kebab-case in SASS:
- * `colorPrimary` -> `$color-primary`
- */
-
-@import '../../../configs/colors.json';

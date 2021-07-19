@@ -2,6 +2,8 @@
  * Functions
  */
 
+@use "sass:math";
+
 /// Strip units from a value
 @function strip-units($value) {
   @return math.div($value, ($value * 0 + 1));
@@ -20,4 +22,13 @@
   } @else {
     @return 0;
   }
+}
+
+$s-debug-breakpoints: true;
+
+@function create-debug-breakpoints-list($bp-map, $should-show: false) {
+  @if $should-show {
+    @return map-keys($bp-map);
+  }
+  @return ();
 }

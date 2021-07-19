@@ -1,7 +1,6 @@
-import jsonImporter from 'node-sass-json-importer'
 import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
 import createI18nConfig from './i18n/i18nConfig'
-import colorConfig from './configs/colors.json'
+import colors from './configs/colors.mjs'
 import storybookConfig from './configs/storybookConfig'
 import createNuxtImageConfig from './configs/nuxtImageConfig'
 
@@ -55,23 +54,15 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
+    // @nuxtjs/storybook depends on postcss8, it got fixed but still has some issues apparently (https://github.com/nuxt-community/storybook/issues/258#issuecomment-851379066)
+    '@nuxt/postcss8',
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/style-resources',
     'nuxt-graphql-request',
     '@nuxtjs/pwa',
     '@nuxt/image',
   ],
-
-  // Style Resources Config
-  // (https://github.com/nuxt-community/style-resources-module)
-  styleResources: {
-    // Share variables, mixins, functions across all style files
-    // Don't include actual styles.
-    scss: ['./assets/scss/style-resources.scss'],
-  },
 
   // Stylelint config (https://github.com/nuxt-community/stylelint-module)
   stylelint: {
@@ -97,22 +88,6 @@ export default {
   build: {
     // TODO: 'vue-link' seems not to work if not transpiled by babel. Maybe I'm missing something here.
     transpile: ['vue-link'],
-
-    loaders: {
-      scss: {
-        additionalData: `
-          @use "sass:math";
-          $is-dev-env: ${
-            // Expose `$is-dev-env` variable to scss
-            process.env.NODE_ENV === 'development'
-          };
-        `,
-        sassOptions: {
-          // Add node-sass-json-importer (https://github.com/pmowrer/node-sass-json-importer)
-          importer: jsonImporter({ convertCase: true }),
-        },
-      },
-    },
   },
 
   // Generate Options
@@ -131,8 +106,8 @@ export default {
 
   // Customize Nuxt.js Progress Bar
   loading: {
-    color: colorConfig.colorPrimary,
-    failedColor: colorConfig.colorError,
+    color: colors.primary,
+    failedColor: colors.error,
   },
 
   // Storybook Options (https://storybook.nuxtjs.org/options)
@@ -161,7 +136,7 @@ export default {
     // Disable workbox module (don't be a PWA)
     workbox: false,
     meta: {
-      theme_color: colorConfig.colorPrimary,
+      theme_color: colors.primary,
 
       // Don't be `mobile-web-app-capable`
       mobileApp: false,
@@ -180,7 +155,7 @@ export default {
     },
     manifest: {
       lang: DEFAULT_LOCALE,
-      background_color: colorConfig.colorBackgroundLight,
+      background_color: colors['background-light'],
     },
   },
 }

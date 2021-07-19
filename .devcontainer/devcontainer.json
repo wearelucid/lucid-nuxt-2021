@@ -5,7 +5,7 @@
   "build": {
     "dockerfile": "Dockerfile",
     // Update 'VARIANT' to pick a Node version: 12, 14, 16
-    "args": { "VARIANT": "16", "EXTRA_NODE_VERSION": "14" }
+    "args": { "VARIANT": "14", "EXTRA_NODE_VERSION": "16" }
   },
 
   // Set *default* container specific settings.json values on container create.
@@ -29,11 +29,10 @@
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [3000],
+  "forwardPorts": [3000, 4000],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // TODO: nvm use doesn't work yet
-  // "postCreateCommand": "nvm use && yarn",
+  "postCreateCommand": "yarn install",
 
   // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "node"

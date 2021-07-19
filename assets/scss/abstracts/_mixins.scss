@@ -7,6 +7,11 @@
  * See http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  * for discussion of different solutions
  */
+
+@use 'variables' as *;
+@use 'mediaqueries' as *;
+@use 'colors' as *;
+
 @mixin visually-hidden() {
   border: 0;
   clip: rect(0 0 0 0);
