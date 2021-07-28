@@ -7428,10 +7428,10 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
 
-graphql-request@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-3.4.0.tgz#3a400cd5511eb3c064b1873afb059196bbea9c2b"
-  integrity sha512-acrTzidSlwAj8wBNO7Q/UQHS8T+z5qRGquCQRv9J1InwR01BBWV9ObnoE+JS5nCCEj8wSGS0yrDXVDoRiKZuOg==
+graphql-request@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-3.5.0.tgz#7e69574e15875fb3f660a4b4be3996ecd0bbc8b7"
+  integrity sha512-Io89QpfU4rqiMbqM/KwMBzKaDLOppi8FU8sEccCE4JqCgz95W9Q8bvxQ4NfPALLSMvg9nafgg8AkYRmgKSlukA==
   dependencies:
     cross-fetch "^3.0.6"
     extract-files "^9.0.0"
@@ -10042,13 +10042,13 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-graphql-request@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/nuxt-graphql-request/-/nuxt-graphql-request-4.0.1.tgz#fda6a7dcc5d81747823e5923c4e368fad299af65"
-  integrity sha512-tIgoy8rY1Z8uS4bJpYHAd9kqNiRy2b3WtyrXbl4nUQt09mrcVOFXEWVUB3E/j7NNTOEsfirFAHUxeOfpDjwG4A==
+nuxt-graphql-request@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/nuxt-graphql-request/-/nuxt-graphql-request-4.1.0.tgz#459db0b41e5468909f50282d9bcfd4e60866a146"
+  integrity sha512-yGUV9zzIiZ5ANSjDw5F7C4vlDIuzn+7WFGuaatjmGOsRsEeCqkGW6K09ggcXvV5l/++UKo6VN6xQM/DLQm6ieQ==
   dependencies:
     cross-fetch "^3.1.4"
-    graphql-request "^3.4.0"
+    graphql-request "^3.5.0"
 
 nuxt-i18n@^6.28.0:
   version "6.28.0"
