@@ -34,7 +34,7 @@
     "graphql-tag": "^2.11.0",
     "normalize-scss": "^7.0.1",
     "nuxt": "^2.15.7",
-    "nuxt-i18n": "^6.28.0",
+    "nuxt-i18n": "^6.28.1",
     "ufo": "^0.7.0",
     "vue-link": "^1.6.1",
     "what-input": "^5.2.10"
