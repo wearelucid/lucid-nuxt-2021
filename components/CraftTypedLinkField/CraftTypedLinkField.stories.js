@@ -22,8 +22,7 @@ export const Asset = Template.bind({})
 Asset.args = {
   text: 'Link to an asset',
   type: 'asset',
-  url:
-    'https://lucid-craft-2021.nitro/uploads/images/gaspar-manuel-zaldo-urMEnqK1eoQ-unsplash.jpg',
+  url: 'https://lucid-craft-2021.nitro/uploads/images/gaspar-manuel-zaldo-urMEnqK1eoQ-unsplash.jpg',
 }
 
 export const External = Template.bind({})

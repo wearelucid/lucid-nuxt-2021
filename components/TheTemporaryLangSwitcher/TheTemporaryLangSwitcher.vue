@@ -34,9 +34,8 @@ export default {
   computed: {
     localeLinksToRender() {
       return this.pageTranslations.map((craftPageTranslation) => {
-        const matchedI18nLocale = this.getNuxtI18nLocaleFromCraftTranslation(
-          craftPageTranslation
-        )
+        const matchedI18nLocale =
+          this.getNuxtI18nLocaleFromCraftTranslation(craftPageTranslation)
         return {
           ...craftPageTranslation,
           name: matchedI18nLocale?.name,
