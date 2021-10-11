@@ -28,13 +28,13 @@
     "*.{vue,css,scss}": "stylelint"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^7.0.3",
     "@nuxtjs/sitemap": "^2.4.0",
     "@wearelucid/nuxt-seomatic": "^1.1.2",
     "core-js": "^3.18.0",
     "graphql-tag": "^2.11.0",
     "normalize-scss": "^7.0.1",
     "nuxt": "^2.15.8",
-    "nuxt-i18n": "^6.28.1",
     "ufo": "^0.7.9",
     "vue-link": "^1.6.1",
     "what-input": "^5.2.10"
@@ -59,6 +59,7 @@
     "lint-staged": "^11.1.2",
     "nuxt-graphql-request": "^4.1.0",
     "postcss": "^8.3.6",
+    "postcss-import": "^14.0.2",
     "postcss-loader": "^6.1.1",
     "prettier": "^2.4.1",
     "sass": "^1.41.1",

@@ -82,7 +82,7 @@ export default {
   // mq: { breakpoints: nuxtMqBreakpoints, defaultBreakpoint: 'large' },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['nuxt-i18n', '@nuxtjs/sitemap', '@wearelucid/nuxt-seomatic'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/sitemap', '@wearelucid/nuxt-seomatic'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
