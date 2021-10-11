@@ -56,7 +56,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "graphql": "^15.6.0",
     "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
+    "lint-staged": "^11.2.3",
     "nuxt-graphql-request": "^4.1.0",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
