@@ -54,8 +54,6 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // @nuxtjs/storybook depends on postcss8, it got fixed but still has some issues apparently (https://github.com/nuxt-community/storybook/issues/258#issuecomment-851379066)
-    '@nuxt/postcss8',
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
