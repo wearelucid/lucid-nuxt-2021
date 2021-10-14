@@ -7484,7 +7484,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==
 
-graphql-request@^3.5.0:
+graphql-request@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-3.6.0.tgz#8f2be900cf07ac87064b15601cc30e0f9a5e7d51"
   integrity sha512-p5qIuD+gyjuOJ8z9sEcfcLVK7HUB+/88hf/xGEzX330U3L2OR1JtaupLPmd1D2V7YtqWiEnSA3tX9vqZ4eGMhA==
@@ -10128,13 +10128,13 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-graphql-request@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/nuxt-graphql-request/-/nuxt-graphql-request-4.1.0.tgz#459db0b41e5468909f50282d9bcfd4e60866a146"
-  integrity sha512-yGUV9zzIiZ5ANSjDw5F7C4vlDIuzn+7WFGuaatjmGOsRsEeCqkGW6K09ggcXvV5l/++UKo6VN6xQM/DLQm6ieQ==
+nuxt-graphql-request@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/nuxt-graphql-request/-/nuxt-graphql-request-4.2.0.tgz#aee484d7fb5d9bb6432cf274db7d3f27a67ec78f"
+  integrity sha512-ke2AprqC5cwqMANLdjDTUqQhE+wlgRVH4SSRBc3NzBcPjggiexQBYp6GzYDnA14LLXA2pK5u9qAQWRzZScGdfw==
   dependencies:
     cross-fetch "^3.1.4"
-    graphql-request "^3.5.0"
+    graphql-request "^3.6.0"
 
 nuxt@^2.15.8:
   version "2.15.8"
