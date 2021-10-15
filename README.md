@@ -48,6 +48,14 @@ Run Storybook:
 $ yarn storybook
 ```
 
+## Scaffolding
+
+Scaffold components and vuex modules:
+
+```bash
+$ yarn scaffold
+```
+
 ## Linting tools
 
 - [ESLint](https://github.com/nuxt/eslint-config)
