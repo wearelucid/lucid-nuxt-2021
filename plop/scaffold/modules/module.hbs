@@ -1,0 +1,15 @@
+export const state = () => ({
+  example: false,
+})
+
+export const actions = {
+  toggleExample({ commit }) {
+    commit('SET_EXAMPLE_STATE', true)
+  },
+}
+
+export const mutations = {
+  SET_EXAMPLE_STATE(state) {
+    state.example = state
+  },
+}

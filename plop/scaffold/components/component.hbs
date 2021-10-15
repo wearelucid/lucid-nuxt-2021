@@ -1,0 +1,11 @@
+<template>
+  <div :class="$options.name">
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+export default { name: '{{componentName}}' }
+</script>
+
+<style src="./{{componentName}}.scss" lang="scss" scoped></style>
