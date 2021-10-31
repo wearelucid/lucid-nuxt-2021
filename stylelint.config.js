@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
     'stylelint-config-standard',
+    'stylelint-config-recommended-vue',
     'stylelint-config-sass-guidelines',
     'stylelint-config-prettier',
   ],
@@ -14,5 +15,6 @@ module.exports = {
         ignore: ['attribute'],
       },
     ],
+    'color-function-notation': 'legacy',
   },
 }

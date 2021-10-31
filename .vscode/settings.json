@@ -8,5 +8,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true,
     "source.fixAll": true
-  }
+  },
+  "stylelint.validate": ["css", "scss", "vue"]
 }
