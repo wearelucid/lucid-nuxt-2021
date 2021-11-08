@@ -10448,10 +10448,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-graphql-request@^4.1.0:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/nuxt-graphql-request/-/nuxt-graphql-request-4.2.1.tgz#f73e8ef80251181bc47bedfa4cdb8da1f17f761f"
-  integrity sha512-SG+VIhq9tSM27oj9t5ftoZILecABDxsx/w1GvBDqN2Aqk/TByzadMS6crEb9//gd6jW8rEgl9hpaN5Fx3wG4Tw==
+nuxt-graphql-request@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/nuxt-graphql-request/-/nuxt-graphql-request-4.2.2.tgz#c699a095319244391490200b605431841145b44b"
+  integrity sha512-H94Ir48joLmpXHv/eVEQiOvE+bzthTq2JDBNnZ/ErUiMUbMmuf3BTxRPuhRqq7pfqLtQHZImYtMIYh0HlHEhbg==
   dependencies:
     cross-fetch "^3.1.4"
     graphql-request "^3.6.0"

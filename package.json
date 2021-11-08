@@ -59,7 +59,7 @@
     "husky": "^7.0.2",
     "inquirer-directory": "^2.2.0",
     "lint-staged": "^11.2.6",
-    "nuxt-graphql-request": "^4.1.0",
+    "nuxt-graphql-request": "^4.2.2",
     "plop": "^2.7.4",
     "postcss": "^8.3.11",
     "postcss-html": "^1.2.0",
