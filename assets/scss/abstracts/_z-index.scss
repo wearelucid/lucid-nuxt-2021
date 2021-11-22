@@ -2,10 +2,13 @@
  * Z-indices / z-index
  */
 
+@use 'sass:map';
+
 @function z($indices...) {
   @if not map-has-nested-keys($s-zindex-map, $indices...) {
     @warn 'No index found for `#{inspect($indices...)}` in $s-zindex-map map. Property omitted.';
   }
+
   @return map-deep-get($s-zindex-map, $indices...);
 }
 
@@ -14,15 +17,18 @@
     @if not map-has-key($map, $key) {
       @return false;
     }
-    $map: map-get($map, $key);
+
+    $map: map.get($map, $key);
   }
+
   @return true;
 }
 
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
-    $map: map-get($map, $key);
+    $map: map.get($map, $key);
   }
+
   @return $map;
 }
 

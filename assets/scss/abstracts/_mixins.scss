@@ -78,7 +78,7 @@
 @mixin word-wrap($break: true) {
   hyphens: auto;
 
-  @if $break==true {
+  @if $break == true {
     word-break: break-word;
     word-wrap: break-word;
   }
@@ -89,7 +89,7 @@
  * @Params: small | medium | large | full-width
  */
 @mixin set-gutter($size: 'small') {
-  @if ($size == 'small') {
+  @if $size == 'small' {
     padding: 0 $s-size-gutter-small;
     width: 100%;
 
@@ -99,29 +99,29 @@
       max-width: $s-size-content-max-width-small + 2 * ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }
-  } @else if ($size == 'medium') {
+  } @else if $size == 'medium' {
     padding: 0 $s-size-gutter-small;
     width: 100%;
 
+    // prettier-ignore
     @include mq($from: medium) {
       margin-left: auto;
       margin-right: auto;
-      max-width: px2rem($s-size-content-max-width-medium) + 2 *
-        ($s-size-gutter-medium);
+      max-width: px2rem($s-size-content-max-width-medium) + 2 * ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }
-  } @else if ($size == 'large') {
+  } @else if $size == 'large' {
     padding: 0 $s-size-gutter-small;
     width: 100%;
 
+    // prettier-ignore
     @include mq($from: medium) {
       margin-left: auto;
       margin-right: auto;
-      max-width: px2rem($s-size-content-max-width-large) + 2 *
-        ($s-size-gutter-medium);
+      max-width: px2rem($s-size-content-max-width-large) + 2 * ($s-size-gutter-medium);
       padding: 0 $s-size-gutter-medium;
     }
-  } @else if ($size == 'full-width') {
+  } @else if $size == 'full-width' {
     max-width: 100%;
     padding: 0;
     width: 100%;

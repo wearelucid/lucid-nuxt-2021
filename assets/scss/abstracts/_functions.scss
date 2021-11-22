@@ -2,7 +2,7 @@
  * Functions
  */
 
-@use "sass:math";
+@use 'sass:math';
 
 /// Strip units from a value
 @function strip-units($value) {
@@ -14,21 +14,22 @@
   @if not unitless($px) {
     $px: strip-units($px);
   }
+
   @if not unitless($base-font-value) {
     $base-font-value: strip-units($base-font-value);
   }
-  @if ($px != 0) {
+
+  @if $px != 0 {
     @return math.div($px, $base-font-value) * 1rem;
   } @else {
     @return 0;
   }
 }
 
-$s-debug-breakpoints: true;
-
 @function create-debug-breakpoints-list($bp-map, $should-show: false) {
   @if $should-show {
     @return map-keys($bp-map);
   }
+
   @return ();
 }
