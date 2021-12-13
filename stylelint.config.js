@@ -16,5 +16,7 @@ module.exports = {
       },
     ],
     'color-function-notation': 'legacy',
+    'at-rule-no-unknown': null,
+    'scss/at-rule-no-unknown': true,
   },
 }
