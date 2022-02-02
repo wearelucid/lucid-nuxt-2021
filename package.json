@@ -48,8 +48,9 @@
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/pwa": "^3.3.5",
-    "@nuxtjs/storybook": "4.1",
+    "@nuxtjs/storybook": "^4.2.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
+    "css-loader": "^5.0.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
@@ -76,5 +77,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "resolutions": {
+    "postcss": "8"
   }
 }
