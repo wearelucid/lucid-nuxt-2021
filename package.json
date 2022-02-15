@@ -50,7 +50,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/storybook": "^4.2.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
-    "css-loader": "^5.0.0",
+    "css-loader": "^6.6.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
