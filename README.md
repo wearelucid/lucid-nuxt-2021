@@ -37,23 +37,12 @@ $ yarn generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
-## Storybook
-
-Added via [@nuxtjs/storybook](https://storybook.nuxtjs.org). Make sure to have a look at [`storybookConfig.js`](./configs/storybookConfig.js).
-
-Run Storybook:
-
-```bash
-# Run Storybook on http://localhost:4000
-$ yarn storybook
-```
-
 ## Scaffolding
 
 Scaffold components and vuex modules:
 
 ```bash
-$ yarn scaffold
+yarn scaffold
 ```
 
 ## Linting tools
@@ -107,3 +96,7 @@ Add breakpoints to [`breakpoints.mjs`](./configs/breakpoints.mjs). Breakpoints a
 ## VS Code
 
 We recommend to use [VS Code](https://code.visualstudio.com/). [Recommended extensions](./.vscode/extensions.json) can be installed (prompt by VS Code) when opening the project for the first time. [Project settings](./.vscode/settings.json) ensures that linting with [`eslint`](./.eslintrc.js) and [`stylelint`](./.stylelintrc.json) works correctly.
+
+## Storybook (optional)
+
+Add with [@nuxtjs/storybook](https://storybook.nuxtjs.org). Example config in [`storybookConfig.js`](./configs/storybookConfig.js).

@@ -1,7 +1,6 @@
 import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
 import createI18nConfig from './i18n/i18nConfig'
 import colors from './configs/colors.mjs'
-import storybookConfig from './configs/storybookConfig'
 import createNuxtImageConfig from './configs/nuxtImageConfig'
 
 /**
@@ -108,8 +107,10 @@ export default {
     failedColor: colors.error,
   },
 
+  // Example Storybook Config
   // Storybook Options (https://storybook.nuxtjs.org/options)
-  storybook: storybookConfig,
+  // import storybookConfig from './configs/storybookConfig'
+  // storybook: storybookConfig,
 
   // nuxt-graphql-request Options (https://github.com/gomah/nuxt-graphql-request)
   graphql: {

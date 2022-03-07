@@ -2,7 +2,7 @@
   command = "yarn netlify"
   publish = "dist"
 
-# Storybook branch deploy
-[context.storybook]
-  command = "yarn storybook:build"
-  publish = "storybook-static"
+# Branch deploy with custom build command and publish directory (for example `storybook`):
+# [context.storybook]
+#   command = "yarn storybook:build"
+#   publish = "storybook-static"
