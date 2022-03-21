@@ -24,14 +24,10 @@ export default async function (apiUrl) {
         "❌ Couldn't get routes from CMS. Is API_URL defined in .env and your GraphQL endpoint working?"
       )
     }
-    const fetchedRoutes = jsonResponse.data.entries.map(
-      (item) => parseURL(item.url).pathname
-    )
-    consola.success(
-      '✅ Successfully fetched routes to generate: ',
-      fetchedRoutes
-    )
-    return fetchedRoutes
+    const fetchedRoutes = jsonResponse.data.entries.filter((item) => item.url)
+    const routeURLs = fetchedRoutes.map((item) => parseURL(item.url).pathname)
+    consola.success('✅ Successfully fetched routes to generate: ', routeURLs)
+    return routeURLs
   } catch (error) {
     throw new Error(error)
   }
