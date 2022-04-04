@@ -18,7 +18,7 @@
     "sass-vars:colors": "node configs/createSassColorVars.mjs",
     "sass-vars:globals": "node configs/createSassGlobalVars.mjs",
     "sass-vars:all": "yarn sass-vars:globals && yarn sass-vars:colors && yarn sass-vars:breakpoints",
-    "postinstall": "husky install",
+    "postinstall": "[ \"$CI\" = true ] && exit 0; husky install",
     "scaffold": "plop",
     "commit": "cz"
   },
