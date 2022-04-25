@@ -11370,10 +11370,10 @@ webpackbar@^4.0.0:
     text-table "^0.2.0"
     wrap-ansi "^6.0.0"
 
-what-input@^5.2.10:
-  version "5.2.10"
-  resolved "https://registry.yarnpkg.com/what-input/-/what-input-5.2.10.tgz#f79f5b65cf95d75e55e6d580bb0a6b98174cad4e"
-  integrity sha512-7AQoIMGq7uU8esmKniOtZG3A+pzlwgeyFpkS3f/yzRbxknSL68tvn5gjE6bZ4OMFxCPjpaBd2udUTqlZ0HwrXQ==
+what-input@^5.2.11:
+  version "5.2.11"
+  resolved "https://registry.yarnpkg.com/what-input/-/what-input-5.2.11.tgz#09075570be5792ca542ebf34db6ba43790270e88"
+  integrity sha512-XmxIyHvy0vh+Gi/WB04encFUi1CapO6NE2eevts5qXroexlJXSKkFjkBW9HADmi7I72f8oRLhUZeCQOBEVJhQA==
 
 whatwg-url@^5.0.0:
   version "5.0.0"
