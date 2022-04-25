@@ -38,7 +38,7 @@
     "ohmyfetch": "^0.4.15",
     "ufo": "^0.8.3",
     "vue-link": "^1.6.1",
-    "what-input": "^5.2.10"
+    "what-input": "^5.2.11"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.17.0",
