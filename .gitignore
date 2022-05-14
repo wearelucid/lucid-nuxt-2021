@@ -97,3 +97,6 @@ storybook-static
 _globals.scss
 _breakpoints.scss
 _colors.scss
+
+# Local Netlify folder
+.netlify
