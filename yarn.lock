@@ -7512,11 +7512,6 @@ normalize-scss@^7.0.1:
   resolved "https://registry.yarnpkg.com/normalize-scss/-/normalize-scss-7.0.1.tgz#74485e82bb5d0526371136422a09fdb868ffc1a4"
   integrity sha512-qj16bWnYs+9/ac29IgGjySg4R5qQTp1lXfm7ApFOZNVBYFY8RZ3f8+XQNDDLHeDtI3Ba7Jj4+LuPgz9v/fne2A==
 
-normalize-selector@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/normalize-selector/-/normalize-selector-0.2.0.tgz#d0b145eb691189c63a78d201dc4fdb1293ef0c03"
-  integrity sha1-0LFF62kRicY6eNIB3E/bEpPvDAM=
-
 normalize-url@1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-1.9.1.tgz#2cc0d66b31ea23036458436e3620d85954c66c3c"
@@ -10367,10 +10362,10 @@ stylelint-webpack-plugin@^2.3.1:
     normalize-path "^3.0.0"
     schema-utils "^3.1.1"
 
-stylelint@^14.8.1:
-  version "14.8.2"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-14.8.2.tgz#801eef74fe6020611e6a515abb9fc7caeb125793"
-  integrity sha512-tjDfexCYfoPdl/xcDJ9Fv+Ko9cvzbDnmdiaqEn3ovXHXasi/hbkt5tSjsiReQ+ENqnz0eltaX/AOO+AlzVdcNA==
+stylelint@^14.8.3:
+  version "14.8.3"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-14.8.3.tgz#25d2df1e010cda52ff56327059d1ce25319109be"
+  integrity sha512-aLpskXwSgFEBYbFRKA/BfuyYMGuXNtn2t5GqoffNPSezvw97x/vVNWcZNF0+cwt+LBjfvyq9/MRE3OjInGRgNA==
   dependencies:
     balanced-match "^2.0.0"
     colord "^2.9.2"
@@ -10395,7 +10390,6 @@ stylelint@^14.8.1:
     meow "^9.0.0"
     micromatch "^4.0.5"
     normalize-path "^3.0.0"
-    normalize-selector "^0.2.0"
     picocolors "^1.0.0"
     postcss "^8.4.13"
     postcss-media-query-parser "^0.2.3"
