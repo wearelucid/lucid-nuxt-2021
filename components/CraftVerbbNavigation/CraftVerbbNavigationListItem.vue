@@ -65,19 +65,13 @@ export default {
   },
   computed: {
     computedType() {
-      // Links that open a new window should be treated as external links
-      if (this.newWindow === '1') return 'external'
+      // Check for titles (aka 'passive' items),
+      // they don't render links, only show a title
+      if (this.type === 'verbb\\navigation\\nodetypes\\PassiveType')
+        return 'passive'
 
-      // If there is no type, it's probably a manual link
-      if (!this.type) {
-        // Check if it's internal anyway
-        if (this.isInternalLink) return 'internal'
-        // Otherwise treat as external
-        return 'external'
-      }
-
-      // Check for entries
-      if (this.type.includes('Entry')) {
+      // Entries
+      if (this.type === 'craft\\elements\\Entry') {
         // Warn for entries with mismatching host
         if (!this.isInternalLink) {
           logger.warn(
@@ -89,9 +83,13 @@ export default {
         return 'internal'
       }
 
-      // Check for titles (aka 'passive' items),
-      // they don't render links, only show a title
-      if (this.type.includes('PassiveType')) return 'passive'
+      // Check if it's internal
+      // internal links never open in a new tab
+      if (this.isInternalLink) return 'internal'
+
+      // CustomType is probably an external link
+      if (this.type === 'verbb\\navigation\\nodetypes\\CustomType')
+        return 'external'
 
       // Error if no type could be determined
       logger.error(
