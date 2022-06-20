@@ -60,7 +60,7 @@
     "inquirer-directory": "^2.2.0",
     "lint-staged": "^13.0.0",
     "nuxt-graphql-request": "^5.2.0",
-    "plop": "^3.0.4",
+    "plop": "^3.1.1",
     "postcss": "^8.4.14",
     "postcss-html": "^1.4.0",
     "postcss-import": "12",
