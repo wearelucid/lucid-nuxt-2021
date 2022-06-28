@@ -1,7 +1,7 @@
 import fetchRoutesToBeGenerated from './graphql/scripts/fetchRoutesToBeGenerated'
 import createI18nConfig from './i18n/i18nConfig'
 import colors from './configs/colors.mjs'
-import createNuxtImageConfig from './configs/nuxtImageConfig'
+// import createNuxtImageConfig from './configs/nuxtImageConfig'
 
 /**
  * Set the default locale (used by i18n and pwa/manifest module)
@@ -58,7 +58,6 @@ export default {
     '@nuxtjs/stylelint-module',
     'nuxt-graphql-request',
     '@nuxtjs/pwa',
-    '@nuxt/image',
   ],
 
   // Stylelint config (https://github.com/nuxt-community/stylelint-module)
@@ -71,7 +70,7 @@ export default {
   },
 
   // @nuxt/image config
-  image: createNuxtImageConfig([process.env.IMAGES_URL]),
+  // image: createNuxtImageConfig([process.env.IMAGES_URL]),
 
   // ? Do you need nuxt-mq? Here you go:
   // nuxt-mq config (https://github.com/vanhoofmaarten/nuxt-mq)
