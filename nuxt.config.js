@@ -84,6 +84,7 @@ export default {
   build: {
     // TODO: 'vue-link' seems not to work if not transpiled by babel. Maybe I'm missing something here.
     transpile: ['vue-link'],
+    // Disable PostCSS – Removes "you did not set any plugins, parser, or stringifier" warning. Delete line if you use PostCSS.
     postcss: null,
   },
 
