@@ -13,6 +13,12 @@ import { nuxtImageBreakpoints } from './breakpoints'
  * { initial: 320, small: 768, medium: 1280, large: 999999 }
  */
 const createNuxtImageConfig = (domains = []) => {
+  if (
+    !domains.length ||
+    !domains.every((domain) => typeof domain === 'string')
+  ) {
+    throw new Error('Please provide a list of domains as strings')
+  }
   return { domains, screens: nuxtImageBreakpoints }
 }
 
