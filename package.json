@@ -34,7 +34,7 @@
     "core-js": "^3.26.1",
     "graphql-tag": "^2.12.6",
     "normalize-scss": "^7.0.1",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.0.0",
     "ohmyfetch": "^0.4.21",
     "ufo": "^1.0.0",
     "vue-link": "^1.6.1",
