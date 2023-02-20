@@ -35,7 +35,7 @@
     "normalize-scss": "^7.0.1",
     "nuxt": "^2.16.0",
     "ohmyfetch": "^0.4.21",
-    "ufo": "^1.0.1",
+    "ufo": "^1.1.0",
     "vue-link": "^1.6.1",
     "what-input": "^5.2.12"
   },
