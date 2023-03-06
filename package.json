@@ -33,7 +33,7 @@
     "consola": "^2.15.3",
     "graphql-tag": "^2.12.6",
     "normalize-scss": "^7.0.1",
-    "nuxt": "^2.16.1",
+    "nuxt": "^2.16.2",
     "ohmyfetch": "^0.4.21",
     "ufo": "^1.1.0",
     "vue-link": "^1.6.1",
