@@ -1,7 +1,7 @@
 <template>
   <div :class="$options.name">
     <p v-if="$fetchState.pending">Fetching menu...</p>
-    <p v-else-if="$fetchState.error" style="color: #f00">
+    <p v-else-if="$fetchState.error" :style="'color: #f00'">
       {{ $fetchState.error.message }}
     </p>
     <CraftVerbbNavigationList v-else>
