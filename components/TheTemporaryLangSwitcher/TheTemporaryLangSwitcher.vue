@@ -1,6 +1,6 @@
 <template>
   <aside>
-    <hr :style="'margin: 1em 0'" />
+    <hr style="margin: 1em 0" />
     <p>
       {{ $i18n.localeProperties.name }}
       is the current lang (code: {{ $i18n.locale }})
@@ -17,7 +17,7 @@
     <div v-else>
       <span>No translation available</span>
     </div>
-    <hr :style="'margin: 1em 0'" />
+    <hr style="margin: 1em 0" />
   </aside>
 </template>
 

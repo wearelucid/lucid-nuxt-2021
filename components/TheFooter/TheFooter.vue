@@ -1,8 +1,8 @@
 <template>
   <footer :class="$options.name">
-    <hr :style="'margin: 2em 0'" />
+    <hr style="margin: 2em 0" />
     <p v-if="$fetchState.pending">Fetching Footer...</p>
-    <p v-else-if="$fetchState.error" :style="'color: #f00'">
+    <p v-else-if="$fetchState.error" style="color: #f00">
       {{ $fetchState.error.message }}
     </p>
     <div v-else>
