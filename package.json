@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "yarn sass-vars:all && nuxt",
+    "dev": "yarn sass-vars:all && yarn print-env-vars && nuxt",
     "build": "yarn sass-vars:all && nuxt build",
     "start": "nuxt start",
     "generate": "yarn sass-vars:all && nuxt generate",
@@ -20,7 +20,8 @@
     "sass-vars:all": "yarn sass-vars:globals && yarn sass-vars:colors && yarn sass-vars:breakpoints",
     "postinstall": "[ \"$CI\" = true ] && exit 0; husky install",
     "scaffold": "plop",
-    "commit": "cz"
+    "commit": "cz",
+    "print-env-vars": "node configs/printEnvVars.mjs"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
